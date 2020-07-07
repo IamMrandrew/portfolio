@@ -6,9 +6,8 @@
 
 .navBar {
     margin-right : auto;
-    padding : 20px 10px;
     background-color: #FFFFFF;
-    border-bottom : 1px solid #999999;
+    /* border-bottom : 1px solid #999999; */
 }
 
 .container {
@@ -32,8 +31,12 @@ nav div ul li {
 }
 nav div a {
     margin : 10px;
+    padding : 15px;
     font-size : 16px;
-    font-weight: 375;
+    font-weight: 400;
+    text-decoration: none;
+    color : #202020;
+    display : inline-block;
 }
 
 nav div a:hover {
@@ -41,11 +44,53 @@ nav div a:hover {
 }
 
 .jumbotron {
-    padding : 64px 32px 64px;
+    padding : 84px 32px 120px;
     line-height: 1.75;
+    background-color: #b5b9a9;
 }
 
 #Title1 {
     font-size : 30px;
     font-weight: 500;
+}
+
+.portfolioCoverImg{
+    width : 100%;
+}
+
+.col {
+    width : 50%;
+    padding : 15px;
+    float : left;
+    box-sizing: border-box;
+}
+
+.col h4{
+    margin : 15px 15px 5px;
+}
+
+.col p{
+    margin : 5px 15px 0px;
+}
+
+.col-4 {
+    width : 33%;
+    float : left;
+}
+
+.clearfix {
+    clear : both;
+}
+footer {
+    padding : 40px;
+    background-color: #F1F2EB;
+}
+
+footer h4 {
+    font-weight: 500;
+}
+
+footer p {
+    font-weight: 300;
+    font-size: 14px
 }
