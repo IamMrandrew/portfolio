@@ -1,9 +1,20 @@
-* {
+body{
     font-family : "Open Sans", sans-serif;
-    margin : 0;
-    padding : 0;
 }
 
+h1, h2, h3, h5{
+    padding : 10px 15px 10px;
+}
+
+h4 {
+    font-size : 18px;
+    font-weight : 400;
+    padding : 10px 15px 10px;
+}
+p {
+    padding : 0 15px 0;
+    font-weight : 380;
+}
 .navBar {
     margin-right : auto;
     background-color: #FFFFFF;
@@ -14,6 +25,8 @@
     max-width : 1140px;
     margin : auto;
     padding : 0px 15px 0px;
+    display : flex;
+    flex-wrap: wrap;
 }
 
 .textContainer {
@@ -26,12 +39,16 @@ nav div {
     text-align : right;
 }
 
+nav div ul {
+    margin-left : auto;
+}
+
 nav div ul li {
-    display : inline;
+    display : inline-block;
 }
 nav div a {
-    margin : 10px;
-    padding : 15px;
+    margin : 0px 10px 0px; 
+    padding : 25px 15px 25px;
     font-size : 16px;
     font-weight: 400;
     text-decoration: none;
@@ -59,9 +76,9 @@ nav div a:hover {
 }
 
 .col {
-    width : 50%;
+    width : 570px;
     padding : 15px;
-    float : left;
+    /* float : left; */
     box-sizing: border-box;
 }
 
@@ -74,8 +91,9 @@ nav div a:hover {
 }
 
 .col-4 {
-    width : 33%;
-    float : left;
+    width : 380px;
+    margin : 10px 0 15px;
+    /* float : left; */
 }
 
 .clearfix {
@@ -94,3 +112,4 @@ footer p {
     font-weight: 300;
     font-size: 14px
 }
+
