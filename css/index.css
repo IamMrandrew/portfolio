@@ -179,7 +179,7 @@ nav .container{
         width: 100%;
         background-color: #FFFFFF;
         height: 9vh;
-        transform: translateY(-100%);
+        transform: translateY(-200%);
         transition: transform 0.5s;
 
     }
