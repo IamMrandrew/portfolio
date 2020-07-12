@@ -12,7 +12,6 @@
   <!-- Custom Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
  
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/index.css">
 
@@ -21,49 +20,66 @@
 <body>
 
   <header>
-    <nav class="navBar">
+    <nav>
     <div class="container">
-      <ul>
+      <div class="nav-brand">
+        <a href="#">Home</a>
+      </div>
+      <ul class="nav-list">
         <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Design</a>
+          <a href="#" id="designTab">Design</a>
         </li>
         <li>
           <a href="#">About</a>
         </li>
       </ul>
+      <div class="burgerToggle">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
     </div>
     </nav>
   </header>
 
   <section class="jumbotron">
-    <div class="textContainer">
-      <h1 id="Title1">Hello I am ANDREW</h1>
+    <div class="container">
+    <div class="text-wrapper">
+      <h1 class="h1">Hello I am ANDREW</h1>
       <p>I love design and coding</p>
+    </div>
     </div>
   </section>
 
   <div class="container">
-    <div class="col">
-      <img src="img/hautakchurchMockup.png" class="portfolioCoverImg">
-      <h4>Hau Tak Church Design</h4>
-      <p>Responsive Neat Dynamic</p>
-      <img src="img/homekitMockup.png" class="portfolioCoverImg">
-      <h4>HomeKit Site Design</h4>
-      <p>Responsive Neat Dynamic</p>
+    <h1 class="h2">Design</h1>
+  </div>
+
+  <section class="container container-flex" id="design">
+    <div class="col-6">
+      <article class="item item1">
+        <img src="img/hautakchurchMockup.png" class="portfolioCoverImg">
+        <h4>Hau Tak Church Design</h4>
+        <p>Responsive Neat Dynamic</p>
+      </article>
+      <article class="item item2">
+        <img src="img/homekitMockup.png" class="portfolioCoverImg">
+        <h4>HomeKit Site Design</h4>
+        <p>Responsive Neat Dynamic</p>    
+      </article>
     </div>
-    <div class="col">
-      <img src="img/trytryClothesMockup.png" class="portfolioCoverImg">
-      <h4>TryTryClothes Design</h4>
-      <p>User Friendly Neat</p>
+    <div class="col-6 item-wrapper">
+      <article class="item item3">
+        <img src="img/trytryClothesMockup.png" class="portfolioCoverImg">
+        <h4>TryTryClothes Design</h4>
+        <p>User Friendly Neat</p>
+      </article>
     </div>
     <!-- <div class="clearfix"></div> -->
-  </div>
+  </section>
   
   <footer>
-    <div class="container">
+    <div class="container container-flex">
       <div class="col-4">
         <h4>Email</h4>
         <p>andrewliyanlap000824@gmail.com</p>
@@ -73,22 +89,11 @@
         <h4>Email</h4>
         <p>1155127269@link.cuhk.edu.hk</p>
       </div>   
-<!--        
-      <div class="col-4">
-        <h4>Email</h4>
-        <p>andrewliyanlap000824@gmail.com</p>
-      </div>     -->
-
-      <!-- <div class="clearfix"></div> -->
     </div>
   </footer>
-  <!-- <script type="text/javascript">
-    alert("yo");
-  </script> -->
 
-  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
+ <script src="js/index.js"></script>
+
 </body>
 
 </html>
