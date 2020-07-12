@@ -78,40 +78,7 @@ p {
     max-width: 1140px;
     margin: auto;
 }
-/* 
-.navBar {
-    width: 100%;
-    margin-right: auto;
-    background-color: #FFFFFF;
-    /* border-bottom : 1px solid #999999; 
-}
 
-nav div {
-    text-align: right;
-}
-
-nav div ul {
-    margin-left: auto;
-}
-
-nav div ul li {
-    display: inline-block;
-}
-nav div a {
-    margin: 0px 10px 0px; 
-    padding: 25px 10px 25px;
-    font-size: 16px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #202020;
-    display: inline-block;
-    letter-spacing: 3px;
-} 
-
-nav div a:hover {
-    color: #5C5C5C;
-}
-*/
 nav {
     position: relative;
 
@@ -227,7 +194,7 @@ nav .container{
 .jumbotron {
     /* padding : 84px 32px 120px; */
     line-height: 350px;
-    background-color: #b5b9a9;
+    background-color: #ffffff;
     margin: 0px 0px 15px;
     transition : 0.3s;
     position: relative;
@@ -238,7 +205,7 @@ nav .container{
     .jumbotron {
         /* padding : 84px 32px 120px; */
         line-height: 500px;
-        background-color: #b5b9a9;
+        background-color: #ffffff;
         margin: 0px 0px 15px;
         transition : 0.3s;
     }
@@ -267,7 +234,7 @@ nav .container{
     width: 100%;
 }
 
-.col-6 {
+.col-4 {
     flex: 0 0 100%;
     padding: 15px;
     /* float : left; */
@@ -275,21 +242,22 @@ nav .container{
 }
 
     @media screen and (min-width : 768px) {
-        .col-6 {
-            flex: 0 0 50%;
+        .col-4 {
+            flex: 0 0 33.33%;
         }
     }
 
-.col-6 h4{
+.col-4 article h4{
     margin: 15px 15px 5px;
+    color: #FFFFFF;
 }
 
-.col-6 p{
-    margin: 5px 15px 0px;
+.col-4 article p{
+    margin: 15px 15px 15px;
+    color: #FFFFFF;
 }
 
-.col-4 {
-    flex: 0 0 33.33%;
+.footer{
     margin: 10px 0 15px;
     /* float : left; */
 }
@@ -303,21 +271,13 @@ nav .container{
 
 }
 
-
-@media screen and (min-width : 768px){
-    .item-wrapper {
-        position: relative;
-    }
-    
-    .item3 {
-        position: absolute;
-        top: 100px;
-        left: 15px;
-        right: 15px;
-    }
+.section2 {
+    background-color: #52687E;
 }
 
-
+.form .container {
+    background-color: #454545;
+}
 footer {
     margin-top: 15px;
     padding: 40px;
