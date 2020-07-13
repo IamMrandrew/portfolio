@@ -299,7 +299,11 @@ nav .container{
     clear : both;
 } */
 
-.item:hover {
+.item img {
+  transition: transform 0.5s;
+}
+
+.item img:hover {
   transform: scale(1.5);
 }
 
