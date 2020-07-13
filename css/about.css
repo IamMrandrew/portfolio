@@ -79,118 +79,6 @@ p {
     margin: auto;
 }
 
-nav {
-    position: relative;
-
-}
-
-nav .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 7vh;
-}
-
-.nav-brand a{
-    text-decoration: none;
-    color: #202020;
-    letter-spacing: 2px;
-    display: inline-block;
-    padding: 10px;
-    position: relative;
-    z-index: 2;
-}
-
-.nav-brand a:hover{
-    color: #5C5C5C;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-}
-
-.nav-list li {
-    display: inline-block;
-    padding: 10px;
-}
-.nav-list li a{
-    text-decoration: none;
-    color: #202020;
-    letter-spacing: 2px;
-}
-
-.nav-list li a:hover{
-    color: #5C5C5C;
-}
-
-.burgerToggle {
-    display: none;
-    position: relative;
-}
- 
-
-@media screen and (max-width : 768px){
-    .burgerToggle {
-        display: block;
-    }   
-
-    .nav-list{
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        position: absolute;
-        top: 7vh;
-        left: 0;
-        width: 100%;
-        background-color: #FFFFFF;
-        height: 9vh;
-        transform: translateY(-200%);
-        transition: transform 0.5s;
-
-    }
-
-    .nav-list li {
-        margin: 0px 20px;
-        opacity: 0%;
-    }
-
-}
-
-.nav-active {
-    transform: translateY(0%);
-
-}
-
-.nav-active li{
-    opacity: 100%;
-    transition: 2s ease;
-}
-
-.burgerToggle div {
-    background-color: #202020;
-    width: 22px;
-    height: 2px;
-    margin: 4px;
-}
-
-.burgerToggle .line{
-    transition: 0.5s;
-}
-
-.burger-active .line1 {
-    transform: rotate(-45deg) translate(-6px, 2px);
-}
-
-.burger-active .line2 { 
-    opacity: 0;
-}
-
-.burger-active .line3 {
-    transform: rotate(45deg) translate(-6px, -3px);
-}
-
 .jumbotron {
     /* padding : 84px 32px 120px; */
     line-height: 350px;
@@ -266,10 +154,6 @@ nav .container{
 .clearfix {
     clear : both;
 } */
-
-.item:hover {
-
-}
 
 .section2 {
     background-color: #52687E;
