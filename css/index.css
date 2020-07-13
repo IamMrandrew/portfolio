@@ -299,6 +299,10 @@ nav .container{
     clear : both;
 } */
 
+.item {
+  overflow: hidden;
+}
+  
 .item img {
   transition: transform 0.5s;
 }
