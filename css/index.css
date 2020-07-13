@@ -213,7 +213,7 @@ nav .container{
 }
 
 .burger-active .line1 {
-    transform: rotate(-45deg) translate(-5px, 3px);
+    transform: rotate(-45deg) translate(-6px, 3px);
 }
 
 .burger-active .line2 { 
@@ -308,7 +308,7 @@ nav .container{
 }
 
 .item img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 
