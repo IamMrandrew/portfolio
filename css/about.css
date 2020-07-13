@@ -180,7 +180,7 @@ nav .container{
 }
 
 .burger-active .line1 {
-    transform: rotate(-45deg) translate(-5px, 3px);
+    transform: rotate(-45deg) translate(-6px, 2px);
 }
 
 .burger-active .line2 { 
