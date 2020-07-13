@@ -81,12 +81,24 @@ p {
 
 .jumbotron {
     /* padding : 84px 32px 120px; */
-    line-height: 350px;
     background-color: #b5b9a9;
     margin: 0px 0px 15px;
     transition : 0.3s;
     position: relative;
     z-index: -2;
+}
+
+.jumbotron .container {
+    line-height: 350px;
+}
+
+.text-wrapper {
+    margin: auto;
+    padding: 15px;
+    line-height: 1.75;
+    display : inline-block;
+    position: relative;
+    top: 35px;
 }
 
 @media screen and (min-width : 768px) {
@@ -97,15 +109,22 @@ p {
         margin: 0px 0px 15px;
         transition : 0.3s;
     }
+
+    .jumbotron .container {
+        line-height: 500px;
+    }
+
+    .text-wrapper {
+        margin: auto;
+        padding: 15px;
+        line-height: 1.75;
+        display : inline-block;
+        top: 0;
+    }
+
 }
 
-.text-wrapper {
-    margin: auto;
-    padding: 15px;
-    line-height: 1.75;
-    display : inline-block;
 
-}
 
 .jumbotron p {
     font-size: 18px;
