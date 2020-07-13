@@ -299,7 +299,7 @@ nav .container{
     clear : both;
 } */
 
-.item {
+.item .img-wrapper{
   overflow: hidden;
 }
   
