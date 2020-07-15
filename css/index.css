@@ -8,7 +8,7 @@ nav {
 
 @media screen and (max-width: 768px) {
   body {
-    padding-top: 6vh;
+    padding-top: 60px;
   }
 }
 
@@ -28,7 +28,7 @@ nav .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 7vh;
+  height: 60px;
 }
 
 .nav-brand a {
@@ -39,6 +39,10 @@ nav .container {
   padding: 10px;
   position: relative;
   z-index: 2;
+}
+
+.nav-brand a img {
+  height: 30px;
 }
 
 .nav-brand a:hover {
@@ -91,7 +95,7 @@ nav .container {
         -ms-flex-pack: center;
             justify-content: center;
     position: absolute;
-    top: 7vh;
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: #FFFFFF;
@@ -348,6 +352,20 @@ p {
 .item img:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.item {
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.itemAppear {
+  opacity: 100%;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 @media screen and (min-width: 768px) {

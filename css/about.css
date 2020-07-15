@@ -8,7 +8,7 @@ nav {
 
 @media screen and (max-width: 768px) {
   body {
-    padding-top: 6vh;
+    padding-top: 60px;
   }
 }
 
@@ -28,7 +28,7 @@ nav .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 7vh;
+  height: 60px;
 }
 
 .nav-brand a {
@@ -39,6 +39,10 @@ nav .container {
   padding: 10px;
   position: relative;
   z-index: 2;
+}
+
+.nav-brand a img {
+  height: 30px;
 }
 
 .nav-brand a:hover {
@@ -91,7 +95,7 @@ nav .container {
         -ms-flex-pack: center;
             justify-content: center;
     position: absolute;
-    top: 7vh;
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: #FFFFFF;

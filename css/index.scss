@@ -187,6 +187,16 @@ p {
   transform: scale(1.2);
 }
 
+.item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.7s;
+}
+
+.itemAppear {
+    opacity: 100%;
+    transform: translateY(0);
+}
 
 @media screen and (min-width : 768px){
     .item-wrapper {
