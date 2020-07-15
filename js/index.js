@@ -49,7 +49,7 @@ function scrollAppear() {
   let designSession = designItem1.getBoundingClientRect().top;
   let screenPosition = window.innerHeight / 1.2;
 
-  if (window.matchMedia("(min-width: 768px").matches) {
+  if (window.matchMedia("(min-width: 768px)").matches) {
     if (designSession < screenPosition) {
       designItem1.classList.add("itemAppear")
     }
@@ -69,8 +69,8 @@ function scrollAppear() {
     if (designSession < screenPosition-450) {
       designItem2.classList.add("itemAppear")
     }
-  
-    if (designSession < screenPosition-900) {
+
+    if (designSession < screenPosition-800) {
       designItem3.classList.add("itemAppear")
     }
   }
