@@ -6,7 +6,8 @@
     z-index: -2;
 
     .container {
-    line-height: 600px;
+        line-height: 600px;
+        padding: 0px 80px;
     }   
 
     .text-wrapper {
@@ -27,6 +28,7 @@
     p {
         font-size: 18px;
         letter-spacing: 3px;
+        padding: 10px 15px 10px;
     }
 }
 

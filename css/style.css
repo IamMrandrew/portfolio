@@ -844,6 +844,7 @@ footer .copyright p {
 
 .jumbotron1 .container {
   line-height: 600px;
+  padding: 0px 80px;
 }
 
 .jumbotron1 .text-wrapper {
@@ -864,6 +865,7 @@ footer .copyright p {
 .jumbotron1 p {
   font-size: 18px;
   letter-spacing: 3px;
+  padding: 10px 15px 10px;
 }
 
 @media screen and (min-width: 768px) {
