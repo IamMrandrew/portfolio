@@ -1,0 +1,212 @@
+.jumbotron2 {
+    background-color: red;
+    margin: 0px 0px 15px;
+    transition : 0.3s;
+    position: relative;
+    z-index: -2;
+
+    .left {
+        background-color: #F1F1F1;
+        height: 400px; 
+
+        .textContainer {
+            line-height: 400px;
+        }
+
+        .text-wrapper {
+            margin: auto;
+            padding: 15px;
+            line-height: 1.75;
+            display : inline-block;
+            position: relative;
+            top: 35px;
+        }
+
+        .h1 {
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 3px;
+        }
+        
+        p {
+            font-size: 18px;
+            letter-spacing: 3px;
+            padding: 0px 15px 0px;
+        }
+        
+    }
+
+    .right {
+        display: none;
+        // transition: all 0.5s;
+    }
+
+    @media screen and (min-width: 768px){
+        .left {
+            background-color: #F1F1F1;
+            height: 600px;
+            z-index: 100;
+        
+            .textContainer {
+                line-height: 600px;
+                position: absolute;
+                max-width: 720px;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                right: 50%;
+            }
+
+            .text-wrapper {
+                margin: auto;
+                padding: 15px;
+                line-height: 1.75;
+                display : inline-block;
+                position: relative;
+                top: 35px;
+            }
+
+            .h1 {
+                font-size: 30px;
+                font-weight: 500;
+                letter-spacing: 3px;
+            }
+            
+            p {
+                font-size: 18px;
+                letter-spacing: 3px;
+            }
+        }
+        .right {
+            // display: block;
+            background-color: #8E9CA2;
+            height: 600px;
+            display: flex;
+            align-items: center;
+
+            .text-wrapper {
+                margin: auto;
+                padding: 15px;
+                line-height: 1.75;
+                display : inline-block;
+                // position: relative;
+                // top: 35px;
+
+                img {
+                    display: inline-block;
+                }
+            }
+
+
+        }
+    }
+}
+.skill-wrapper {
+    padding: 30px;
+
+    #skills {
+        background-color: #52687E;
+        border-radius: 30px;
+        color: #FFFFFF;
+        padding: 60px;
+        max-width: 700px;
+    
+        h3 {
+            width: 100%;
+            font-size: 20px;
+        }
+    
+        .skills {
+            text-align: center;
+            padding: 15px;
+
+            p {
+                padding: 5px;
+                font-weight: 380;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .skill-wrapper {
+        position: absolute;
+        top: 550px;
+        left: 0;
+        right: 0;
+    }
+
+    .blank-div {
+        display: block;
+        height: 280px;
+    }
+}
+
+.form-wrapper {
+    padding: 30px;
+
+    .form {
+        background-color: #3E3C3C;
+        border-radius: 30px;
+        color: #ffffff;
+        padding: 60px;
+        max-width: 700px;
+        
+        h3 {
+            font-size: 20px;
+        }
+
+        .field-wrapper {
+            padding: 0px 30px;
+
+            .field {
+                text-align: center;
+                width: 100%;
+                
+                margin: 30px 0px;
+    
+                input {
+                    font-family: "Open Sans", sans-serif;
+                    display: block;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    background-color: #FFFFFF;
+                    border-radius: 8px;
+                    width: 100%;
+                    height: 40px;
+                    padding: 0px 15px;
+                    color: #434343;
+                    font-size: 15px;
+                }
+    
+                textarea{
+                    font-family: "Open Sans", sans-serif;
+                    display: block;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    background-color: #FFFFFF;
+                    border-radius: 8px;
+                    width: 100%;
+                    height: 80px;
+                    padding: 10px 15px;
+                    color: #434343;
+                    font-size: 15px;
+                    
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .skill-wrapper #skills {
+        padding: 30px;
+    }
+    .form-wrapper .form {
+        padding: 30px;
+    }
+}

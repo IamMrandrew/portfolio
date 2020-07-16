@@ -834,7 +834,6 @@ footer .copyright p {
 }
 
 .jumbotron1 {
-  /* padding : 84px 32px 120px; */
   background-color: #b5b9a9;
   margin: 0px 0px 15px;
   -webkit-transition: 0.3s;
@@ -943,6 +942,207 @@ footer .copyright p {
   }
 }
 
+.jumbotron2 {
+  background-color: red;
+  margin: 0px 0px 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+  z-index: -2;
+}
+
+.jumbotron2 .left {
+  background-color: #F1F1F1;
+  height: 400px;
+}
+
+.jumbotron2 .left .textContainer {
+  line-height: 400px;
+}
+
+.jumbotron2 .left .text-wrapper {
+  margin: auto;
+  padding: 15px;
+  line-height: 1.75;
+  display: inline-block;
+  position: relative;
+  top: 35px;
+}
+
+.jumbotron2 .left .h1 {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.jumbotron2 .left p {
+  font-size: 18px;
+  letter-spacing: 3px;
+  padding: 0px 15px 0px;
+}
+
+.jumbotron2 .right {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron2 .left {
+    background-color: #F1F1F1;
+    height: 600px;
+    z-index: 100;
+  }
+  .jumbotron2 .left .textContainer {
+    line-height: 600px;
+    position: absolute;
+    max-width: 720px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+  }
+  .jumbotron2 .left .text-wrapper {
+    margin: auto;
+    padding: 15px;
+    line-height: 1.75;
+    display: inline-block;
+    position: relative;
+    top: 35px;
+  }
+  .jumbotron2 .left .h1 {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
+  .jumbotron2 .left p {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+  .jumbotron2 .right {
+    background-color: #8E9CA2;
+    height: 600px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .jumbotron2 .right .text-wrapper {
+    margin: auto;
+    padding: 15px;
+    line-height: 1.75;
+    display: inline-block;
+  }
+  .jumbotron2 .right .text-wrapper img {
+    display: inline-block;
+  }
+}
+
+.skill-wrapper {
+  padding: 30px;
+}
+
+.skill-wrapper #skills {
+  background-color: #52687E;
+  border-radius: 30px;
+  color: #FFFFFF;
+  padding: 60px;
+  max-width: 700px;
+}
+
+.skill-wrapper #skills h3 {
+  width: 100%;
+  font-size: 20px;
+}
+
+.skill-wrapper #skills .skills {
+  text-align: center;
+  padding: 15px;
+}
+
+.skill-wrapper #skills .skills p {
+  padding: 5px;
+  font-weight: 380;
+}
+
+@media screen and (min-width: 768px) {
+  .skill-wrapper {
+    position: absolute;
+    top: 550px;
+    left: 0;
+    right: 0;
+  }
+  .blank-div {
+    display: block;
+    height: 280px;
+  }
+}
+
+.form-wrapper {
+  padding: 30px;
+}
+
+.form-wrapper .form {
+  background-color: #3E3C3C;
+  border-radius: 30px;
+  color: #ffffff;
+  padding: 60px;
+  max-width: 700px;
+}
+
+.form-wrapper .form h3 {
+  font-size: 20px;
+}
+
+.form-wrapper .form .field-wrapper {
+  padding: 0px 30px;
+}
+
+.form-wrapper .form .field-wrapper .field {
+  text-align: center;
+  width: 100%;
+  margin: 30px 0px;
+}
+
+.form-wrapper .form .field-wrapper .field input {
+  font-family: "Open Sans", sans-serif;
+  display: block;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
+  padding: 0px 15px;
+  color: #434343;
+  font-size: 15px;
+}
+
+.form-wrapper .form .field-wrapper .field textarea {
+  font-family: "Open Sans", sans-serif;
+  display: block;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  width: 100%;
+  height: 80px;
+  padding: 10px 15px;
+  color: #434343;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .skill-wrapper #skills {
+    padding: 30px;
+  }
+  .form-wrapper .form {
+    padding: 30px;
+  }
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   -webkit-box-sizing: border-box;
@@ -957,11 +1157,6 @@ h4 {
   font-size: 18px;
   font-weight: 400;
   padding: 10px 15px 10px;
-}
-
-p {
-  padding: 0 15px 0;
-  font-weight: 380;
 }
 
 .h2 {
