@@ -28,7 +28,7 @@ nav .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 60px;
+  height: 80px;
 }
 
 .nav-brand a {
@@ -336,7 +336,10 @@ p {
 }
 
 .item .img-wrapper {
+  border-radius: 25px;
   overflow: hidden;
+  z-index: 1;
+  position: relative;
 }
 
 .item img {
@@ -372,18 +375,28 @@ p {
 
 footer {
   margin-top: 15px;
-  padding: 40px;
+  padding: 20px;
   background-color: #F1F2EB;
 }
 
 footer h4 {
+  font-size: 18px;
   font-weight: 500;
   color: #705454;
 }
 
 footer p {
   font-weight: 300;
-  font-size: 145x;
+  font-size: 16px;
   color: #565151;
 }
-/*# sourceMappingURL=index.css.map */
+
+footer .copyright {
+  margin: 30px auto 5px;
+  padding: 15px;
+}
+
+footer .copyright p {
+  font-size: 12px;
+}
+/*# sourceMappingURL=style.css.map */
