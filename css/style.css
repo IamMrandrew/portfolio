@@ -1,3 +1,53 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -151,73 +201,32 @@ nav .container {
           transform: rotate(45deg) translate(-6px, -3px);
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+footer {
+  margin-top: 15px;
+  padding: 20px;
+  background-color: #F1F2EB;
 }
 
-h1, h2, h3, h5 {
-  padding: 10px 15px 10px;
-}
-
-h4 {
+footer h4 {
   font-size: 18px;
-  font-weight: 400;
-  padding: 10px 15px 10px;
+  font-weight: 500;
+  color: #705454;
 }
 
-p {
-  padding: 0 15px 0;
-  font-weight: 380;
+footer p {
+  font-weight: 300;
+  font-size: 16px;
+  color: #565151;
 }
 
-.h2 {
-  font-size: 20px;
-  font-weight: 400;
-  margin: 30px 0px 15px;
-  padding: 15px 15px 0px;
-  letter-spacing: 2px;
-  color: #525151;
+footer .copyright {
+  margin: 30px auto 5px;
+  padding: 15px;
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-  }
+footer .copyright p {
+  font-size: 12px;
+  text-decoration: none;
 }
 
 .container-flex {
@@ -373,30 +382,72 @@ p {
   }
 }
 
-footer {
-  margin-top: 15px;
-  padding: 20px;
-  background-color: #F1F2EB;
+body {
+  font-family: "Open Sans", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-footer h4 {
+h1, h2, h3, h5 {
+  padding: 10px 15px 10px;
+}
+
+h4 {
   font-size: 18px;
-  font-weight: 500;
-  color: #705454;
+  font-weight: 400;
+  padding: 10px 15px 10px;
 }
 
-footer p {
-  font-weight: 300;
-  font-size: 16px;
-  color: #565151;
+p {
+  padding: 0 15px 0;
+  font-weight: 380;
 }
 
-footer .copyright {
-  margin: 30px auto 5px;
-  padding: 15px;
+.h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 30px 0px 15px;
+  padding: 15px 15px 0px;
+  letter-spacing: 2px;
+  color: #525151;
 }
 
-footer .copyright p {
-  font-size: 12px;
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
 }
 /*# sourceMappingURL=style.css.map */
