@@ -15,6 +15,7 @@ html {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    transition : $containerTransitionTime;
   }
   
   @media (min-width: 576px) {
@@ -58,8 +59,6 @@ html {
   .col-xl-auto {
     position: relative;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
   }
 
 
@@ -488,3 +487,7 @@ html {
     display: inline-flex !important;
   }
   
+  .flex-wrap {
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+  }

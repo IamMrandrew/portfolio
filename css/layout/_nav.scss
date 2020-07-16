@@ -20,12 +20,17 @@ nav {
     }
 }
 
-nav .container{
+nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // height: 7vh;
-    height: 80px;
+    height: 60px;
+}
+
+@media screen and (min-width: 768px) {
+    nav .container {
+        height: 80px;
+    }
 }
 
 .nav-brand a{
@@ -72,7 +77,7 @@ nav .container{
 }
  
 
-@media screen and (max-width : 768px){
+@media screen and (max-width: 768px){
     .burgerToggle {
         display: block;
     }   
@@ -93,7 +98,7 @@ nav .container{
     }
 
     .nav-list li {
-        margin: 0px 20px;
+        // margin: 0px 20px;
         opacity: 0%;
     }
 
