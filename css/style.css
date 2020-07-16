@@ -833,6 +833,11 @@ footer .copyright p {
   text-decoration: none;
 }
 
+a[href^=tel] {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 .jumbotron1 {
   background-color: #b5b9a9;
   margin: 0px 0px 15px;
