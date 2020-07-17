@@ -814,6 +814,9 @@ footer {
   margin-top: 15px;
   padding: 20px;
   background-color: #252525;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 footer .contact-item {
@@ -841,6 +844,14 @@ footer .copyright p {
   font-weight: 300;
   color: #8f8f8f;
   text-decoration: none;
+}
+
+.itemAppear {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
 }
 
 a[href^=tel] {
