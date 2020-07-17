@@ -810,6 +810,10 @@ nav .container {
   -moz-tap-hightlight-color: rgba(0, 0, 0, 0);
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 footer {
   margin-top: 15px;
   padding: 20px;
@@ -985,7 +989,7 @@ a[href^=tel] {
 
 .jumbotron2 .left .textContainer {
   line-height: 600px;
-  padding: 0px 80px;
+  padding: 0px 40px;
 }
 
 .jumbotron2 .left .text-wrapper {
@@ -1075,7 +1079,7 @@ a[href^=tel] {
   background-color: #52687E;
   border-radius: 30px;
   color: #FFFFFF;
-  padding: 60px 60px 25px;
+  padding: 30px 30px 25px;
   max-width: 700px;
 }
 
@@ -1096,6 +1100,12 @@ a[href^=tel] {
 .skill-wrapper .skillContainer .skills p {
   padding: 5px;
   font-weight: 380;
+}
+
+@media screen and (min-width: 768px) {
+  .skill-wrapper .skillContainer {
+    padding: 60px 60px 25px;
+  }
 }
 
 @media screen and (min-width: 768px) {

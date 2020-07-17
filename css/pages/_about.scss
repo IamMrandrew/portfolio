@@ -11,7 +11,7 @@
 
         .textContainer {
             line-height: 600px;
-            padding: 0px 80px;
+            padding: 0px 40px;
         }
 
         .text-wrapper {
@@ -112,7 +112,7 @@
         background-color: #52687E;
         border-radius: 30px;
         color: #FFFFFF;
-        padding: 60px 60px 25px;
+        padding: 30px 30px 25px;
         max-width: 700px;
     
         .skills {
@@ -132,6 +132,12 @@
                 font-weight: 380;
             }
         }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .skill-wrapper .skillContainer {
+        padding: 60px 60px 25px;
     }
 }
 

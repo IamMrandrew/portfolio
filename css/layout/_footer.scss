@@ -1,11 +1,12 @@
-
+html, body {
+    overflow-x: hidden;
+}
 footer {
     margin-top: 15px;
     padding: 20px;
     background-color: #252525;
     opacity: 0;
     transform: translateX(100%);
-
 
     .contact-item {
         padding: 15px;
