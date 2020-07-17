@@ -29,9 +29,15 @@ function smoothScroll(target, duration) {
 }
 
 let designTab = document.querySelector("#designTab");
+let homeTab = document.querySelector("#homeTab");
 
 designTab.addEventListener('click', function() {
   smoothScroll("#design", 800);
+});
+
+homeTab.addEventListener('click', function(){
+  smoothScroll(".jumbotron1", 800);
+  console.log("yo");
 });
 
 function scrollAppear() {
