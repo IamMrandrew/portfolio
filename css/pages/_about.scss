@@ -245,10 +245,22 @@
                     padding-top: 14px;
                 }
             }
+
+            .submitBtn {
+                background-color: #55A0EA;
+                border: none;
+                border-radius: 13px;
+                outline: none;
+                padding: 10px 20px;
+                color: #FFFFFF;
+                font-size: 16px;
+            }
+
+            .submitBtn:hover {
+                background-color: #4c90d2;                ;
+                transition: all 0.5s;
+            }
         }
-
-
-        
     }
     
 }
