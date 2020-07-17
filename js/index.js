@@ -1,12 +1,4 @@
 
-const burgerToggle = document.querySelector('.burgerToggle');
-const navlist = document.querySelector('.nav-list');
-
-burgerToggle.addEventListener('click', function() {
-    navlist.classList.toggle('nav-active');
-    burgerToggle.classList.toggle('burger-active')
-});
-
 function smoothScroll(target, duration) {
   var target = document.querySelector(target);
   let targetPosition = target.getBoundingClientRect().top;

@@ -1,5 +1,5 @@
 .jumbotron1 {
-    background-color: #b5b9a9;
+    // background-color: #b5b9a9;
     margin: 0px 0px 15px;
     transition : 0.3s;
     position: relative;
@@ -36,7 +36,7 @@
     .jumbotron1 {
         /* padding : 84px 32px 120px; */
         // line-height: 900px;
-        background-color: #b5b9a9;
+        // background-color: #b5b9a9;
         margin: 0px 0px 15px;
         transition : 0.3s;
 
@@ -77,12 +77,16 @@
         transform: scale(1.2);
     }
 
-    h4{
-        margin: 15px 15px 5px;
+    h5{
+        font-weight: 400;
+        color: #303030;
+        margin: 15px 0px 5px;
     }
 
     p{
-        margin: 5px 15px 15px;
+        color: #646464;
+        // margin: 5px 15px 15px;
+        // padding: 0px 15px;;
     }
 }
 

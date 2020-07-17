@@ -1,16 +1,17 @@
 .jumbotron2 {
-    background-color: red;
+    background-color: #FFFFFF;
     margin: 0px 0px 15px;
     transition : 0.3s;
     position: relative;
     z-index: -2;
 
     .left {
-        background-color: #F1F1F1;
-        height: 400px; 
+        // background-color: #F1F1F1;
+        height: 600px; 
 
         .textContainer {
-            line-height: 400px;
+            line-height: 600px;
+            padding: 0px 80px;
         }
 
         .text-wrapper {
@@ -29,7 +30,7 @@
         }
         
         p {
-            font-size: 18px;
+            font-size: 16px;
             letter-spacing: 3px;
             padding: 0px 15px 0px;
         }
@@ -43,7 +44,7 @@
 
     @media screen and (min-width: 768px){
         .left {
-            background-color: #F1F1F1;
+            // background-color: #F1F1F1;
             height: 600px;
             z-index: 100;
         
@@ -53,11 +54,13 @@
                 max-width: 720px;
                 top: 0;
                 bottom: 0;
-                left: 50%;
-                right: 50%;
+                left: 50%;                
+                margin-left: -360px;
+
             }
 
             .text-wrapper {
+                max-width: 360px;
                 margin: auto;
                 padding: 15px;
                 line-height: 1.75;
@@ -65,17 +68,8 @@
                 position: relative;
                 top: 35px;
             }
-
-            .h1 {
-                font-size: 30px;
-                font-weight: 500;
-                letter-spacing: 3px;
-            }
             
-            p {
-                font-size: 18px;
-                letter-spacing: 3px;
-            }
+
         }
         .right {
             // display: block;
@@ -93,7 +87,8 @@
                 // top: 35px;
 
                 img {
-                    display: inline-block;
+                    display: block;
+                    width: 100%;
                 }
             }
 
@@ -101,25 +96,37 @@
         }
     }
 }
+
+@media screen and (min-width: 1595px) {
+    .jumbotron2 .left .text-wrapper {
+        max-width: 450px;
+    }
+}
+
 .skill-wrapper {
     padding: 30px;
+    opacity: 0;
+    transform: translateY(50px);
 
-    #skills {
+    .skillContainer {
         background-color: #52687E;
         border-radius: 30px;
         color: #FFFFFF;
-        padding: 60px;
+        padding: 60px 60px 25px;
         max-width: 700px;
-    
-        h3 {
-            width: 100%;
-            font-size: 20px;
-        }
     
         .skills {
             text-align: center;
-            padding: 15px;
+            padding: 15px 15px 50px;
+            
+            i {
+                padding-bottom: 15px;
+            }
+            h5 {
+                min-height: 70px;
+                font-size: 18px;
 
+            }
             p {
                 padding: 5px;
                 font-weight: 380;
@@ -131,19 +138,40 @@
 @media screen and (min-width: 768px) {
     .skill-wrapper {
         position: absolute;
-        top: 550px;
+        top: 600px;
         left: 0;
         right: 0;
+        transition: all 0.5s;
     }
 
     .blank-div {
         display: block;
-        height: 280px;
+        height: 425px;
+        transition: all 0.5s;
+    }
+}
+
+@media screen and (min-width: 1595px) {
+    .skill-wrapper {
+        position: absolute;
+        top: 550px;
+        left: 0;
+        right: 0;
+        transition: all 0.5s;
+    }
+
+    .blank-div {
+        display: block;
+        height: 380px;
+        transition: all 0.5s;
     }
 }
 
 .form-wrapper {
     padding: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.7s;
 
     .form {
         background-color: #3E3C3C;
@@ -152,18 +180,25 @@
         padding: 60px;
         max-width: 700px;
         
-        h3 {
-            font-size: 20px;
-        }
 
         .field-wrapper {
             padding: 0px 30px;
 
             .field {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 text-align: center;
                 width: 100%;
-                
+                background-color: #FFFFFF;
+                border-radius: 8px;
                 margin: 30px 0px;
+                padding: 0px 15px;
+
+                i {
+                    // -webkit-text-stroke: 0.5px #434343;
+                    color: #434343;
+                }
     
                 input {
                     font-family: "Open Sans", sans-serif;
@@ -171,8 +206,8 @@
                     background: none;
                     border: none;
                     outline: none;
-                    background-color: #FFFFFF;
-                    border-radius: 8px;
+                    // background-color: #FFFFFF;
+                    // border-radius: 8px;
                     width: 100%;
                     height: 40px;
                     padding: 0px 15px;
@@ -196,10 +231,25 @@
                     
                 }
             }
+
+            .field-message {
+                align-items: flex-start;
+                
+                i {
+                    padding-top: 14px;
+                }
+            }
         }
+
+
         
     }
     
+}
+
+.itemAppear {
+    opacity: 100%;
+    transform: translateY(0);
 }
 
 @media screen and (max-width: 768px) {

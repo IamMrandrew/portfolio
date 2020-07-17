@@ -137,3 +137,8 @@ nav .container {
 .burger-active .line3 {
     transform: rotate(45deg) translate(-6px, -3px);
 }
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-hightlight-color: rgba(0, 0, 0, 0);
+}
