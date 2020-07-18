@@ -73,7 +73,7 @@ function scrollAppear() {
   window.addEventListener("scroll", scrollAppear);
 
   function typingEffect() {
-    const texts = ['design', 'coding'];
+    const texts = ['coding', 'designing', 'singing', 'sleeping'];
     let index = 0;
     let letterIndex = 0;
     let currentText = "";
