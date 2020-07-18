@@ -1369,8 +1369,8 @@ footer .copyright p {
     top: 630px;
     left: 0;
     right: 0;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
   }
   .skill-wrapper .skillContainer {
     padding: 60px 60px 25px;
@@ -1381,8 +1381,8 @@ footer .copyright p {
   .blank-div {
     display: block;
     height: 425px;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
   }
 }
 
@@ -1504,6 +1504,8 @@ footer .copyright p {
   opacity: 100%;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
 }
 
 @media screen and (max-width: 767px) {

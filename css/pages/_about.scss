@@ -222,7 +222,7 @@
         top: 630px;
         left: 0;
         right: 0;
-        transition: all 0.5s;
+        transition: all 0.7s;
 
         .skillContainer {
             padding: 60px 60px 25px;
@@ -237,7 +237,7 @@
     .blank-div {
         display: block;
         height: 425px;
-        transition: all 0.5s;
+        transition: all 0.7s;
     }
 }
 
@@ -352,6 +352,7 @@
 .itemAppear {
     opacity: 100%;
     transform: translateY(0);
+    transition: all 0.7s;
 }
 
 @media screen and (max-width: 767px) {
