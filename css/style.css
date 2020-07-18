@@ -739,12 +739,14 @@ nav .container {
 
 .nav-list li a {
   text-decoration: none;
-  color: #5C5C5C;
+  color: #8d8d8d;
   letter-spacing: 2px;
 }
 
 .nav-list li a:hover {
   color: #202020;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .nav-list .nav-item-active a {
@@ -752,7 +754,9 @@ nav .container {
 }
 
 .nav-list .nav-item-active a:hover {
-  color: #5C5C5C;
+  color: #8d8d8d;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 @-webkit-keyframes displayNavLeft {
@@ -1054,14 +1058,22 @@ footer .copyright p {
     transition: 0.3s;
   }
   .jumbotron1 .container {
-    line-height: 600px;
+    line-height: 300px;
   }
   .jumbotron1 .text-wrapper {
     margin: auto;
     padding: 15px;
     line-height: 1.75;
     display: inline-block;
-    top: 0;
+    top: 35px;
+  }
+  .jumbotron1 .text-wrapper h1 {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 4px;
+  }
+  .jumbotron1 .text-wrapper p, .jumbotron1 .text-wrapper .typing {
+    font-size: 21px;
   }
 }
 

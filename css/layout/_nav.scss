@@ -65,12 +65,13 @@ nav .container {
 }
 .nav-list li a{
     text-decoration: none;
-    color: #5C5C5C;
+    color: #8d8d8d;
     letter-spacing: 2px;
 }
 
 .nav-list li a:hover{
     color: #202020;
+    transition: all 1s;
 }
 
 .nav-list .nav-item-active a {
@@ -78,7 +79,8 @@ nav .container {
 }
 
 .nav-list .nav-item-active a:hover {
-    color: #5C5C5C;
+    color: #8d8d8d;
+    transition: all 1s;
 }
 
 @keyframes displayNavLeft {
