@@ -15,7 +15,7 @@ function scrollAppear() {
     let img = document.querySelectorAll(".content img");
     let imgSession = [];
     for (let i = 0; i < img.length; i++){
-        imgSession[i] = img[i].getBoundingClientRect().top;
+        imgSession[i] = img[i].getBoundingClientRect().top*1.3;
     }
 
     let screenPosition = window.innerHeight / 1;
@@ -43,5 +43,5 @@ function scrollAppear() {
     }
 }
 
-setTimeout(scrollAppear, 3200);
+setTimeout(scrollAppear, 700);
 window.addEventListener("scroll", scrollAppear);
