@@ -118,7 +118,7 @@
   <div class="blank-div"></div> 
   
   <section class="form-wrapper">
-    <form>
+    <form name="contactForm" method="POST" data-netlify="true">
     <div class="container form">
       <div class="container h3">
         <h5>Contact Me</h5>
@@ -126,15 +126,19 @@
       <div class="container field-wrapper">
         <div class="field field-name">
           <i class="far fa-user fa-sm"></i>
-          <input type="text" placeholder="Name" required>
+          <input type="text" name="name" placeholder="Name" required>
         </div>
         <div class="field field-email">
           <i class="far fa-envelope fa-sm"></i>
-          <input type="text" placeholder="Email" required>
+          <input type="text" name="email" placeholder="Email" required>
         </div>
         <div class="field field-message">
           <i class="far fa-comments fa-sm"></i>
           <textarea name="message" placeholder="Enter your message here"></textarea>
+        </div>
+        <div class="field">
+          <i class="far fa-comments fa-sm"></i>
+          <div data-netlify-recaptcha="true"></div>
         </div>
         <input type="submit" value="Submit" class="submitBtn">
       </div>
