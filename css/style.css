@@ -938,7 +938,6 @@ footer .copyright p {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   position: relative;
-  z-index: -2;
 }
 
 .jumbotron1 .container {
