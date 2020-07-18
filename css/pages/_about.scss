@@ -30,7 +30,7 @@
             position: relative;
             z-index: 100;
             opacity: 0;
-            animation: displayTitle 0.7s ease-in-out 1s forwards;
+            animation: displayTitle2 0.7s ease-in-out 1s forwards;
         }
         
         p {
@@ -40,22 +40,24 @@
             z-index: 100;
             color: #4d4d4d;
             position: relative;
+            opacity: 0;
+            animation: displayTitle2 0.7s ease-in-out 1.7s forwards;
         }
 
-        .p1 {
-            opacity: 0;
-            animation: displayTitle 0.7s ease-in-out 1.7s forwards;
-        }
+        // .p1 {
+        //     opacity: 0;
+        //     animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+        // }
 
-        .p2 {
-            opacity: 0;
-            animation: displayTitle 0.7s ease-in-out 2.4s forwards;
-        }
+        // .p2 {
+        //     opacity: 0;
+        //     animation: displayTitle 0.7s ease-in-out 2.4s forwards;
+        // }
 
-        .p3 {
-            opacity: 0;
-            animation: displayTitle 0.7s ease-in-out 3.2s forwards;
-        }
+        // .p3 {
+        //     opacity: 0;
+        //     animation: displayTitle 0.7s ease-in-out 3.2s forwards;
+        // }
 
         .resume {
             display: inline-block;
@@ -70,7 +72,7 @@
             color: #FFFFFF;
 
             opacity: 0;
-            animation: displayTitle 0.7s ease-in-out 4s forwards;
+            animation: displayTitle2 0.7s ease-in-out 2.4s forwards;
         }
         
     }
@@ -152,10 +154,10 @@
     }
 }
 
-@keyframes displayTitle {
+@keyframes displayTitle2 {
     from {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(50px);
     }
     to {
         opacity: 1;
@@ -339,7 +341,7 @@
             }
 
             .submitBtn:hover {
-                background-color: #4c90d2;                ;
+                background-color: #4c90d2;
                 transition: all 0.5s;
             }
         }

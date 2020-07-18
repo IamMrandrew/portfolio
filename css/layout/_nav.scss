@@ -73,6 +73,14 @@ nav .container {
     color: #202020;
 }
 
+.nav-list .nav-item-active a {
+    color: #202020;
+}
+
+.nav-list .nav-item-active a:hover {
+    color: #5C5C5C;
+}
+
 @keyframes displayNavLeft {
     from {
         opacity: 0;
@@ -93,14 +101,6 @@ nav .container {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-.nav-item-active a {
-    color: #202020 !important;
-}
-
-.nav-item-active a:hover {
-    color: #5C5C5C !important;
 }
 
 .burgerToggle {

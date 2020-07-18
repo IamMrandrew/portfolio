@@ -5,7 +5,6 @@ const navItem = document.querySelectorAll('.nav-list a');
 
 for (let i = 0; i < navItem.length; i++) {
     navItem[i].addEventListener('click', function() {
-        console.log("yo");
         navlist.classList.remove('nav-active');
         burgerToggle.classList.remove('burger-active')
     });

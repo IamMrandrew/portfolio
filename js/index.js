@@ -62,11 +62,13 @@ function scrollAppear() {
     designItem2.classList.add("itemAppear")
   }
 
-  if (designItem3Session < screenPosition-100) {
+  if (designItem3Session < screenPosition) {
     designItem3.classList.add("itemAppear")
   }
 
 }
+
+  setTimeout(scrollAppear, 3000);
 
   window.addEventListener("scroll", scrollAppear);
 
@@ -95,7 +97,7 @@ function scrollAppear() {
     setInterval(typing, 400);
   }
 
-  typingEffect();
+  setTimeout(typingEffect, 3000);
 
   function clickItemImg() {
     let item1 = document.querySelector(".item1 .img-wrapper");

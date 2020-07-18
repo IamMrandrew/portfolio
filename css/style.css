@@ -747,6 +747,14 @@ nav .container {
   color: #202020;
 }
 
+.nav-list .nav-item-active a {
+  color: #202020;
+}
+
+.nav-list .nav-item-active a:hover {
+  color: #5C5C5C;
+}
+
 @-webkit-keyframes displayNavLeft {
   from {
     opacity: 0;
@@ -797,14 +805,6 @@ nav .container {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-}
-
-.nav-item-active a {
-  color: #202020 !important;
-}
-
-.nav-item-active a:hover {
-  color: #5C5C5C !important;
 }
 
 .burgerToggle {
@@ -1055,7 +1055,7 @@ footer .copyright p {
     transition: 0.3s;
   }
   .jumbotron1 .container {
-    line-height: 900px;
+    line-height: 600px;
   }
   .jumbotron1 .text-wrapper {
     margin: auto;
@@ -1170,8 +1170,8 @@ footer .copyright p {
   position: relative;
   z-index: 100;
   opacity: 0;
-  -webkit-animation: displayTitle 0.7s ease-in-out 1s forwards;
-          animation: displayTitle 0.7s ease-in-out 1s forwards;
+  -webkit-animation: displayTitle2 0.7s ease-in-out 1s forwards;
+          animation: displayTitle2 0.7s ease-in-out 1s forwards;
 }
 
 .jumbotron2 .left p {
@@ -1181,24 +1181,9 @@ footer .copyright p {
   z-index: 100;
   color: #4d4d4d;
   position: relative;
-}
-
-.jumbotron2 .left .p1 {
   opacity: 0;
-  -webkit-animation: displayTitle 0.7s ease-in-out 1.7s forwards;
-          animation: displayTitle 0.7s ease-in-out 1.7s forwards;
-}
-
-.jumbotron2 .left .p2 {
-  opacity: 0;
-  -webkit-animation: displayTitle 0.7s ease-in-out 2.4s forwards;
-          animation: displayTitle 0.7s ease-in-out 2.4s forwards;
-}
-
-.jumbotron2 .left .p3 {
-  opacity: 0;
-  -webkit-animation: displayTitle 0.7s ease-in-out 3.2s forwards;
-          animation: displayTitle 0.7s ease-in-out 3.2s forwards;
+  -webkit-animation: displayTitle2 0.7s ease-in-out 1.7s forwards;
+          animation: displayTitle2 0.7s ease-in-out 1.7s forwards;
 }
 
 .jumbotron2 .left .resume {
@@ -1213,8 +1198,8 @@ footer .copyright p {
   text-decoration: none;
   color: #FFFFFF;
   opacity: 0;
-  -webkit-animation: displayTitle 0.7s ease-in-out 4s forwards;
-          animation: displayTitle 0.7s ease-in-out 4s forwards;
+  -webkit-animation: displayTitle2 0.7s ease-in-out 2.4s forwards;
+          animation: displayTitle2 0.7s ease-in-out 2.4s forwards;
 }
 
 .jumbotron2 .right {
@@ -1287,11 +1272,24 @@ footer .copyright p {
   }
 }
 
-@keyframes displayTitle {
+@-webkit-keyframes displayTitle2 {
   from {
     opacity: 0;
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes displayTitle2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -1516,6 +1514,81 @@ footer .copyright p {
   .form-wrapper .form .field-wrapper {
     padding-bottom: 15px;
   }
+}
+
+.hero {
+  margin-bottom: 30px;
+}
+
+.hero img {
+  max-width: 100%;
+}
+
+.content .textContainer {
+  max-width: 960px;
+}
+
+.content .textContainer .header-wrapper {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.content .textContainer h1 {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #414141;
+}
+
+.content .textContainer blockquote {
+  padding: 0px 15px 10px;
+  letter-spacing: 1px;
+  color: #7D7D7D;
+  font-size: 14px;
+}
+
+.content .textContainer h2 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #494949;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.content .textContainer p {
+  color: #727272;
+  letter-spacing: 2px;
+  line-height: 28px;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.content .textContainer a {
+  text-decoration: none;
+}
+
+.content .textContainer a p {
+  color: #535353;
+}
+
+.content .textContainer img {
+  max-width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.content .textContainer .itemAppear {
+  opacity: 100%;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 body {
