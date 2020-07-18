@@ -49,7 +49,7 @@ function scrollAppear() {
   let designItem1Session = designItem1.getBoundingClientRect().top;
   let designItem2Session = designItem2.getBoundingClientRect().top;
   let designItem3Session = designItem3.getBoundingClientRect().top;
-  let screenPosition = window.innerHeight / 1.2;
+  let screenPosition = window.innerHeight / 1.1;
 
   if (screenPosition > designTitleSession) {
     designTitle.classList.add("itemAppear")
