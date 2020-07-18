@@ -26,6 +26,9 @@
         opacity: 0;
         animation: displayTitle 0.7s ease-in-out 1s forwards;
     }
+    .typing-wrapper {
+        opacity: 0;
+        animation: displayTitle 0.7s ease-in-out 1.7s forwards;
     
     p {
         display: inline;
@@ -33,9 +36,11 @@
         letter-spacing: 3px;
         padding: 10px 15px 10px;
         padding-right: 0px;
-        opacity: 0;
-        animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+        // opacity: 0;
+        // animation: displayTitle 0.7s ease-in-out 1.7s forwards;
     }
+
+
 
     .typing {
         display: inline;
@@ -43,8 +48,7 @@
         letter-spacing: 3px;
         padding: 10px 15px 10px;
         padding-left: 0px;
-        opacity: 0;
-        animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+        
     }
 
     .typing::after {
@@ -55,6 +59,7 @@
         margin: 5px;
         animation: blink 1s step-end infinite;
     }
+}
 }
 
 @keyframes blink {

@@ -956,29 +956,29 @@ a[href^=tel] {
           animation: displayTitle 0.7s ease-in-out 1s forwards;
 }
 
-.jumbotron1 p {
+.jumbotron1 .typing-wrapper {
+  opacity: 0;
+  -webkit-animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+          animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+}
+
+.jumbotron1 .typing-wrapper p {
   display: inline;
   font-size: 18px;
   letter-spacing: 3px;
   padding: 10px 15px 10px;
   padding-right: 0px;
-  opacity: 0;
-  -webkit-animation: displayTitle 0.7s ease-in-out 1.7s forwards;
-          animation: displayTitle 0.7s ease-in-out 1.7s forwards;
 }
 
-.jumbotron1 .typing {
+.jumbotron1 .typing-wrapper .typing {
   display: inline;
   font-size: 18px;
   letter-spacing: 3px;
   padding: 10px 15px 10px;
   padding-left: 0px;
-  opacity: 0;
-  -webkit-animation: displayTitle 0.7s ease-in-out 1.7s forwards;
-          animation: displayTitle 0.7s ease-in-out 1.7s forwards;
 }
 
-.jumbotron1 .typing::after {
+.jumbotron1 .typing-wrapper .typing::after {
   content: "";
   width: 5px;
   height: 4px;
