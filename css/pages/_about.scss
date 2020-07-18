@@ -27,12 +27,29 @@
             font-size: 30px;
             font-weight: 500;
             letter-spacing: 3px;
+            opacity: 0;
+            animation: displayTitle 0.7s ease-in-out 1s forwards;
         }
         
         p {
             font-size: 16px;
             letter-spacing: 3px;
             padding: 0px 15px 0px;
+        }
+
+        .p1 {
+            opacity: 0;
+            animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+        }
+
+        .p2 {
+            opacity: 0;
+            animation: displayTitle 0.7s ease-in-out 2.4s forwards;
+        }
+
+        .p3 {
+            opacity: 0;
+            animation: displayTitle 0.7s ease-in-out 3.2s forwards;
         }
         
     }
@@ -50,6 +67,7 @@
             padding: 15px;
             line-height: 1.75;
             display : inline-block;
+
             // position: relative;
             // top: 35px;
 
@@ -86,6 +104,7 @@
                 position: relative;
                 top: 35px;
                 transition: all 0.5s;
+
             }
             
 
@@ -93,9 +112,31 @@
         .right {
             display: flex;
             width: 100%;
-            transition: transform 0.5s;
+            // transition: transform 0.5s;
+            transform: translateX(100%);
+            animation: translateBlock 0.7s ease-in-out 1.7s forwards;
 
         }
+    }
+}
+
+@keyframes displayTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes translateBlock {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
     }
 }
 

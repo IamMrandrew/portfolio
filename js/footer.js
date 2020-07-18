@@ -6,7 +6,6 @@ function scrollAppear() {
 
     if (screenPosition > footerSession) {
         footer.classList.add("itemAppear");
-        console.log("yo");
     }
 }
 

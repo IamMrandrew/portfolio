@@ -951,12 +951,91 @@ a[href^=tel] {
   font-size: 30px;
   font-weight: 500;
   letter-spacing: 3px;
+  opacity: 0;
+  -webkit-animation: displayTitle 0.7s ease-in-out 1s forwards;
+          animation: displayTitle 0.7s ease-in-out 1s forwards;
 }
 
 .jumbotron1 p {
+  display: inline;
   font-size: 18px;
   letter-spacing: 3px;
   padding: 10px 15px 10px;
+  padding-right: 0px;
+  opacity: 0;
+  -webkit-animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+          animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+}
+
+.jumbotron1 .typing {
+  display: inline;
+  font-size: 18px;
+  letter-spacing: 3px;
+  padding: 10px 15px 10px;
+  padding-left: 0px;
+  opacity: 0;
+  -webkit-animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+          animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+}
+
+.jumbotron1 .typing::after {
+  content: "";
+  width: 5px;
+  height: 4px;
+  border-right: 2px solid #202020;
+  margin: 5px;
+  -webkit-animation: blink 1s step-end infinite;
+          animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes displayTitle {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes displayTitle {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -976,6 +1055,12 @@ a[href^=tel] {
     display: inline-block;
     top: 0;
   }
+}
+
+.designTitle {
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 
 .item {
@@ -1067,12 +1152,33 @@ a[href^=tel] {
   font-size: 30px;
   font-weight: 500;
   letter-spacing: 3px;
+  opacity: 0;
+  -webkit-animation: displayTitle 0.7s ease-in-out 1s forwards;
+          animation: displayTitle 0.7s ease-in-out 1s forwards;
 }
 
 .jumbotron2 .left p {
   font-size: 16px;
   letter-spacing: 3px;
   padding: 0px 15px 0px;
+}
+
+.jumbotron2 .left .p1 {
+  opacity: 0;
+  -webkit-animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+          animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+}
+
+.jumbotron2 .left .p2 {
+  opacity: 0;
+  -webkit-animation: displayTitle 0.7s ease-in-out 2.4s forwards;
+          animation: displayTitle 0.7s ease-in-out 2.4s forwards;
+}
+
+.jumbotron2 .left .p3 {
+  opacity: 0;
+  -webkit-animation: displayTitle 0.7s ease-in-out 3.2s forwards;
+          animation: displayTitle 0.7s ease-in-out 3.2s forwards;
 }
 
 .jumbotron2 .right {
@@ -1128,10 +1234,45 @@ a[href^=tel] {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -webkit-transition: -webkit-transform 0.5s;
-    transition: -webkit-transform 0.5s;
-    transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-animation: translateBlock 0.7s ease-in-out 1.7s forwards;
+            animation: translateBlock 0.7s ease-in-out 1.7s forwards;
+  }
+}
+
+@keyframes displayTitle {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes translateBlock {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes translateBlock {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 

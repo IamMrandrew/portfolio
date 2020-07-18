@@ -32,47 +32,67 @@ let designTab = document.querySelector("#designTab");
 let homeTab = document.querySelector("#homeTab");
 
 designTab.addEventListener('click', function() {
-  smoothScroll("#design", 800);
+  smoothScroll(".designTitle", 800);
 });
 
 homeTab.addEventListener('click', function(){
   smoothScroll(".jumbotron1", 800);
-  console.log("yo");
 });
 
 function scrollAppear() {
+  let designTitle = document.querySelector(".designTitle");
   let designItem1 = document.querySelector(".item1");
   let designItem2 = document.querySelector(".item2");
   let designItem3 = document.querySelector(".item3");
-  let designSession = designItem1.getBoundingClientRect().top;
+  
+  let designTitleSession = designTitle.getBoundingClientRect().top;
+  let designItem1Session = designItem1.getBoundingClientRect().top;
+  let designItem2Session = designItem2.getBoundingClientRect().top;
+  let designItem3Session = designItem3.getBoundingClientRect().top;
   let screenPosition = window.innerHeight / 1.2;
 
-  if (window.matchMedia("(min-width: 768px)").matches) {
-    if (designSession < screenPosition) {
-      designItem1.classList.add("itemAppear")
-    }
-  
-    if (designSession < screenPosition-450) {
-      designItem2.classList.add("itemAppear")
-    }
-  
-    if (designSession < screenPosition-100) {
-      designItem3.classList.add("itemAppear")
-    }
-  } else {
-    if (designSession < screenPosition) {
-      designItem1.classList.add("itemAppear")
-    }
-  
-    if (designSession < screenPosition-450) {
-      designItem2.classList.add("itemAppear")
-    }
+  if (screenPosition > designTitleSession) {
+    designTitle.classList.add("itemAppear")
+  }
+  if (designItem1Session < screenPosition) {
+    designItem1.classList.add("itemAppear")
+  }
 
-    if (designSession < screenPosition-800) {
-      designItem3.classList.add("itemAppear")
-    }
+  if (designItem2Session < screenPosition) {
+    designItem2.classList.add("itemAppear")
+  }
+
+  if (designItem3Session < screenPosition-100) {
+    designItem3.classList.add("itemAppear")
   }
 
 }
 
-window.addEventListener("scroll", scrollAppear);
+  window.addEventListener("scroll", scrollAppear);
+
+  function typingEffect() {
+    const texts = ['design', 'coding'];
+    let index = 0;
+    let letterIndex = 0;
+    let currentText = "";
+    let letter = "";
+
+    function typing() {
+      if (index === texts.length) {
+        index = 0;
+      }
+
+      currentText = texts[index];
+      letter = currentText.slice(0, ++letterIndex);
+
+      document.querySelector('.typing').textContent = letter;
+      if (letter.length === currentText.length) {
+        index++;
+        letterIndex = 0;
+      }
+      
+    }
+    setInterval(typing, 400);
+  }
+
+  typingEffect();
