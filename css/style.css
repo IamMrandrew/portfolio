@@ -1373,14 +1373,14 @@ footer .copyright p {
     transition: all 0.7s;
   }
   .skill-wrapper .skillContainer {
-    padding: 60px 60px 25px;
+    padding: 60px 60px 60px;
   }
   .skill-wrapper .skillContainer hr {
     display: none;
   }
   .blank-div {
     display: block;
-    height: 425px;
+    height: 460px;
     -webkit-transition: all 0.7s;
     transition: all 0.7s;
   }
@@ -1397,7 +1397,7 @@ footer .copyright p {
   }
   .blank-div {
     display: block;
-    height: 380px;
+    height: 415px;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
