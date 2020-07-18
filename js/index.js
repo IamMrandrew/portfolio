@@ -96,3 +96,13 @@ function scrollAppear() {
   }
 
   typingEffect();
+
+  function clickItemImg() {
+    let item1 = document.querySelector(".item1 .img-wrapper");
+    console.log(item1);
+    item1.addEventListener('click', function(){
+      window.location="design/hautakchurch-webdevelopment.html"
+    });
+  }
+
+  clickItemImg();

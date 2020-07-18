@@ -1087,6 +1087,7 @@ footer .copyright p {
   overflow: hidden;
   z-index: 1;
   position: relative;
+  cursor: pointer;
 }
 
 .item img {
@@ -1102,7 +1103,12 @@ footer .copyright p {
           transform: scale(1.2);
 }
 
+.item a {
+  text-decoration: none;
+}
+
 .item h5 {
+  font-size: 19px;
   font-weight: 400;
   color: #303030;
   margin: 15px 0px 5px;
@@ -1501,6 +1507,15 @@ footer .copyright p {
   opacity: 100%;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+@media screen and (max-width: 767px) {
+  .form-wrapper .form {
+    padding: 15px;
+  }
+  .form-wrapper .form .field-wrapper {
+    padding-bottom: 15px;
+  }
 }
 
 body {

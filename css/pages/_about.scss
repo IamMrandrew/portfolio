@@ -352,16 +352,12 @@
     transform: translateY(0);
 }
 
-// @media screen and (max-width: 767px) {
-//     .skill-wrapper .skillContainer {
-//         padding: 15px;
-//     }
-//     .form-wrapper .form {
-//         padding: 15px;
+@media screen and (max-width: 767px) {
+    .form-wrapper .form {
+        padding: 15px;
 
-//         .field-wrapper {
-//             padding-bottom: 15px;
-//         }
-//     }
-
-// }
+        .field-wrapper {
+            padding-bottom: 15px;
+        }
+    }
+}

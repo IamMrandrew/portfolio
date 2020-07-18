@@ -126,6 +126,7 @@
         overflow: hidden;
         z-index: 1;
         position: relative;
+        cursor: pointer;
     }
 
     img {
@@ -137,7 +138,12 @@
         transform: scale(1.2);
     }
 
+    a {
+        text-decoration: none;
+    }
+    
     h5{
+        font-size: 19px;
         font-weight: 400;
         color: #303030;
         margin: 15px 0px 5px;
