@@ -41,6 +41,7 @@ nav .container {
     padding: 10px;
     position: relative;
     z-index: 2;
+    animation: displayNavLeft 0.7s ease-in-out;
 }
 
 .nav-brand a img {
@@ -60,6 +61,7 @@ nav .container {
 .nav-list li {
     display: inline-block;
     padding: 10px;
+    animation: displayNavRight 0.7s ease-in-out;
 }
 .nav-list li a{
     text-decoration: none;
@@ -71,6 +73,28 @@ nav .container {
     color: #5C5C5C;
 }
 
+@keyframes displayNavLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes displayNavRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .burgerToggle {
     display: none;
     position: relative;
@@ -80,6 +104,7 @@ nav .container {
 @media screen and (max-width: 768px){
     .burgerToggle {
         display: block;
+        animation: displayNavRight 0.7s ease-in-out;
     }   
 
     .nav-list{

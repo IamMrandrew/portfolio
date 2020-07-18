@@ -698,6 +698,8 @@ nav .container {
   padding: 10px;
   position: relative;
   z-index: 2;
+  -webkit-animation: displayNavLeft 0.7s ease-in-out;
+          animation: displayNavLeft 0.7s ease-in-out;
 }
 
 .nav-brand a img {
@@ -721,6 +723,8 @@ nav .container {
 .nav-list li {
   display: inline-block;
   padding: 10px;
+  -webkit-animation: displayNavRight 0.7s ease-in-out;
+          animation: displayNavRight 0.7s ease-in-out;
 }
 
 .nav-list li a {
@@ -733,6 +737,58 @@ nav .container {
   color: #5C5C5C;
 }
 
+@-webkit-keyframes displayNavLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes displayNavLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes displayNavRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes displayNavRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 .burgerToggle {
   display: none;
   position: relative;
@@ -741,6 +797,8 @@ nav .container {
 @media screen and (max-width: 768px) {
   .burgerToggle {
     display: block;
+    -webkit-animation: displayNavRight 0.7s ease-in-out;
+            animation: displayNavRight 0.7s ease-in-out;
   }
   .nav-list {
     -webkit-box-orient: vertical;
@@ -1019,6 +1077,25 @@ a[href^=tel] {
 
 .jumbotron2 .right {
   display: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #8E9CA2;
+  height: 600px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.jumbotron2 .right .text-wrapper {
+  margin: auto;
+  padding: 15px;
+  line-height: 1.75;
+  display: inline-block;
+}
+
+.jumbotron2 .right .text-wrapper img {
+  display: block;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -1043,26 +1120,18 @@ a[href^=tel] {
     display: inline-block;
     position: relative;
     top: 35px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
   }
   .jumbotron2 .right {
-    background-color: #8E9CA2;
-    height: 600px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .jumbotron2 .right .text-wrapper {
-    margin: auto;
-    padding: 15px;
-    line-height: 1.75;
-    display: inline-block;
-  }
-  .jumbotron2 .right .text-wrapper img {
-    display: block;
     width: 100%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
   }
 }
 
@@ -1089,7 +1158,7 @@ a[href^=tel] {
 
 .skill-wrapper .skillContainer .skills {
   text-align: center;
-  padding: 15px 15px 50px;
+  padding: 15px 15px 15px;
 }
 
 .skill-wrapper .skillContainer .skills i {
@@ -1106,9 +1175,16 @@ a[href^=tel] {
   font-weight: 380;
 }
 
+.skill-wrapper .skillContainer .skills hr {
+  margin: 30px 40px;
+}
+
 @media screen and (min-width: 768px) {
   .skill-wrapper .skillContainer {
     padding: 60px 60px 25px;
+  }
+  .skill-wrapper .skillContainer hr {
+    display: none;
   }
 }
 
