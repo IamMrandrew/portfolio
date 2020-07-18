@@ -68,7 +68,7 @@ function scrollAppear() {
 
 }
 
-  setTimeout(scrollAppear, 3000);
+  setTimeout(scrollAppear, 2500);
 
   window.addEventListener("scroll", scrollAppear);
 

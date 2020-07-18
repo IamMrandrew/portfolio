@@ -970,8 +970,8 @@ footer .copyright p {
 
 .jumbotron1 .typing-wrapper {
   opacity: 0;
-  -webkit-animation: displayTitle 0.7s ease-in-out 1.7s forwards;
-          animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+  -webkit-animation: displayTitle 0.7s ease-in-out 1s forwards;
+          animation: displayTitle 0.7s ease-in-out 1s forwards;
 }
 
 .jumbotron1 .typing-wrapper p {
@@ -1127,6 +1127,8 @@ footer .copyright p {
 
 .item p {
   color: #646464;
+  letter-spacing: 2px;
+  word-spacing: 8px;
 }
 
 .itemAppear {

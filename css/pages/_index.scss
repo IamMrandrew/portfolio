@@ -28,7 +28,7 @@
     }
     .typing-wrapper {
         opacity: 0;
-        animation: displayTitle 0.7s ease-in-out 1.7s forwards;
+        animation: displayTitle 0.7s ease-in-out 1s forwards;
     
     p {
         display: inline;
@@ -160,6 +160,8 @@
 
     p{
         color: #646464;
+        letter-spacing: 2px;
+        word-spacing: 8px;
         // margin: 5px 15px 15px;
         // padding: 0px 15px;;
     }
