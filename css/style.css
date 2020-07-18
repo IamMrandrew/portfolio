@@ -1504,6 +1504,7 @@ footer .copyright p {
   padding: 10px 20px;
   color: #FFFFFF;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .form-wrapper .form .field-wrapper .submitBtn:hover {
