@@ -1530,12 +1530,77 @@ footer .copyright p {
   }
 }
 
-.hero {
+.featureImgSession {
   margin-bottom: 30px;
 }
 
-.hero img {
-  max-width: 100%;
+.featureImgSession .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 270px;
+}
+
+@media screen and (min-width: 768px) {
+  .featureImgSession .container {
+    height: 768px;
+  }
+}
+
+.featureImgSession .container .hero {
+  width: 100%;
+  height: 0%;
+  -webkit-animation: featureImgAnimation 0.7s ease-in-out 1s forwards,  featureImgAnimation2 0.7s ease-in-out 2s forwards;
+          animation: featureImgAnimation 0.7s ease-in-out 1s forwards,  featureImgAnimation2 0.7s ease-in-out 2s forwards;
+}
+
+.featureImgSession .container .hero img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@-webkit-keyframes featureImgAnimation {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 80%;
+  }
+}
+
+@keyframes featureImgAnimation {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 80%;
+  }
+}
+
+@-webkit-keyframes featureImgAnimation2 {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes featureImgAnimation2 {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 90%;
+  }
 }
 
 .content .textContainer {
