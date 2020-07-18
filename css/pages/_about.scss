@@ -1,9 +1,8 @@
 .jumbotron2 {
     background-color: #FFFFFF;
-    margin: 0px 0px 15px;
+    margin: 0px 0px 30px;
     transition : 0.3s;
     position: relative;
-    z-index: -2;
 
     .left {
         // background-color: #F1F1F1;
@@ -21,12 +20,15 @@
             display : inline-block;
             position: relative;
             top: 35px;
+            z-index: 50;
         }
 
         .h1 {
-            font-size: 30px;
+            font-size: 21px;
             font-weight: 500;
             letter-spacing: 3px;
+            position: relative;
+            z-index: 100;
             opacity: 0;
             animation: displayTitle 0.7s ease-in-out 1s forwards;
         }
@@ -35,6 +37,9 @@
             font-size: 16px;
             letter-spacing: 3px;
             padding: 0px 15px 0px;
+            z-index: 100;
+            color: #4d4d4d;
+            position: relative;
         }
 
         .p1 {
@@ -51,6 +56,22 @@
             opacity: 0;
             animation: displayTitle 0.7s ease-in-out 3.2s forwards;
         }
+
+        .resume {
+            display: inline-block;
+            padding: 5px 15px;
+            margin: 30px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 14px;
+            outline: none;
+            background-color: #FA824C;
+            text-decoration: none;
+            color: #FFFFFF;
+
+            opacity: 0;
+            animation: displayTitle 0.7s ease-in-out 4s forwards;
+        }
         
     }
 
@@ -61,10 +82,16 @@
         background-color: #8E9CA2;
         height: 600px;
         align-items: center;
+        
+        .imgContainer {
+            width: 280px;
+        }
 
-        .text-wrapper {
+        .img-wrapper {
             margin: auto;
             padding: 15px;
+            margin-bottom: 80px;
+            // margin-left: 30px;
             line-height: 1.75;
             display : inline-block;
 
@@ -77,12 +104,17 @@
             }
         }
     }
+    @media screen and (max-width: 358px) {
+        .left .textContainer {
+            padding: 0px 15px 60px 15px;
+            
+        }
+    }
 
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 768px) {
         .left {
             // background-color: #F1F1F1;
             height: 600px;
-            z-index: 100;
         
             .textContainer {
                 line-height: 600px;
@@ -153,14 +185,14 @@
 
     .skillContainer {
         background-color: #52687E;
-        border-radius: 30px;
+        border-radius: 50px;
         color: #FFFFFF;
         padding: 30px 30px 25px;
         max-width: 700px;
     
         .skills {
             text-align: center;
-            padding: 15px 15px 15px;
+            padding: 30px 15px 15px 15px;
             
             i {
                 padding-bottom: 15px;
@@ -183,22 +215,21 @@
 }
 
 @media screen and (min-width: 768px) {
-    .skill-wrapper .skillContainer {
-        padding: 60px 60px 25px;
-
-        hr {
-            display: none;
-        }
-    }
-}
-
-@media screen and (min-width: 768px) {
     .skill-wrapper {
         position: absolute;
-        top: 600px;
+        top: 630px;
         left: 0;
         right: 0;
         transition: all 0.5s;
+
+        .skillContainer {
+            padding: 60px 60px 25px;
+            
+            hr {
+                display: none;
+            }
+        }
+
     }
 
     .blank-div {
@@ -211,7 +242,7 @@
 @media screen and (min-width: 1595px) {
     .skill-wrapper {
         position: absolute;
-        top: 550px;
+        top: 580px;
         left: 0;
         right: 0;
         transition: all 0.5s;
@@ -321,16 +352,16 @@
     transform: translateY(0);
 }
 
-@media screen and (max-width: 768px) {
-    .skill-wrapper #skills {
-        padding: 15px;
-    }
-    .form-wrapper .form {
-        padding: 15px;
+// @media screen and (max-width: 767px) {
+//     .skill-wrapper .skillContainer {
+//         padding: 15px;
+//     }
+//     .form-wrapper .form {
+//         padding: 15px;
 
-        .field-wrapper {
-            padding-bottom: 15px;
-        }
-    }
+//         .field-wrapper {
+//             padding-bottom: 15px;
+//         }
+//     }
 
-}
+// }

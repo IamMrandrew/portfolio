@@ -8,7 +8,7 @@ nav {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     body {
         padding-top: 60px;
     }
@@ -65,12 +65,12 @@ nav .container {
 }
 .nav-list li a{
     text-decoration: none;
-    color: #202020;
+    color: #5C5C5C;
     letter-spacing: 2px;
 }
 
 .nav-list li a:hover{
-    color: #5C5C5C;
+    color: #202020;
 }
 
 @keyframes displayNavLeft {
@@ -95,13 +95,21 @@ nav .container {
     }
 }
 
+.nav-item-active a {
+    color: #202020 !important;
+}
+
+.nav-item-active a:hover {
+    color: #5C5C5C !important;
+}
+
 .burgerToggle {
     display: none;
     position: relative;
 }
  
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
     .burgerToggle {
         display: block;
         animation: displayNavRight 0.7s ease-in-out;
@@ -163,7 +171,3 @@ nav .container {
     transform: rotate(45deg) translate(-6px, -3px);
 }
 
-* {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -moz-tap-hightlight-color: rgba(0, 0, 0, 0);
-}

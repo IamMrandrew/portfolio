@@ -51,3 +51,13 @@ border-spacing: 0;
 input {
     -webkit-appearance: none;
 }
+
+a[href^=tel] {
+    text-decoration:inherit;
+    color: inherit;
+ }
+
+ * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-hightlight-color: rgba(0, 0, 0, 0);
+}
