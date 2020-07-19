@@ -123,6 +123,21 @@
     transform: translateY(50px);
 }
 
+#designAnchor{
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+
+    @media screen and (min-width: 768px) {
+        top: -25px;
+    }
+}
+
+
+
+
+
 .item {
     opacity: 0;
     transform: translateY(50px);
