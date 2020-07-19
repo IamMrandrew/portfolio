@@ -103,7 +103,7 @@ function scrollAppear() {
     let item1 = document.querySelector(".item1 .img-wrapper");
     console.log(item1);
     item1.addEventListener('click', function(){
-      window.location="design/hautakchurch-webdevelopment.html"
+      window.location="design/hau-tak-church.html"
     });
   }
 
