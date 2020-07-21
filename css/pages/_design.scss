@@ -23,8 +23,8 @@
             height: 768px;
             
             .hero {
-                animation: featureImgAnimation 0.7s ease-in-out 1s forwards, 
-                featureImgAnimation2 0.7s ease-in-out 2s forwards;
+                animation: featureImgAnimation 0.5s ease-in-out 1s forwards, 
+                featureImgAnimation2 0.7s ease-in-out 1.7s forwards;
             }
 
         }
@@ -35,10 +35,12 @@
 
 @keyframes featureImgAnimation {
     from {
-        height: 0%
+        height: 0%;
+        opacity: 0%
     }
     to {
         height: 80%;
+        opacity: 100%
     }
 }
 
@@ -122,5 +124,28 @@
             transition: all 1s;
         }
     }
+    .images-wrapper {
+        padding: 30px 0px 30px 30px;
+        opacity: 0;
+        transform: translateY(50px);
+
+        .glide {
+            .glide__arrows i {
+                color: #202020;
+                opacity:0.5;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .itemAppear {
+        opacity: 100%;
+        transform: translateY(0);
+        transition: all 1s;
+    }
+
 
 }

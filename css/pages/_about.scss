@@ -200,9 +200,8 @@
                 padding-bottom: 15px;
             }
             h5 {
-                min-height: 70px;
+                // min-height: 70px;
                 font-size: 18px;
-
             }
             p {
                 padding: 5px;
@@ -226,7 +225,10 @@
 
         .skillContainer {
             padding: 60px 60px 60px;
-            
+
+            h5 {
+                min-height: 70px;
+            }
             hr {
                 display: none;
             }

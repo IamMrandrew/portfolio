@@ -17,6 +17,11 @@ function scrollAppear() {
     for (let i = 0; i < img.length; i++){
         imgSession[i] = img[i].getBoundingClientRect().top*1.3;
     }
+    let imagesWrapper = document.querySelectorAll(".images-wrapper");
+    let imagesWrapperSession = [];
+    for (let i = 0; i < imagesWrapper.length; i++){
+        imagesWrapperSession[i] = imagesWrapper[i].getBoundingClientRect().top*1.3;
+    }
 
     let screenPosition = window.innerHeight / 1;
 
@@ -41,7 +46,51 @@ function scrollAppear() {
             img[i].classList.add("itemAppear");
         }
     }
+
+    for(let i = 0; i < imagesWrapperSession.length; i++){
+        if (screenPosition > imagesWrapperSession[i]) {
+            imagesWrapper[i].classList.add("itemAppear");
+        }
+    }
 }
 
 setTimeout(scrollAppear, 2000);
 window.addEventListener("scroll", scrollAppear);
+
+// hau-tak-church
+// new Glide('.glide', config).mount();
+
+let sliders = document.querySelectorAll('.glide');
+
+    const config = {
+        type: "carousel",
+        perView: 2.1,
+        gap: 20,
+        keyboard: true,
+        animationDuration: 950,
+        breakpoints: {
+            1140: {
+                perView: 1.5
+            },
+            768: {
+                perView: 1.1
+            }
+        }
+    }
+
+    new Glide(".glide1", config).mount();
+    new Glide(".glide2", {
+        type: "carousel",
+        perView: 5,
+        gap: 20,
+        keyboard: true,
+        animationDuration: 950,
+        breakpoints: {
+            1140: {
+                perView: 4.3
+            },
+            768: {
+                perView: 2.2
+            }
+        }
+    }).mount();
