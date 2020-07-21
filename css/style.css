@@ -1899,6 +1899,16 @@ footer .copyright p {
           transform: translateY(50px);
 }
 
+.content .images-wrapper .glide .glide__arrow {
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.content .images-wrapper .glide .arrowsAppear {
+  opacity: 100%;
+}
+
 .content .images-wrapper .glide .glide__arrows i {
   color: #202020;
   opacity: 0.5;

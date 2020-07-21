@@ -94,3 +94,18 @@ let sliders = document.querySelectorAll('.glide');
             }
         }
     }).mount();
+
+let glides = document.querySelectorAll(".glide");
+let arrows = document.querySelectorAll(".glide__arrow");
+
+    for(let i = 0; i < glides.length; i++){
+        glides[i].addEventListener('mouseover', function(){
+            let secondArrow = i*2+1;
+            arrows[i*2].classList.add("arrowsAppear");
+            arrows[secondArrow].classList.add("arrowsAppear");
+            setTimeout(function() {
+                arrows[i*2].classList.remove("arrowsAppear");
+                arrows[secondArrow].classList.remove("arrowsAppear");
+            }, 4000);
+        })
+    }

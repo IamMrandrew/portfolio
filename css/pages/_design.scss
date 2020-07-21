@@ -130,6 +130,15 @@
         transform: translateY(50px);
 
         .glide {
+            .glide__arrow {
+                opacity: 0;
+                transition: all 0.5s;
+            }
+
+            .arrowsAppear {
+                opacity: 100%;
+            }
+
             .glide__arrows i {
                 color: #202020;
                 opacity:0.5;
