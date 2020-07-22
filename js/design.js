@@ -63,34 +63,41 @@ window.addEventListener("scroll", scrollAppear);
 let sliders = document.querySelectorAll('.glide');
 
     const config = {
-        type: "carousel",
-        perView: 2.1,
+        type: "slider",
+        perView: 1.1,
         gap: 20,
         keyboard: true,
+        rewind: false,
+        bound: true,
         animationDuration: 950,
         breakpoints: {
             1140: {
-                perView: 1.5
+                perView: 1.3
             },
             768: {
-                perView: 1.1
+                perView: 1
             }
         }
     }
 
     new Glide(".glide1", config).mount();
     new Glide(".glide2", {
-        type: "carousel",
-        perView: 5,
-        gap: 20,
+        type: "slider",
+        perView: 2.7,
+        gap: 5,
         keyboard: true,
+        rewind: false,
+        bound: true,
         animationDuration: 950,
         breakpoints: {
             1140: {
-                perView: 4.3
+                perView: 2.9
             },
             768: {
                 perView: 2.2
+            },
+            425: {
+                perView: 1.3
             }
         }
     }).mount();
