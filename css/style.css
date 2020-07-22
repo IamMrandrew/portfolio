@@ -1938,6 +1938,7 @@ h2 {
   opacity: 0;
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
+  margin-bottom: 20px;
 }
 
 .content .textContainer a {
