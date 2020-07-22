@@ -6,7 +6,7 @@
 
     .left {
         // background-color: #F1F1F1;
-        height: 600px; 
+        height: 500px; 
 
         .textContainer {
             line-height: 600px;
@@ -184,6 +184,7 @@
     padding: 30px;
     opacity: 0;
     transform: translateY(50px);
+    display: none;
 
     .skillContainer {
         background-color: #52687E;
@@ -196,12 +197,17 @@
             text-align: center;
             padding: 30px 15px 15px 15px;
             
-            i {
-                padding-bottom: 15px;
+            .img-wrapper {
+
+                i {
+                    padding-bottom: 15px;
+                }
             }
+
             h5 {
                 // min-height: 70px;
                 font-size: 18px;
+                letter-spacing: 2px;
             }
             p {
                 padding: 5px;
@@ -218,27 +224,32 @@
 @media screen and (min-width: 768px) {
     .skill-wrapper {
         position: absolute;
-        top: 630px;
+        top: 600px;
         left: 0;
         right: 0;
         transition: all 0.7s;
+        display: block;
 
         .skillContainer {
             padding: 60px 60px 60px;
 
-            h5 {
-                min-height: 70px;
+            .skills {                
+
+                h5 {
+                    min-height: 70px;
+                }
+                hr {
+                    display: none;
+                }
             }
-            hr {
-                display: none;
-            }
+
         }
 
     }
 
     .blank-div {
         display: block;
-        height: 460px;
+        height: 400px;
         transition: all 0.7s;
     }
 }
@@ -254,11 +265,59 @@
 
     .blank-div {
         display: block;
-        height: 415px;
+        height: 380px;
         transition: all 0.5s;
     }
 }
 
+.skill-wrapper-mobile {
+    padding: 30px;
+
+    .skillContainer {
+        background-color: #52687E;
+        border-radius: 50px;
+        color: #FFFFFF;
+        padding: 80px 30px;
+        margin: 30px 0px;
+        max-width: 700px;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(50px);
+        
+        .skills {
+            display: flex;
+            max-width: 150px;
+            position: relative;
+            right: 5px;
+
+            .img-wrapper {
+                padding-top: 16px;
+                padding-right: 2px;
+            }
+
+            .text-wrapper {
+                h5 {
+                    font-size: 21px;
+                }
+                p {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
+    .itemAppear {
+        opacity: 100%;
+        transform: translateY(0);
+        transition: all 0.7s;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .skill-wrapper-mobile {
+        display: none;
+    }
+}
 .form-wrapper {
     padding: 30px;
     opacity: 0;
