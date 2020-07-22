@@ -1359,7 +1359,7 @@ h2 {
 }
 
 .jumbotron2 .left {
-  height: 500px;
+  height: 550px;
 }
 
 .jumbotron2 .left .textContainer {
@@ -1662,6 +1662,10 @@ h2 {
 
 .skill-wrapper-mobile .skillContainer .skills .text-wrapper p {
   font-size: 17px;
+}
+
+.skill-wrapper-mobile .skillContainer-mobile-3 {
+  margin-bottom: 0px;
 }
 
 .skill-wrapper-mobile .itemAppear {
