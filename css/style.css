@@ -2015,7 +2015,8 @@ h2 {
 }
 
 .glider-contain .glider::-webkit-scrollbar {
-  height: 0px;
+  height: 0px !important;
+  width: 0 !important;
 }
 
 .glider-contain .glider .glider-item {
@@ -2038,6 +2039,7 @@ h2 {
 
 .glider-contain .glider .glider-item img {
   width: 100%;
+  height: 100%;
 }
 
 .glider-contain .glider-prev, .glider-contain .glider-next {
