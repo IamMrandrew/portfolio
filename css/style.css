@@ -2040,7 +2040,7 @@ h2 {
 
 @media screen and (max-width: 768px) {
   .glider-contain .glider .glider-item {
-    padding: 30px;
+    padding: 30px 60px;
   }
 }
 
