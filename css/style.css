@@ -2023,6 +2023,7 @@ h2 {
   height: 0px !important;
   width: 0 !important;
   background: transparent;
+  display: none;
 }
 
 .glider-contain .glider .glider-item {
