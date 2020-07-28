@@ -2014,6 +2014,11 @@ h2 {
   margin: 30px 0px;
 }
 
+.glider-contain .glider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .glider-contain .glider::-webkit-scrollbar {
   height: 0px !important;
   width: 0 !important;
