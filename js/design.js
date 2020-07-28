@@ -1,3 +1,4 @@
+// const glider = require("./glider");
 
 function scrollAppear() {
     let headerWrapper = document.querySelector(".header-wrapper");
@@ -58,61 +59,122 @@ setTimeout(scrollAppear, 2000);
 window.addEventListener("scroll", scrollAppear);
 
 // hau-tak-church
-// new Glide('.glide', config).mount();
 
-let sliders = document.querySelectorAll('.glide');
+// let sliders = document.querySelectorAll('.glide');
 
-    const config = {
-        type: "slider",
-        perView: 1.1,
-        gap: 20,
-        keyboard: true,
-        rewind: false,
-        bound: true,
-        animationDuration: 950,
-        breakpoints: {
-            1140: {
-                perView: 1.3
-            },
-            768: {
-                perView: 1
+//     const config = {
+//         type: "slider",
+//         perView: 1.1,
+//         gap: 20,
+//         keyboard: true,
+//         rewind: false,
+//         bound: true,
+//         animationDuration: 950,
+//         breakpoints: {
+//             1140: {
+//                 perView: 1.3
+//             },
+//             768: {
+//                 perView: 1
+//             }
+//         }
+//     }
+
+//     new Glide(".glide1", config).mount();
+//     new Glide(".glide2", {
+//         type: "slider",
+//         perView: 2.7,
+//         gap: 5,
+//         keyboard: true,
+//         rewind: false,
+//         bound: true,
+//         animationDuration: 950,
+//         breakpoints: {
+//             1140: {
+//                 perView: 2.9
+//             },
+//             768: {
+//                 perView: 2.2
+//             },
+//             425: {
+//                 perView: 1.3
+//             }
+//         }
+//     }).mount();
+
+// let glides = document.querySelectorAll(".glide");
+// let arrows = document.querySelectorAll(".glide__arrow");
+
+//     for(let i = 0; i < glides.length; i++){
+//         glides[i].addEventListener('mouseover', function(){
+//             let secondArrow = i*2+1;
+//             arrows[i*2].classList.add("arrowsAppear");
+//             arrows[secondArrow].classList.add("arrowsAppear");
+//             setTimeout(function() {
+//                 arrows[i*2].classList.remove("arrowsAppear");
+//                 arrows[secondArrow].classList.remove("arrowsAppear");
+//             }, 4000);
+//         })
+//     }
+
+new Glider(document.querySelector('.glider'), {
+    // slidesToShow: 'auto',
+    // itemWidth: 320,
+    slidesToShow: 1,
+    draggable: true,
+    dots: '.dots',
+    dragVelocity: 1,
+    arrows: {
+        prev: '.glider-prev',
+        next: '.glider-next'
+    },
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1.2,
+            }
+        }, {
+            breakpoint: 1440,
+            settings: {
+                slidesToShow: 1.4,
+            }
+        }, {
+            breakpoint: 1700,
+            settings: {
+                slidesToShow: 2.3,
             }
         }
-    }
+    ]
+});
 
-    new Glide(".glide1", config).mount();
-    new Glide(".glide2", {
-        type: "slider",
-        perView: 2.7,
-        gap: 5,
-        keyboard: true,
-        rewind: false,
-        bound: true,
-        animationDuration: 950,
-        breakpoints: {
-            1140: {
-                perView: 2.9
-            },
-            768: {
-                perView: 2.2
-            },
-            425: {
-                perView: 1.3
+new Glider(document.querySelector('.glider2'), {
+    // slidesToShow: 'auto',
+    // itemWidth: 320,
+    slidesToShow: 1.4,
+    draggable: true,
+    dots: '.dots-2',
+    dragVelocity: 1,
+    arrows: {
+        prev: '.glider-prev-2',
+        next: '.glider-next-2'
+    },
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1.8,
+            }
+        }, {
+            breakpoint: 1440,
+            settings: {
+                slidesToShow: 2.6,
+            }
+        }, {
+            breakpoint: 1700,
+            settings: {
+                slidesToShow: 3.4,
             }
         }
-    }).mount();
-
-let glides = document.querySelectorAll(".glide");
-let arrows = document.querySelectorAll(".glide__arrow");
-
-    for(let i = 0; i < glides.length; i++){
-        glides[i].addEventListener('mouseover', function(){
-            let secondArrow = i*2+1;
-            arrows[i*2].classList.add("arrowsAppear");
-            arrows[secondArrow].classList.add("arrowsAppear");
-            setTimeout(function() {
-                arrows[i*2].classList.remove("arrowsAppear");
-                arrows[secondArrow].classList.remove("arrowsAppear");
-            }, 4000);
-        })
-    }
+    ]
+});
