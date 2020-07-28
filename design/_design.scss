@@ -166,10 +166,11 @@
     .glider {
         -ms-overflow-style: none;
         scrollbar-width: none;
-        
+
         &::-webkit-scrollbar {
             height: 0px !important;
             width: 0 !important;
+            background: transparent;
         }
 
         .glider-item{

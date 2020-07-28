@@ -2022,6 +2022,7 @@ h2 {
 .glider-contain .glider::-webkit-scrollbar {
   height: 0px !important;
   width: 0 !important;
+  background: transparent;
 }
 
 .glider-contain .glider .glider-item {
