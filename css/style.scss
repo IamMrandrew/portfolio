@@ -4,28 +4,7 @@
 @import "layout/grid";
 @import "layout/nav";
 @import "layout/footer";
-// @import "glidejs/glide.core";
-// @import "glidejs/glide.theme";
 @import "gliderjs/glider";
 @import "pages/index";
 @import "pages/about";
 @import "../design/design";
-
-body{
-    font-family: "Open Sans", sans-serif;
-    box-sizing: border-box;
-}
-
-// h1, h2, h3, h5{
-//     padding: 10px 15px 10px;
-// }
-
-// h4 {
-//     font-size: 18px;
-//     font-weight: 400;
-//     padding: 10px 15px 10px;
-// }
-// p {
-//     padding: 0 15px 0;
-//     font-weight: 380;
-// }

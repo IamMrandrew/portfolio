@@ -98,6 +98,10 @@ p {
   padding: 0px 15px 10px;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -2006,13 +2010,17 @@ h2 {
   transition: all 1s;
 }
 
+.glider-contain {
+  margin: 30px 0px;
+}
+
 .glider-contain .glider::-webkit-scrollbar {
   height: 0px;
 }
 
 .glider-contain .glider .glider-item {
   margin: 15px;
-  padding: 40px;
+  padding: 40px 80px;
   background-color: #f0f0f0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2028,8 +2036,12 @@ h2 {
   }
 }
 
+.glider-contain .glider .glider-item img {
+  width: 100%;
+}
+
 .glider-contain .glider-prev, .glider-contain .glider-next {
-  top: 40%;
+  top: 45%;
 }
 
 @media screen and (max-width: 768px) {
@@ -2043,11 +2055,11 @@ h2 {
 }
 
 .glider-contain .glider-prev {
-  left: 20px;
+  left: 35px;
 }
 
 .glider-contain .glider-next {
-  right: 20px;
+  right: 35px;
   left: auto;
 }
 
@@ -2057,13 +2069,7 @@ h2 {
 
 @media screen and (max-width: 768px) {
   .glider-contain .glider2 .glider-item {
-    padding: 30px;
+    padding: 30px 60px;
   }
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 /*# sourceMappingURL=style.css.map */
