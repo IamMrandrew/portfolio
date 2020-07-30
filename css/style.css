@@ -1600,6 +1600,12 @@ h2 {
   }
   .skill-wrapper .skillContainer .skills h5 {
     min-height: 70px;
+    font-weight: 550;
+  }
+  .skill-wrapper .skillContainer .skills p {
+    padding: 5px;
+    font-size: 17px;
+    font-weight: 400;
   }
   .skill-wrapper .skillContainer .skills hr {
     display: none;
