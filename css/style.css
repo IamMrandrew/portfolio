@@ -1670,10 +1670,12 @@ h2 {
 
 .skill-wrapper-mobile .skillContainer .skills .text-wrapper h5 {
   font-size: 21px;
+  font-weight: 550;
 }
 
 .skill-wrapper-mobile .skillContainer .skills .text-wrapper p {
   font-size: 17px;
+  font-weight: 400;
 }
 
 .skill-wrapper-mobile .skillContainer-mobile-3 {
