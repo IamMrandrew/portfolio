@@ -906,12 +906,27 @@ footer {
           transform: translateX(100%);
 }
 
+footer a {
+  text-decoration: none;
+}
+
 footer .contact-item {
   padding: 15px;
 }
 
 footer .contact-item h4 {
   font-size: 0.7rem;
+  color: #c7c7c7;
+}
+
+footer .contact-item .contact-icon {
+  padding: 0px 15px;
+  margin-bottom: 0.8rem;
+}
+
+footer .contact-item .contact-icon i {
+  font-size: 1.3rem;
+  font-weight: 300;
   color: #c7c7c7;
 }
 

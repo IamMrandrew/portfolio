@@ -8,6 +8,9 @@ footer {
     opacity: 0;
     transform: translateX(100%);
 
+    a {
+        text-decoration: none;
+    }
     .contact-item {
         padding: 15px;
 
@@ -17,6 +20,18 @@ footer {
             color: #c7c7c7;
         }
 
+        .contact-icon {
+            padding: 0px 15px;
+            margin-bottom: 0.8rem;
+
+            i {
+                font-size: 1.3rem;
+                font-weight: 300;
+                color: #c7c7c7;
+            }
+    
+        }
+        
         p {
             font-size: 0.8rem;
             font-weight: 300;
