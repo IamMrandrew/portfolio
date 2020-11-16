@@ -1,5 +1,5 @@
 # Simple, Minimal, but Clear Portfolio
-Hello guys, here is my personal portfolio. You can access my site [here](https://www.laporatory.com).  
+Hello guys, here is my personal portfolio. Check out my site at [https://www.laporatory.com](https://www.laporatory.com).  
 Nothing fancy or special yet, but I am sure that everything will be better in the comming years.
 
 <img width="1128" alt="Laporatory.comt" src="https://user-images.githubusercontent.com/62586450/99269011-d1fe2f80-2860-11eb-99c0-2695a0101bd1.png">
