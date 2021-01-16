@@ -1,2 +1,40 @@
 .work {
+  .img-wrapper {
+    width: 335px;
+    height: 335px;
+    margin-bottom: 6px;
+
+    img {
+      object-fit: cover;
+      object-position: 50% 50%;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .text-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .work-title,
+    .work-desc {
+      font-size: 18px;
+      color: $secondary;
+    }
+
+    .work-title {
+      font-weight: 500;
+    }
+
+    .work-desc {
+      font-weight: 400;
+      text-align: right;
+    }
+  }
+
+  &.wider {
+    .img-wrapper {
+      width: 495px;
+    }
+  }
 }

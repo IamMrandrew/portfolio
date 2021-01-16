@@ -1,2 +1,34 @@
 .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+
+  .text-wrapper {
+    width: 100%;
+
+    .main-title {
+      color: $primary;
+
+      .highlighting {
+        position: relative;
+
+        .highlighter {
+          position: absolute;
+          z-index: -1;
+          top: 40px;
+          left: 15px;
+          width: 100%;
+          height: 35px;
+          background-color: $highlighted;
+        }
+      }
+    }
+
+    .sub-title {
+      font-size: 30px;
+      font-weight: 500;
+      color: $tinted;
+    }
+  }
 }

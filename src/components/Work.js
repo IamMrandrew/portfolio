@@ -1,13 +1,15 @@
 import React from "react";
 
-const Work = () => {
+const Work = ({ src, wider, title, desc }) => {
   return (
-    <article className="work">
+    <article className={wider ? "work wider" : "work"}>
       <div className="img-wrapper">
-        <img src="" alt="" />
+        <img src={src} alt={src ? src.toString() : ""} />
       </div>
-      <div className="work-title">Todobubu</div>
-      <div className="work-desc">React</div>
+      <div className="text-wrapper">
+        <div className="work-title">{title}</div>
+        <div className="work-desc">{desc}</div>
+      </div>
     </article>
   );
 };

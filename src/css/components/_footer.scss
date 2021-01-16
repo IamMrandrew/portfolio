@@ -1,2 +1,42 @@
 .footer {
+  background-color: $primary;
+  color: $white;
+  padding: 50px;
+  padding-bottom: 40px;
+  margin-bottom: 50px;
+
+  .contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+
+    .col-lg-5:nth-child(1) {
+      svg {
+        font-size: 40px;
+        margin-right: 20px;
+      }
+    }
+
+    .col-lg-7:nth-child(2) {
+      .text-wrapper {
+        .footer-title {
+          font-size: 36px;
+          margin-bottom: 25px;
+        }
+        .footer-desc {
+          font-size: 21px;
+          font-weight: 500;
+          margin-bottom: 0;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 21px;
+    font-weight: 600;
+  }
 }
