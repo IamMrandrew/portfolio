@@ -7,7 +7,15 @@ const Hero = () => {
         <h1 className="main-title">
           Hello, I am andrew <br></br> a{" "}
           <span className="highlighting">
-            Computer Science student
+            Computer&nbsp;
+            <div className="highlighter"></div>
+          </span>
+          <span className="highlighting">
+            Science&nbsp;
+            <div className="highlighter"></div>
+          </span>
+          <span className="highlighting">
+            student
             <div className="highlighter"></div>
           </span>
         </h1>

@@ -12,6 +12,7 @@
 
       .highlighting {
         position: relative;
+        display: inline-block;
 
         .highlighter {
           position: absolute;
@@ -21,6 +22,7 @@
           width: 100%;
           height: 35px;
           background-color: $highlighted;
+          opacity: 0.9;
         }
       }
     }
@@ -29,6 +31,31 @@
       font-size: 30px;
       font-weight: 500;
       color: $tinted;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    height: 350px;
+
+    .text-wrapper {
+      .main-title {
+        font-size: 30px;
+
+        .highlighting {
+          .highlighter {
+            top: 20px;
+            left: 8px;
+            width: 100%;
+            height: 18px;
+            background-color: $highlighted;
+            opacity: 0.9;
+          }
+        }
+      }
+
+      .sub-title {
+        font-size: 18px;
+      }
     }
   }
 }

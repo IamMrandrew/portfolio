@@ -22,4 +22,17 @@
     justify-content: space-around;
     align-items: center;
   }
+
+  @media screen and (max-width: 768px) {
+    .section-title {
+      position: absolute;
+      top: 35px;
+      left: 30px;
+    }
+
+    .section-block {
+      width: calc(100% - 15px);
+      padding: 20px;
+    }
+  }
 }

@@ -9,6 +9,11 @@ const Nav = () => {
           <li className="nav-item">Works</li>
           <li className="nav-item">Profile</li>
         </ul>
+        <div className="burger">
+          <div className="bar bar1"></div>
+          <div className="bar bar2"></div>
+          <div className="bar bar3"></div>
+        </div>
       </div>
     </nav>
   );

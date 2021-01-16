@@ -27,5 +27,41 @@
         margin-left: 24px;
       }
     }
+
+    .burger {
+      display: none;
+
+      .bar {
+        background-color: $primary;
+        width: 20px;
+        height: 3px;
+        margin-left: auto;
+        margin-bottom: 4px;
+        border-radius: 5px;
+      }
+
+      .bar2 {
+        width: 17px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .nav-brand {
+        font-size: 21px;
+      }
+
+      .nav-list {
+        opacity: 0;
+        pointer-events: none;
+
+        .nav-item {
+          font-size: 17px;
+        }
+      }
+
+      .burger {
+        display: block;
+      }
+    }
   }
 }
