@@ -1,6 +1,6 @@
 .contact {
   position: relative;
-
+  margin-bottom: 50px;
   .section-title {
     color: $primary;
     position: absolute;
@@ -62,7 +62,7 @@
           }
 
           &::selection {
-            background: $primary;
+            background: $highlighted;
             color: $white;
           }
         }
@@ -84,7 +84,7 @@
     .section-block {
       width: calc(100% - 15px);
       padding: 20px;
-      padding-top: 90px;
+      padding-top: 100px;
     }
   }
 }
