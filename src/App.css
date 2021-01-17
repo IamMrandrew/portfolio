@@ -1140,6 +1140,40 @@ body.scroll-lock {
   color: #747474;
 }
 
+.hero .text-wrapper .sub-title::after {
+  content: "";
+  width: 5px;
+  height: 4px;
+  border-right: 3px solid #747474;
+  margin: 8px;
+  -webkit-animation: blink 0.5s step-end infinite;
+          animation: blink 0.5s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .hero {
     height: 350px;
