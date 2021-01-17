@@ -1,18 +1,22 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
 import Nav from "./components/Nav";
-import Works from "./components/Works";
-
+import Home from "./components/Home";
+import Profile from "./components/Profile";
 import "./App.css";
 
 const App = () => {
   return (
-    <div className="App">
-      <Nav />
-      <Hero />
-      <Works />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/profile" exact component={Profile} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
