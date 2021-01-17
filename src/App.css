@@ -1138,6 +1138,7 @@ body.scroll-lock {
   font-size: 30px;
   font-weight: 500;
   color: #747474;
+  letter-spacing: 1px;
 }
 
 @media screen and (max-width: 767px) {
@@ -1327,13 +1328,14 @@ body.scroll-lock {
 .about .text-wrapper .about-desc {
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.23;
+  line-height: 1.3;
+  letter-spacing: 1px;
   color: #747474;
 }
 
 @media screen and (max-width: 767px) {
   .about .text-wrapper .about-desc {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 
