@@ -1,10 +1,17 @@
 .about {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   height: 600px;
 
   .text-wrapper {
+    flex-basis: 60%;
+
+    @media screen and (max-width: 991px) {
+      flex-basis: 100%;
+    }
+
     .main-title {
       color: $primary;
     }
@@ -26,6 +33,19 @@
     }
   }
 
+  .img-wrapper {
+    flex-basis: 40%;
+
+    padding: 30px;
+
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
   @media screen and (max-width: 767px) {
     height: 500px;
   }

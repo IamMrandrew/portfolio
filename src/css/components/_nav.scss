@@ -37,11 +37,6 @@
       }
 
       a > li {
-        &:focus,
-        &:hover {
-          // color: $white;
-        }
-
         &::after {
           content: "";
           width: 100%;

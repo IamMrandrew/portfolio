@@ -1349,13 +1349,27 @@ body.scroll-lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   height: 600px;
+}
+
+.about .text-wrapper {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+}
+
+@media screen and (max-width: 991px) {
+  .about .text-wrapper {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 .about .text-wrapper .main-title {
@@ -1378,6 +1392,22 @@ body.scroll-lock {
 
 .about .text-wrapper button {
   margin-top: 20px;
+}
+
+.about .img-wrapper {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  padding: 30px;
+}
+
+@media screen and (max-width: 991px) {
+  .about .img-wrapper {
+    display: none;
+  }
+}
+
+.about .img-wrapper img {
+  width: 100%;
 }
 
 @media screen and (max-width: 767px) {
