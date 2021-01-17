@@ -1,0 +1,27 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+
+  .text-wrapper {
+    .main-title {
+      color: $primary;
+    }
+
+    .about-desc {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.23;
+      color: $tinted;
+
+      @media screen and (max-width: 767px) {
+        font-size: 17px;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+    }
+  }
+}

@@ -181,7 +181,7 @@ h2,
 
 h3,
 .h3 {
-  font-size: 1.75rem;
+  font-size: 24px;
 }
 
 h4,
@@ -209,6 +209,9 @@ p {
     font-size: 30px;
   }
   h2 {
+    font-size: 21px;
+  }
+  h3 {
     font-size: 21px;
   }
 }
@@ -1161,6 +1164,7 @@ body.scroll-lock {
 }
 
 .works .section-title {
+  color: #202020;
   position: absolute;
   top: 35px;
   left: 0;
@@ -1299,6 +1303,114 @@ body.scroll-lock {
   .work.wider .img-wrapper {
     width: 100%;
     height: 100%;
+  }
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 450px;
+}
+
+.about .text-wrapper .main-title {
+  color: #202020;
+}
+
+.about .text-wrapper .about-desc {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.23;
+  color: #747474;
+}
+
+@media screen and (max-width: 767px) {
+  .about .text-wrapper .about-desc {
+    font-size: 17px;
+  }
+}
+
+.about .text-wrapper button {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 12px 30px;
+  background-color: #fa824c;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+}
+
+.skills {
+  position: relative;
+}
+
+.skills .section-title {
+  color: #202020;
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
+.skills .section-block {
+  padding: 40px;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  background-color: #f9f4eb;
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-bottom: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.skills .section-block .skill-wrapper {
+  margin-bottom: 45px;
+}
+
+.skills .section-block .skill-wrapper .skill-title {
+  color: #514c48;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.skills .section-block .skill-wrapper .skill {
+  color: #514c48;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .skills .section-title {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+  }
+  .skills .section-block {
+    width: calc(100% - 15px);
+    padding: 20px;
   }
 }
 /*# sourceMappingURL=App.css.map */
