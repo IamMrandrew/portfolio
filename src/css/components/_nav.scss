@@ -93,14 +93,14 @@
           opacity: 0;
           font-size: 27px;
           font-weight: 600;
-          transform: scale(0.5) translate(0, -300px);
+          transform: scale(0.5) translate(0, -250px);
           transition: all 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
         }
 
         .burger-title {
           display: block;
           font-weight: 700;
-          transform: scale(0.5) translate(50px, -300px);
+          transform: scale(0.5) translate(50px, -250px);
         }
 
         &.active {
