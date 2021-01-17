@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FaBorderNone } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
