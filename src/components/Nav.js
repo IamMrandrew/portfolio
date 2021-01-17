@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { FaBorderNone } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [burger, setBurger] = useState(false);
+
+  const burgerHandler = () => {
+    setBurger(!burger);
+  };
+
+  const linkStyle = {
+    color: "#202020",
+    textDecoration: "none",
+  };
 
   useEffect(() => {
     if (burger) {
@@ -18,14 +29,16 @@ const Nav = () => {
           <div className="nav-brand">andrew li</div>
           <ul className={burger ? "nav-list active" : "nav-list"}>
             <li className="nav-item burger-title">Explore More</li>
-            <li className="nav-item">Works</li>
-            <li className="nav-item">Profile</li>
+            <Link style={linkStyle} to="/" onClick={burgerHandler}>
+              <li className="nav-item">Works</li>
+            </Link>
+            <Link style={linkStyle} to="/profile" onClick={burgerHandler}>
+              <li className="nav-item">Profile</li>
+            </Link>
           </ul>
           <div
             className={burger ? "burger active " : "burger"}
-            onClick={() => {
-              setBurger(!burger);
-            }}
+            onClick={burgerHandler}
           >
             <div className="bar bar1"></div>
             <div className="bar bar2"></div>
