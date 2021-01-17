@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./About";
+import Contact from "./Contact";
 import Skills from "./Skills";
 
 const Profile = () => {
@@ -7,6 +8,7 @@ const Profile = () => {
     <div className="profile">
       <About />
       <Skills />
+      <Contact />
     </div>
   );
 };

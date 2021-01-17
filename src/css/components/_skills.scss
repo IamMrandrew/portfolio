@@ -18,29 +18,48 @@
     margin-bottom: 35px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: baseline;
 
     .skill-wrapper {
       margin-bottom: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      .skill-title {
-        color: $darkBrown;
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
+      .text-wrapper {
+        width: 170px;
 
-      .skill {
-        color: $darkBrown;
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 8px;
+        .skill-title {
+          color: $darkBrown;
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+
+        .skill {
+          color: $darkBrown;
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+
+        @media screen and (max-width: 767px) {
+          width: 150px;
+
+          .skill-title {
+            font-size: 21px;
+          }
+
+          .skill {
+            font-size: 18px;
+          }
+        }
       }
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .section-title {
       position: absolute;
       top: 35px;
@@ -50,6 +69,7 @@
     .section-block {
       width: calc(100% - 15px);
       padding: 20px;
+      padding-top: 90px;
     }
   }
 }
