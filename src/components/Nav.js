@@ -9,8 +9,8 @@ const Nav = () => {
   };
 
   const linkStyle = {
-    color: "#202020",
-    textDecoration: "none",
+    color: "inherit",
+    textDecoration: "inherit",
   };
 
   useEffect(() => {

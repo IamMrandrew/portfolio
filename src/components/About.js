@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import memoji from "../img/memoji.png";
 
 const About = () => {
   return (
@@ -18,6 +19,9 @@ const About = () => {
           I am eager to learn more and I can learn quickly
         </p>
         <Button text={"Resume"} />
+      </div>
+      <div className="img-wrapper">
+        <img src={memoji} alt="memoji" />
       </div>
     </section>
   );
