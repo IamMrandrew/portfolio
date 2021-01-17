@@ -31,7 +31,7 @@
       font-size: 30px;
       font-weight: 500;
       color: $tinted;
-			letter-spacing: 1px;
+      letter-spacing: 1px;
 
       &::after {
         content: "";
@@ -40,6 +40,10 @@
         border-right: 3px solid $tinted;
         margin: 8px;
         animation: blink 0.5s step-end infinite;
+
+        @media screen and (max-width: 767px) {
+          border-right: 2px solid $tinted;
+        }
       }
     }
     @keyframes blink {
