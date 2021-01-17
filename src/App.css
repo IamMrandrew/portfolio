@@ -817,12 +817,6 @@ html {
   transition: 0.3s;
 }
 
-@media (min-width: 576px) {
-  .custom-container {
-    max-width: 540px;
-  }
-}
-
 @media (min-width: 768px) {
   .custom-container {
     max-width: 720px;
@@ -852,6 +846,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .nav .custom-container .nav-brand,
@@ -871,6 +866,10 @@ html {
   display: flex;
 }
 
+.nav .custom-container .nav-list .burger-title {
+  display: none;
+}
+
 .nav .custom-container .nav-list .nav-item {
   font-size: 20px;
   margin-left: 24px;
@@ -878,6 +877,7 @@ html {
 
 .nav .custom-container .burger {
   display: none;
+  cursor: pointer;
 }
 
 .nav .custom-container .burger .bar {
@@ -887,10 +887,28 @@ html {
   margin-left: auto;
   margin-bottom: 4px;
   border-radius: 5px;
+  -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.5);
+  transition: opacity 0.6s ease-out, -webkit-transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.5);
+  transition: opacity 0.6s ease-out, transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.5);
+  transition: opacity 0.6s ease-out, transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.5), -webkit-transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.5);
 }
 
 .nav .custom-container .burger .bar2 {
   width: 17px;
+}
+
+.nav .custom-container .burger.active .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+          transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.nav .custom-container .burger.active .bar2 {
+  opacity: 0;
+}
+
+.nav .custom-container .burger.active .bar3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -5px);
+          transform: rotate(45deg) translate(-5px, -5px);
 }
 
 @media screen and (max-width: 767px) {
@@ -898,15 +916,100 @@ html {
     font-size: 21px;
   }
   .nav .custom-container .nav-list {
-    opacity: 0;
     pointer-events: none;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    height: 450px;
+    width: 100%;
+    background-color: #f9f4eb;
+    -webkit-clip-path: circle(0px at 90% 45px);
+            clip-path: circle(0px at 90% 45px);
+    -webkit-transition: all 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
+    transition: all 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
   }
   .nav .custom-container .nav-list .nav-item {
-    font-size: 17px;
+    position: relative;
+    top: -25px;
+    padding: 0px;
+    opacity: 0;
+    font-size: 27px;
+    font-weight: 600;
+    -webkit-transform: scale(0.5) translate(0, -300px);
+            transform: scale(0.5) translate(0, -300px);
+    -webkit-transition: all 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
+    transition: all 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
+  }
+  .nav .custom-container .nav-list .burger-title {
+    display: block;
+    font-weight: 700;
+    -webkit-transform: scale(0.5) translate(50px, -300px);
+            transform: scale(0.5) translate(50px, -300px);
+  }
+  .nav .custom-container .nav-list.active {
+    -webkit-clip-path: circle(480px at 90% -10%);
+            clip-path: circle(480px at 90% -10%);
+    pointer-events: all;
+  }
+  .nav .custom-container .nav-list.active .nav-item {
+    opacity: 1;
+    padding: 15px;
+    padding-right: 30px;
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    font-size: 27px;
+    font-weight: 600;
+  }
+  .nav .custom-container .nav-list.active .burger-title {
+    font-weight: 700;
+    font-size: 36px;
   }
   .nav .custom-container .burger {
     display: block;
+    position: relative;
+    z-index: 2000;
   }
+}
+
+.pusher {
+  height: 0px;
+  -webkit-transition: 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
+  transition: 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
+}
+
+.pusher.active {
+  height: calc(450px - 80px);
+}
+
+.faded {
+  position: absolute;
+  z-index: 200;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
+  transition: 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
+}
+
+.faded.active {
+  opacity: 1;
+}
+
+body.scroll-lock {
+  overflow: hidden;
 }
 
 .footer .wrapper {
