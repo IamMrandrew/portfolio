@@ -1,0 +1,90 @@
+.contact {
+  position: relative;
+
+  .section-title {
+    color: $primary;
+    position: absolute;
+    top: 35px;
+    left: 0;
+  }
+
+  .section-block {
+    background-color: $oldLace;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-bottom: 35px;
+    padding: 40px;
+    padding-top: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .contact-form {
+      width: 100%;
+
+      .contact-name-field,
+      .contact-email-field,
+      .contact-message-field {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 17px;
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: $white;
+
+        svg {
+          font-size: 18px;
+          color: $placeholder;
+          margin-right: 3px;
+        }
+
+        .icon-comments {
+          align-self: start;
+          margin-top: 11px;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          appearance: none;
+          border: none;
+          outline: none;
+          resize: none;
+          font-size: 18px;
+          font-weight: 600;
+          padding: 8px 17px;
+          font-family: "Barlow", "Montserrat", sans-serif;
+
+          &::placeholder {
+            color: $placeholder;
+          }
+
+          &::selection {
+            background: $primary;
+            color: $white;
+          }
+        }
+      }
+
+      .contact-message-field {
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .section-title {
+      position: absolute;
+      top: 35px;
+      left: 30px;
+    }
+
+    .section-block {
+      width: calc(100% - 15px);
+      padding: 20px;
+      padding-top: 90px;
+    }
+  }
+}

@@ -26,7 +26,9 @@ const Nav = () => {
     <>
       <nav className="nav">
         <div className="custom-container">
-          <div className="nav-brand">andrew li</div>
+          <Link style={linkStyle} to="/">
+            <div className="nav-brand">andrew li</div>
+          </Link>
           <ul className={burger ? "nav-list active" : "nav-list"}>
             <li className="nav-item burger-title">Explore More</li>
             <Link

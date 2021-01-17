@@ -177,11 +177,12 @@ h1,
 h2,
 .h2 {
   font-size: 30px;
+  font-weight: 700;
 }
 
 h3,
 .h3 {
-  font-size: 1.75rem;
+  font-size: 24px;
 }
 
 h4,
@@ -209,6 +210,9 @@ p {
     font-size: 30px;
   }
   h2 {
+    font-size: 26px;
+  }
+  h3 {
     font-size: 21px;
   }
 }
@@ -1161,6 +1165,7 @@ body.scroll-lock {
 }
 
 .works .section-title {
+  color: #202020;
   position: absolute;
   top: 35px;
   left: 0;
@@ -1299,6 +1304,303 @@ body.scroll-lock {
   .work.wider .img-wrapper {
     width: 100%;
     height: 100%;
+  }
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 450px;
+}
+
+.about .text-wrapper .main-title {
+  color: #202020;
+}
+
+.about .text-wrapper .about-desc {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.23;
+  color: #747474;
+}
+
+@media screen and (max-width: 767px) {
+  .about .text-wrapper .about-desc {
+    font-size: 17px;
+  }
+}
+
+.about .text-wrapper button {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 12px 30px;
+  background-color: #fa824c;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+}
+
+.skills {
+  position: relative;
+}
+
+.skills .section-title {
+  color: #202020;
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
+.skills .section-block {
+  padding: 40px;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  background-color: #f9f4eb;
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-bottom: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.skills .section-block .skill-wrapper {
+  margin-bottom: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.skills .section-block .skill-wrapper .text-wrapper {
+  width: 170px;
+}
+
+.skills .section-block .skill-wrapper .text-wrapper .skill-title {
+  color: #514c48;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.skills .section-block .skill-wrapper .text-wrapper .skill {
+  color: #514c48;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .skills .section-block .skill-wrapper .text-wrapper {
+    width: 150px;
+  }
+  .skills .section-block .skill-wrapper .text-wrapper .skill-title {
+    font-size: 21px;
+  }
+  .skills .section-block .skill-wrapper .text-wrapper .skill {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .skills .section-title {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+  }
+  .skills .section-block {
+    width: calc(100% - 15px);
+    padding: 20px;
+    padding-top: 90px;
+  }
+}
+
+.contact {
+  position: relative;
+}
+
+.contact .section-title {
+  color: #202020;
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
+.contact .section-block {
+  background-color: #f9f4eb;
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-bottom: 35px;
+  padding: 40px;
+  padding-top: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .section-block .contact-form {
+  width: 100%;
+}
+
+.contact .section-block .contact-form .contact-name-field,
+.contact .section-block .contact-form .contact-email-field,
+.contact .section-block .contact-form .contact-message-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 17px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.contact .section-block .contact-form .contact-name-field svg,
+.contact .section-block .contact-form .contact-email-field svg,
+.contact .section-block .contact-form .contact-message-field svg {
+  font-size: 18px;
+  color: #dedede;
+  margin-right: 3px;
+}
+
+.contact .section-block .contact-form .contact-name-field .icon-comments,
+.contact .section-block .contact-form .contact-email-field .icon-comments,
+.contact .section-block .contact-form .contact-message-field .icon-comments {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  margin-top: 11px;
+}
+
+.contact .section-block .contact-form .contact-name-field input,
+.contact .section-block .contact-form .contact-name-field textarea,
+.contact .section-block .contact-form .contact-email-field input,
+.contact .section-block .contact-form .contact-email-field textarea,
+.contact .section-block .contact-form .contact-message-field input,
+.contact .section-block .contact-form .contact-message-field textarea {
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 17px;
+  font-family: "Barlow", "Montserrat", sans-serif;
+}
+
+.contact .section-block .contact-form .contact-name-field input::-webkit-input-placeholder,
+.contact .section-block .contact-form .contact-name-field textarea::-webkit-input-placeholder,
+.contact .section-block .contact-form .contact-email-field input::-webkit-input-placeholder,
+.contact .section-block .contact-form .contact-email-field textarea::-webkit-input-placeholder,
+.contact .section-block .contact-form .contact-message-field input::-webkit-input-placeholder,
+.contact .section-block .contact-form .contact-message-field textarea::-webkit-input-placeholder {
+  color: #dedede;
+}
+
+.contact .section-block .contact-form .contact-name-field input:-ms-input-placeholder,
+.contact .section-block .contact-form .contact-name-field textarea:-ms-input-placeholder,
+.contact .section-block .contact-form .contact-email-field input:-ms-input-placeholder,
+.contact .section-block .contact-form .contact-email-field textarea:-ms-input-placeholder,
+.contact .section-block .contact-form .contact-message-field input:-ms-input-placeholder,
+.contact .section-block .contact-form .contact-message-field textarea:-ms-input-placeholder {
+  color: #dedede;
+}
+
+.contact .section-block .contact-form .contact-name-field input::-ms-input-placeholder,
+.contact .section-block .contact-form .contact-name-field textarea::-ms-input-placeholder,
+.contact .section-block .contact-form .contact-email-field input::-ms-input-placeholder,
+.contact .section-block .contact-form .contact-email-field textarea::-ms-input-placeholder,
+.contact .section-block .contact-form .contact-message-field input::-ms-input-placeholder,
+.contact .section-block .contact-form .contact-message-field textarea::-ms-input-placeholder {
+  color: #dedede;
+}
+
+.contact .section-block .contact-form .contact-name-field input::placeholder,
+.contact .section-block .contact-form .contact-name-field textarea::placeholder,
+.contact .section-block .contact-form .contact-email-field input::placeholder,
+.contact .section-block .contact-form .contact-email-field textarea::placeholder,
+.contact .section-block .contact-form .contact-message-field input::placeholder,
+.contact .section-block .contact-form .contact-message-field textarea::placeholder {
+  color: #dedede;
+}
+
+.contact .section-block .contact-form .contact-name-field input::-moz-selection,
+.contact .section-block .contact-form .contact-name-field textarea::-moz-selection,
+.contact .section-block .contact-form .contact-email-field input::-moz-selection,
+.contact .section-block .contact-form .contact-email-field textarea::-moz-selection,
+.contact .section-block .contact-form .contact-message-field input::-moz-selection,
+.contact .section-block .contact-form .contact-message-field textarea::-moz-selection {
+  background: #202020;
+  color: #ffffff;
+}
+
+.contact .section-block .contact-form .contact-name-field input::selection,
+.contact .section-block .contact-form .contact-name-field textarea::selection,
+.contact .section-block .contact-form .contact-email-field input::selection,
+.contact .section-block .contact-form .contact-email-field textarea::selection,
+.contact .section-block .contact-form .contact-message-field input::selection,
+.contact .section-block .contact-form .contact-message-field textarea::selection {
+  background: #202020;
+  color: #ffffff;
+}
+
+.contact .section-block .contact-form .contact-message-field {
+  margin-bottom: 27px;
+}
+
+@media screen and (max-width: 767px) {
+  .contact .section-title {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+  }
+  .contact .section-block {
+    width: calc(100% - 15px);
+    padding: 20px;
+    padding-top: 90px;
   }
 }
 /*# sourceMappingURL=App.css.map */
