@@ -29,10 +29,18 @@ const Nav = () => {
           <div className="nav-brand">andrew li</div>
           <ul className={burger ? "nav-list active" : "nav-list"}>
             <li className="nav-item burger-title">Explore More</li>
-            <Link style={linkStyle} to="/" onClick={burgerHandler}>
+            <Link
+              style={linkStyle}
+              to="/"
+              onClick={burger ? burgerHandler : null}
+            >
               <li className="nav-item">Works</li>
             </Link>
-            <Link style={linkStyle} to="/profile" onClick={burgerHandler}>
+            <Link
+              style={linkStyle}
+              to="/profile"
+              onClick={burger ? burgerHandler : null}
+            >
               <li className="nav-item">Profile</li>
             </Link>
           </ul>
