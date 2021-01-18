@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
+import Thanks from "./components/Thanks";
 import "./App.css";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/profile/thanks" exact component={Thanks} />
         </Switch>
         <Footer />
       </div>
