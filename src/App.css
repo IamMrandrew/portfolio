@@ -1285,6 +1285,7 @@ body.scroll-lock {
 
 .work {
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .work .ratio-wrapper {
@@ -1294,6 +1295,7 @@ body.scroll-lock {
 .work .ratio-wrapper .img-wrapper {
   width: 335px;
   height: 335px;
+  overflow: hidden;
 }
 
 .work .ratio-wrapper .img-wrapper img {
@@ -1303,6 +1305,10 @@ body.scroll-lock {
      object-position: 50% 50%;
   height: 100%;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .work .text-wrapper {
@@ -1331,6 +1337,11 @@ body.scroll-lock {
 
 .work.wider .img-wrapper {
   width: 495px;
+}
+
+.work:hover .ratio-wrapper .img-wrapper img {
+  -webkit-transform: scale(1.01) translateY(-5px);
+          transform: scale(1.01) translateY(-5px);
 }
 
 @media screen and (max-width: 991px) {

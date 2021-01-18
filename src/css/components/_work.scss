@@ -1,5 +1,6 @@
 .work {
   margin-bottom: 30px;
+  cursor: pointer;
 
   .ratio-wrapper {
     margin-bottom: 6px;
@@ -7,12 +8,14 @@
     .img-wrapper {
       width: 335px;
       height: 335px;
+      overflow: hidden;
 
       img {
         object-fit: cover;
         object-position: 50% 50%;
         height: 100%;
         width: 100%;
+        transition: transform 0.5s;
       }
     }
   }
@@ -40,6 +43,16 @@
   &.wider {
     .img-wrapper {
       width: 495px;
+    }
+  }
+
+  &:hover {
+    .ratio-wrapper {
+      .img-wrapper {
+        img {
+          transform: scale(1.01) translateY(-5px);
+        }
+      }
     }
   }
 
