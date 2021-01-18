@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {
   useNetlifyForm,
   NetlifyFormProvider,
@@ -12,11 +12,12 @@ import { FaUser, FaEnvelope, FaComments } from "react-icons/fa";
 
 const Contact = () => {
   const [success, setSuccess] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
       setSuccess(true);
-      return <Redirect to="/profile/submitted" />;
+      history.push("/profile/submitted");
     }
   }, []);
 
