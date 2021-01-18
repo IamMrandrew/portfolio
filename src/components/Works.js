@@ -3,6 +3,8 @@ import Work from "./Work";
 
 import thumbTodobubu from "../img/thumb-todobubu.jpg";
 import thumbLoopa from "../img/thumb-loopa.jpg";
+import thumbHautakchurch from "../img/thumb-hautakchurch.jpg";
+import thumbDanxUp from "../img/thumb-danxup.jpg";
 
 const Works = () => {
   return (
@@ -13,8 +15,18 @@ const Works = () => {
         <Work src={thumbLoopa} wider={true} title="Loopa" desc="Tone.js" />
       </div>
       <div className="section-block">
-        <Work src={thumbLoopa} wider={true} title="Loopa" desc="Tone.js" />
-        <Work src={thumbTodobubu} wider={false} title="Todobubu" desc="React" />
+        <Work
+          src={thumbHautakchurch}
+          wider={true}
+          title="Hau Tak Church Web"
+          desc="Wordpress"
+        />
+        <Work
+          src={thumbDanxUp}
+          wider={false}
+          title="danXup"
+          desc="Pose Animator"
+        />
       </div>
     </section>
   );
