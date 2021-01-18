@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
-import Submitted from "./components/Submitted";
+import Thanks from "./components/Thanks";
 import "./App.css";
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/profile" exact component={Profile} />
-          <Route path="/profile/submitted" exact component={Submitted} />
+          <Route path="/profile/submitted" exact component={Thanks} />
         </Switch>
         <Footer />
       </div>

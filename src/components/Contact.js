@@ -17,7 +17,7 @@ const Contact = () => {
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
       setSuccess(true);
-      history.push("/profile/submitted");
+      history.push("/profile/thanks");
     }
   }, []);
 
