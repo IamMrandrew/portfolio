@@ -16,6 +16,7 @@ const Contact = () => {
       <div className="section-block">
         <form
           className="contact-form"
+          name="contact-form"
           method="post"
           data-netlify="true"
           netlify-honeypot="bot-field"
