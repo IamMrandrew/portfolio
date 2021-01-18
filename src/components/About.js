@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import memoji from "../img/memoji.png";
+import resume from "../file/resume-4.pdf";
 
 const About = () => {
   return (
@@ -18,7 +19,9 @@ const About = () => {
         <p className="about-desc">
           I am eager to learn more and I can learn quickly
         </p>
-        <Button text={"Resume"} />
+        <a href={resume}>
+          <Button text={"Resume"} />
+        </a>
       </div>
       <div className="img-wrapper">
         <img src={memoji} alt="memoji" />
