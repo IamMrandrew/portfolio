@@ -1076,6 +1076,11 @@ body.scroll-lock {
   margin-bottom: 32px;
 }
 
+.footer .wrapper .contact-wrapper .col-md-5:nth-child(1) a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .footer .wrapper .contact-wrapper .col-md-5:nth-child(1) svg {
   font-size: 40px;
   margin-right: 20px;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
@@ -7,8 +8,12 @@ const Footer = () => {
       <div className="wrapper">
         <div className="contact-wrapper">
           <div className="col-md-5">
-            <FaGithub />
-            <FaEnvelope />
+            <a href="https://github.com/IamMrandrew" target="_blank">
+              <FaGithub />
+            </a>
+            <a href="mailto:andrewliyanlap000824@gmail.com">
+              <FaEnvelope />
+            </a>
           </div>
           <div className="col-md-7">
             <div className="text-wrapper">
