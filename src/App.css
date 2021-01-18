@@ -1606,9 +1606,10 @@ body.scroll-lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10px;
   padding-left: 17px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   background-color: #ffffff;
 }
 
@@ -1718,6 +1719,69 @@ body.scroll-lock {
     width: calc(100% - 15px);
     padding: 20px;
     padding-top: 100px;
+  }
+  .contact .section-block .contact-form .contact-name-field,
+  .contact .section-block .contact-form .contact-email-field,
+  .contact .section-block .contact-form .contact-message-field {
+    padding: 8px;
+    padding-left: 17px;
+  }
+}
+
+.thanks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 550px;
+}
+
+.thanks .text-wrapper {
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
+}
+
+.thanks .text-wrapper .main-title {
+  color: #202020;
+  margin-bottom: 30px;
+}
+
+.thanks .text-wrapper .sub-title {
+  color: #4b4b4b;
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.thanks .text-wrapper button {
+  padding: 16px 35px;
+}
+
+.thanks .img-wrapper {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+}
+
+.thanks .img-wrapper img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .thanks .text-wrapper {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .thanks .img-wrapper {
+    display: none;
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -29,9 +29,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 10px;
         padding-left: 17px;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         background-color: $white;
 
         svg {
@@ -85,6 +86,15 @@
       width: calc(100% - 15px);
       padding: 20px;
       padding-top: 100px;
+
+      .contact-form {
+        .contact-name-field,
+        .contact-email-field,
+        .contact-message-field {
+          padding: 8px;
+          padding-left: 17px;
+        }
+      }
     }
   }
 }
