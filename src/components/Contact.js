@@ -16,14 +16,9 @@ const Contact = () => {
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
       setSuccess(true);
-      <Redirect to="/profile/submitted" />;
+      return <Redirect to="/profile/submitted" />;
     }
   }, []);
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    <Redirect to="/profile/submitted" />;
-  };
 
   return (
     <section className="contact custom-container">
@@ -34,8 +29,6 @@ const Contact = () => {
           name="contact-form"
           method="post"
           action="/profile/?success=true"
-          // action="/profile/submitted"
-          // onSubmit={submitHandler}
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact-form" />
