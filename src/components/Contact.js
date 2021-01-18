@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   useNetlifyForm,
   NetlifyFormProvider,
@@ -10,18 +10,27 @@ import Button from "./Button";
 import { FaUser, FaEnvelope, FaComments } from "react-icons/fa";
 
 const Contact = () => {
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    if (window.location.search.includes("success=true")) {
+      setSuccess(true);
+    }
+  }, []);
+
   return (
     <div className="contact custom-container">
       <h2 className="section-title">Leave some comments</h2>
+      {success && <p>Thanks for your message! </p>}
       <div className="section-block">
         <form
           className="contact-form"
           name="contact-form"
           method="post"
+          action="/profile/?success=true"
           data-netlify="true"
-          netlify-honeypot="bot-field"
-          onSubmit="submit"
         >
+          <input type="hidden" name="form-name" value="contact-form" />
           <div className="contact-name-field">
             <FaUser />
             <input
