@@ -8,6 +8,11 @@ const Nav = () => {
     setBurger(!burger);
   };
 
+  const delayBurgerHandler = () => {
+    setTimeout(() => {
+      burgerHandler();
+    }, 350);
+  };
   const linkStyle = {
     color: "inherit",
     textDecoration: "inherit",
@@ -33,14 +38,14 @@ const Nav = () => {
             <Link
               style={linkStyle}
               to="/"
-              onClick={burger ? burgerHandler : null}
+              onClick={burger ? delayBurgerHandler : null}
             >
               <li className="nav-item">Works</li>
             </Link>
             <Link
               style={linkStyle}
               to="/profile"
-              onClick={burger ? burgerHandler : null}
+              onClick={burger ? delayBurgerHandler : null}
             >
               <li className="nav-item">Profile</li>
             </Link>
