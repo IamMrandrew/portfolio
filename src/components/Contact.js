@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import {
   useNetlifyForm,
   NetlifyFormProvider,
@@ -15,19 +16,26 @@ const Contact = () => {
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
       setSuccess(true);
+      <Redirect to="/profile/submitted" />;
     }
   }, []);
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    <Redirect to="/profile/submitted" />;
+  };
+
   return (
-    <div className="contact custom-container">
+    <section className="contact custom-container">
       <h2 className="section-title">Leave some comments</h2>
-      {success && <p>Thanks for your message! </p>}
       <div className="section-block">
         <form
           className="contact-form"
           name="contact-form"
           method="post"
           action="/profile/?success=true"
+          // action="/profile/submitted"
+          // onSubmit={submitHandler}
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact-form" />
@@ -62,7 +70,7 @@ const Contact = () => {
           <Button text="Submit" type="submit" />
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 
