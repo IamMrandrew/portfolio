@@ -4,6 +4,10 @@
   align-items: center;
   height: 450px;
 
+  .overflow-wrapper {
+    overflow: hidden;
+  }
+
   .text-wrapper {
     width: 100%;
 

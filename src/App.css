@@ -1152,6 +1152,10 @@ body.scroll-lock {
   height: 450px;
 }
 
+.hero .overflow-wrapper {
+  overflow: hidden;
+}
+
 .hero .text-wrapper {
   width: 100%;
 }
@@ -1414,6 +1418,10 @@ body.scroll-lock {
       -ms-flex-align: center;
           align-items: center;
   height: 600px;
+}
+
+.about .overflow-wrapper {
+  overflow: hidden;
 }
 
 .about .text-wrapper {
