@@ -1,7 +1,34 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [text, setText] = useState("");
+
+  const textsIn = {
+    animate: {
+      transition: {
+        // delayChildren: 0.5,
+        staggerChildren: 0.4,
+        staggerDirection: 1,
+      },
+    },
+  };
+
+  const textIn = {
+    initial: {
+      y: 100,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "backOut",
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
 
   useEffect(() => {
     const texts = [
@@ -31,24 +58,36 @@ const Hero = () => {
 
   return (
     <section className="hero custom-container">
-      <div className="text-wrapper">
-        <h1 className="main-title">
-          Hello, I am andrew <br></br> a{" "}
-          <span className="highlighting">
-            Computer&nbsp;
-            <div className="highlighter"></div>
-          </span>
-          <span className="highlighting">
-            Science&nbsp;
-            <div className="highlighter"></div>
-          </span>
-          <span className="highlighting">
-            student
-            <div className="highlighter"></div>
-          </span>
-        </h1>
-        <p className="sub-title">I love {text}</p>
-      </div>
+      <motion.div
+        initial={"initial"}
+        animate={"animate"}
+        exit={"exit"}
+        variants={textsIn}
+        className="text-wrapper"
+      >
+        <div className="overflow-wrapper">
+          <motion.h1 variants={textIn} className="main-title">
+            Hello, I am andrew <br></br> a{" "}
+            <span className="highlighting">
+              Computer&nbsp;
+              <div className="highlighter"></div>
+            </span>
+            <span className="highlighting">
+              Science&nbsp;
+              <div className="highlighter"></div>
+            </span>
+            <span className="highlighting">
+              student
+              <div className="highlighter"></div>
+            </span>
+          </motion.h1>
+        </div>
+        <div className="overflow-wrapper">
+          <motion.p variants={textIn} className="sub-title">
+            I love {text}
+          </motion.p>
+        </div>
+      </motion.div>
     </section>
   );
 };

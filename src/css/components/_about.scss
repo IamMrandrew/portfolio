@@ -5,6 +5,10 @@
   align-items: center;
   height: 600px;
 
+  .overflow-wrapper {
+    overflow: hidden;
+  }
+
   .text-wrapper {
     flex-basis: 60%;
 
