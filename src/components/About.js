@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import memoji from "../img/memoji.png";
-import resume from "../file/resume-4.pdf";
+import resume from "../file/resume.pdf";
 
 const About = () => {
   const textsIn = {
