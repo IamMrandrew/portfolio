@@ -205,7 +205,7 @@ p {
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   h1 {
     font-size: 30px;
   }
@@ -935,7 +935,7 @@ html {
           transform: rotate(45deg) translate(-5px, -5px);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .nav .custom-container .nav-brand {
     font-size: 21px;
   }
@@ -1103,7 +1103,7 @@ body.scroll-lock {
   font-weight: 600;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .footer {
     padding: 0px 30px;
   }
@@ -1197,7 +1197,7 @@ body.scroll-lock {
           animation: blink 0.5s step-end infinite;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .hero .text-wrapper .sub-title::after {
     border-right: 2px solid #747474;
   }
@@ -1227,7 +1227,7 @@ body.scroll-lock {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .hero {
     height: 350px;
   }
@@ -1448,7 +1448,7 @@ body.scroll-lock {
   color: #747474;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .about .text-wrapper .about-desc {
     font-size: 18px;
   }
@@ -1474,7 +1474,7 @@ body.scroll-lock {
   width: 100%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .about {
     height: 500px;
   }
@@ -1557,7 +1557,7 @@ body.scroll-lock {
   margin-bottom: 8px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .skills .section-block .skill-wrapper .text-wrapper {
     width: 150px;
   }
@@ -1569,7 +1569,7 @@ body.scroll-lock {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .skills .section-title {
     position: absolute;
     top: 35px;
@@ -1733,7 +1733,7 @@ body.scroll-lock {
   margin-bottom: 27px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .contact .section-title {
     position: absolute;
     top: 35px;
@@ -1796,7 +1796,7 @@ body.scroll-lock {
   max-width: 100%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.99px) {
   .thanks .text-wrapper {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;

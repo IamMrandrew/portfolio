@@ -45,7 +45,7 @@
         margin: 8px;
         animation: blink 0.5s step-end infinite;
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 767.99px) {
           border-right: 2px solid $tinted;
         }
       }
@@ -63,7 +63,7 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767.99px) {
     height: 350px;
 
     .text-wrapper {
