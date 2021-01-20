@@ -853,8 +853,8 @@ html {
   position: relative;
 }
 
-.nav .custom-container .nav-brand,
-.nav .custom-container .nav-item {
+.nav .nav-brand,
+.nav .nav-item {
   color: #202020;
   font-family: "Montserrat";
   font-weight: 600;
@@ -863,26 +863,26 @@ html {
   position: relative;
 }
 
-.nav .custom-container .nav-brand {
+.nav .nav-brand {
   font-size: 28px;
 }
 
-.nav .custom-container .nav-list {
+.nav .nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.nav .custom-container .nav-list .burger-title {
+.nav .nav-list .burger-title {
   display: none;
 }
 
-.nav .custom-container .nav-list .nav-item {
+.nav .nav-list .nav-item {
   font-size: 20px;
   margin-left: 20px;
 }
 
-.nav .custom-container .nav-list a > li::after {
+.nav .nav-list a > li::after {
   content: "";
   width: 100%;
   height: 0px;
@@ -895,16 +895,16 @@ html {
   transition: height 0.3s ease-in-out;
 }
 
-.nav .custom-container .nav-list a > li:focus::after, .nav .custom-container .nav-list a > li:hover::after {
+.nav .nav-list a > li:focus::after, .nav .nav-list a > li:hover::after {
   height: 15px;
 }
 
-.nav .custom-container .burger {
+.nav .burger {
   display: none;
   cursor: pointer;
 }
 
-.nav .custom-container .burger .bar {
+.nav .burger .bar {
   background-color: #202020;
   width: 20px;
   height: 3px;
@@ -917,29 +917,29 @@ html {
   transition: opacity 0.6s ease-out, transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.5), -webkit-transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.5);
 }
 
-.nav .custom-container .burger .bar2 {
+.nav .burger .bar2 {
   width: 17px;
 }
 
-.nav .custom-container .burger.active .bar1 {
+.nav .burger.active .bar1 {
   -webkit-transform: rotate(-45deg) translate(-5px, 5px);
           transform: rotate(-45deg) translate(-5px, 5px);
 }
 
-.nav .custom-container .burger.active .bar2 {
+.nav .burger.active .bar2 {
   opacity: 0;
 }
 
-.nav .custom-container .burger.active .bar3 {
+.nav .burger.active .bar3 {
   -webkit-transform: rotate(45deg) translate(-5px, -5px);
           transform: rotate(45deg) translate(-5px, -5px);
 }
 
 @media screen and (max-width: 767.99px) {
-  .nav .custom-container .nav-brand {
+  .nav .nav-brand {
     font-size: 21px;
   }
-  .nav .custom-container .nav-list {
+  .nav .nav-list {
     pointer-events: none;
     position: absolute;
     z-index: 1000;
@@ -963,7 +963,7 @@ html {
     -webkit-transition: all 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
     transition: all 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
   }
-  .nav .custom-container .nav-list .nav-item {
+  .nav .nav-list .nav-item {
     position: relative;
     top: -25px;
     padding: 0px;
@@ -977,18 +977,22 @@ html {
     transition: transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), opacity 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), padding 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), margin 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), font 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
     transition: transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), opacity 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), padding 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), margin 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), font 0.7s cubic-bezier(0.87, 0, 0.11, 1.2), -webkit-transform 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
   }
-  .nav .custom-container .nav-list .burger-title {
+  .nav .nav-list .burger-title {
     display: block;
     font-weight: 700;
     -webkit-transform: scale(0.5) translate(50px, -250px);
             transform: scale(0.5) translate(50px, -250px);
   }
-  .nav .custom-container .nav-list.active {
+  .nav .nav-list.active {
     -webkit-clip-path: circle(480px at 90% -10%);
             clip-path: circle(480px at 90% -10%);
     pointer-events: all;
   }
-  .nav .custom-container .nav-list.active .nav-item {
+  .nav .nav-list.active .burger-title {
+    font-weight: 700;
+    font-size: 36px;
+  }
+  .nav .nav-list.active .nav-item {
     opacity: 1;
     padding: 15px 0px;
     margin-right: 30px;
@@ -997,10 +1001,10 @@ html {
     font-size: 27px;
     font-weight: 600;
   }
-  .nav .custom-container .nav-list.active a > li:focus::after, .nav .custom-container .nav-list.active a > li:hover::after {
+  .nav .nav-list.active a > li:focus::after, .nav .nav-list.active a > li:hover::after {
     height: 18px;
   }
-  .nav .custom-container .nav-list.active a > li::after {
+  .nav .nav-list.active a > li::after {
     content: "";
     width: 100%;
     height: 0px;
@@ -1012,11 +1016,7 @@ html {
     -webkit-transition: height 0.3s ease-in-out;
     transition: height 0.3s ease-in-out;
   }
-  .nav .custom-container .nav-list.active .burger-title {
-    font-weight: 700;
-    font-size: 36px;
-  }
-  .nav .custom-container .burger {
+  .nav .burger {
     display: block;
     position: relative;
     z-index: 2000;
@@ -1061,7 +1061,7 @@ body.scroll-lock {
   margin-bottom: 50px;
 }
 
-.footer .wrapper .contact-wrapper {
+.footer .contact-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1076,29 +1076,29 @@ body.scroll-lock {
   margin-bottom: 32px;
 }
 
-.footer .wrapper .contact-wrapper .col-md-5:nth-child(1) a {
+.footer .col-md-5 a {
   color: inherit;
   text-decoration: inherit;
 }
 
-.footer .wrapper .contact-wrapper .col-md-5:nth-child(1) svg {
+.footer .col-md-5 svg {
   font-size: 40px;
   margin-right: 20px;
 }
 
-.footer .wrapper .contact-wrapper .col-md-7:nth-child(2) .text-wrapper .footer-title {
+.footer .col-md-7 .footer-title {
   font-size: 36px;
   margin-bottom: 25px;
 }
 
-.footer .wrapper .contact-wrapper .col-md-7:nth-child(2) .text-wrapper .footer-desc {
+.footer .col-md-7 .footer-desc {
   font-size: 21px;
   font-weight: 500;
   margin-bottom: 0;
   line-height: 1.4;
 }
 
-.footer .wrapper .copyright {
+.footer .copyright {
   font-size: 21px;
   font-weight: 600;
 }
@@ -1112,29 +1112,29 @@ body.scroll-lock {
     padding-left: 25px;
     padding-right: 25px;
   }
-  .footer .wrapper .contact-wrapper {
+  .footer .contact-wrapper {
     margin-bottom: 18px;
   }
-  .footer .wrapper .contact-wrapper .col-md-5:nth-child(1) {
+  .footer .col-md-5 {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
   }
-  .footer .wrapper .contact-wrapper .col-md-5:nth-child(1) svg {
+  .footer .col-md-5 svg {
     font-size: 30px;
     margin-right: 12px;
   }
-  .footer .wrapper .contact-wrapper .col-md-7:nth-child(2) {
+  .footer .col-md-7 {
     margin-bottom: 36px;
   }
-  .footer .wrapper .contact-wrapper .col-md-7:nth-child(2) .text-wrapper .footer-title {
+  .footer .col-md-7 .footer-title {
     font-size: 30px;
     margin-bottom: 20px;
   }
-  .footer .wrapper .contact-wrapper .col-md-7:nth-child(2) .text-wrapper .footer-desc {
+  .footer .col-md-7 .footer-desc {
     font-size: 18px;
   }
-  .footer .wrapper .copyright {
+  .footer .copyright {
     font-size: 16px;
   }
 }
@@ -1160,16 +1160,16 @@ body.scroll-lock {
   width: 100%;
 }
 
-.hero .text-wrapper .main-title {
+.hero .main-title {
   color: #202020;
 }
 
-.hero .text-wrapper .main-title .highlighting {
+.hero .highlighting {
   position: relative;
   display: inline-block;
 }
 
-.hero .text-wrapper .main-title .highlighting .highlighter {
+.hero .highlighter {
   position: absolute;
   z-index: -1;
   top: 40px;
@@ -1180,14 +1180,14 @@ body.scroll-lock {
   opacity: 0.9;
 }
 
-.hero .text-wrapper .sub-title {
+.hero .sub-title {
   font-size: 30px;
   font-weight: 500;
   color: #747474;
   letter-spacing: 1px;
 }
 
-.hero .text-wrapper .sub-title::after {
+.hero .sub-title::after {
   content: "";
   width: 5px;
   height: 4px;
@@ -1198,7 +1198,7 @@ body.scroll-lock {
 }
 
 @media screen and (max-width: 767.99px) {
-  .hero .text-wrapper .sub-title::after {
+  .hero .sub-title::after {
     border-right: 2px solid #747474;
   }
 }
@@ -1231,10 +1231,10 @@ body.scroll-lock {
   .hero {
     height: 350px;
   }
-  .hero .text-wrapper .main-title {
+  .hero .main-title {
     font-size: 30px;
   }
-  .hero .text-wrapper .main-title .highlighting .highlighter {
+  .hero .highlighter {
     top: 20px;
     left: 8px;
     width: 100%;
@@ -1242,7 +1242,7 @@ body.scroll-lock {
     background-color: #f5dab1;
     opacity: 0.9;
   }
-  .hero .text-wrapper .sub-title {
+  .hero .sub-title {
     font-size: 18px;
   }
 }
@@ -1301,13 +1301,13 @@ body.scroll-lock {
   margin-bottom: 6px;
 }
 
-.work .ratio-wrapper .img-wrapper {
+.work .img-wrapper {
   width: 335px;
   height: 335px;
   overflow: hidden;
 }
 
-.work .ratio-wrapper .img-wrapper img {
+.work .img-wrapper img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 50% 50%;
@@ -1348,7 +1348,7 @@ body.scroll-lock {
   width: 495px;
 }
 
-.work:hover .ratio-wrapper .img-wrapper img {
+.work:hover .img-wrapper img {
   -webkit-transform: scale(1.01) translateY(-5px);
           transform: scale(1.01) translateY(-5px);
 }
@@ -1364,7 +1364,7 @@ body.scroll-lock {
     height: 0;
     padding-bottom: 100%;
   }
-  .work .ratio-wrapper .img-wrapper {
+  .work .img-wrapper {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1390,7 +1390,7 @@ body.scroll-lock {
     height: 0;
     padding-bottom: 100%;
   }
-  .work .ratio-wrapper .img-wrapper {
+  .work .img-wrapper {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1418,6 +1418,12 @@ body.scroll-lock {
       -ms-flex-align: center;
           align-items: center;
   height: 600px;
+}
+
+@media screen and (max-width: 767.99px) {
+  .about {
+    height: 500px;
+  }
 }
 
 .about .overflow-wrapper {
@@ -1474,12 +1480,6 @@ body.scroll-lock {
   width: 100%;
 }
 
-@media screen and (max-width: 767.99px) {
-  .about {
-    height: 500px;
-  }
-}
-
 .button {
   padding: 12px 30px;
   background-color: #fa824c;
@@ -1526,7 +1526,7 @@ body.scroll-lock {
           align-items: baseline;
 }
 
-.skills .section-block .skill-wrapper {
+.skills .skill-wrapper {
   margin-bottom: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1539,34 +1539,22 @@ body.scroll-lock {
           align-items: center;
 }
 
-.skills .section-block .skill-wrapper .text-wrapper {
+.skills .text-wrapper {
   width: 170px;
 }
 
-.skills .section-block .skill-wrapper .text-wrapper .skill-title {
+.skills .text-wrapper .skill-title {
   color: #514c48;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.skills .section-block .skill-wrapper .text-wrapper .skill {
+.skills .text-wrapper .skill {
   color: #514c48;
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 8px;
-}
-
-@media screen and (max-width: 767.99px) {
-  .skills .section-block .skill-wrapper .text-wrapper {
-    width: 150px;
-  }
-  .skills .section-block .skill-wrapper .text-wrapper .skill-title {
-    font-size: 21px;
-  }
-  .skills .section-block .skill-wrapper .text-wrapper .skill {
-    font-size: 18px;
-  }
 }
 
 @media screen and (max-width: 767.99px) {
@@ -1579,6 +1567,15 @@ body.scroll-lock {
     width: calc(100% - 15px);
     padding: 20px;
     padding-top: 90px;
+  }
+  .skills .text-wrapper {
+    width: 150px;
+  }
+  .skills .text-wrapper .skill-title {
+    font-size: 21px;
+  }
+  .skills .text-wrapper .skill {
+    font-size: 18px;
   }
 }
 
@@ -1614,13 +1611,13 @@ body.scroll-lock {
           align-items: center;
 }
 
-.contact .section-block .contact-form {
+.contact .contact-form {
   width: 100%;
 }
 
-.contact .section-block .contact-form .contact-name-field,
-.contact .section-block .contact-form .contact-email-field,
-.contact .section-block .contact-form .contact-message-field {
+.contact .contact-name-field,
+.contact .contact-email-field,
+.contact .contact-message-field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1637,29 +1634,29 @@ body.scroll-lock {
   background-color: #ffffff;
 }
 
-.contact .section-block .contact-form .contact-name-field svg,
-.contact .section-block .contact-form .contact-email-field svg,
-.contact .section-block .contact-form .contact-message-field svg {
+.contact .contact-name-field svg,
+.contact .contact-email-field svg,
+.contact .contact-message-field svg {
   font-size: 18px;
   color: #dedede;
   margin-right: 3px;
 }
 
-.contact .section-block .contact-form .contact-name-field .icon-comments,
-.contact .section-block .contact-form .contact-email-field .icon-comments,
-.contact .section-block .contact-form .contact-message-field .icon-comments {
+.contact .contact-name-field .icon-comments,
+.contact .contact-email-field .icon-comments,
+.contact .contact-message-field .icon-comments {
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
   margin-top: 11px;
 }
 
-.contact .section-block .contact-form .contact-name-field input,
-.contact .section-block .contact-form .contact-name-field textarea,
-.contact .section-block .contact-form .contact-email-field input,
-.contact .section-block .contact-form .contact-email-field textarea,
-.contact .section-block .contact-form .contact-message-field input,
-.contact .section-block .contact-form .contact-message-field textarea {
+.contact .contact-name-field input,
+.contact .contact-name-field textarea,
+.contact .contact-email-field input,
+.contact .contact-email-field textarea,
+.contact .contact-message-field input,
+.contact .contact-message-field textarea {
   width: 100%;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1673,63 +1670,63 @@ body.scroll-lock {
   font-family: "Barlow", "Montserrat", sans-serif;
 }
 
-.contact .section-block .contact-form .contact-name-field input::-webkit-input-placeholder,
-.contact .section-block .contact-form .contact-name-field textarea::-webkit-input-placeholder,
-.contact .section-block .contact-form .contact-email-field input::-webkit-input-placeholder,
-.contact .section-block .contact-form .contact-email-field textarea::-webkit-input-placeholder,
-.contact .section-block .contact-form .contact-message-field input::-webkit-input-placeholder,
-.contact .section-block .contact-form .contact-message-field textarea::-webkit-input-placeholder {
+.contact .contact-name-field input::-webkit-input-placeholder,
+.contact .contact-name-field textarea::-webkit-input-placeholder,
+.contact .contact-email-field input::-webkit-input-placeholder,
+.contact .contact-email-field textarea::-webkit-input-placeholder,
+.contact .contact-message-field input::-webkit-input-placeholder,
+.contact .contact-message-field textarea::-webkit-input-placeholder {
   color: #dedede;
 }
 
-.contact .section-block .contact-form .contact-name-field input:-ms-input-placeholder,
-.contact .section-block .contact-form .contact-name-field textarea:-ms-input-placeholder,
-.contact .section-block .contact-form .contact-email-field input:-ms-input-placeholder,
-.contact .section-block .contact-form .contact-email-field textarea:-ms-input-placeholder,
-.contact .section-block .contact-form .contact-message-field input:-ms-input-placeholder,
-.contact .section-block .contact-form .contact-message-field textarea:-ms-input-placeholder {
+.contact .contact-name-field input:-ms-input-placeholder,
+.contact .contact-name-field textarea:-ms-input-placeholder,
+.contact .contact-email-field input:-ms-input-placeholder,
+.contact .contact-email-field textarea:-ms-input-placeholder,
+.contact .contact-message-field input:-ms-input-placeholder,
+.contact .contact-message-field textarea:-ms-input-placeholder {
   color: #dedede;
 }
 
-.contact .section-block .contact-form .contact-name-field input::-ms-input-placeholder,
-.contact .section-block .contact-form .contact-name-field textarea::-ms-input-placeholder,
-.contact .section-block .contact-form .contact-email-field input::-ms-input-placeholder,
-.contact .section-block .contact-form .contact-email-field textarea::-ms-input-placeholder,
-.contact .section-block .contact-form .contact-message-field input::-ms-input-placeholder,
-.contact .section-block .contact-form .contact-message-field textarea::-ms-input-placeholder {
+.contact .contact-name-field input::-ms-input-placeholder,
+.contact .contact-name-field textarea::-ms-input-placeholder,
+.contact .contact-email-field input::-ms-input-placeholder,
+.contact .contact-email-field textarea::-ms-input-placeholder,
+.contact .contact-message-field input::-ms-input-placeholder,
+.contact .contact-message-field textarea::-ms-input-placeholder {
   color: #dedede;
 }
 
-.contact .section-block .contact-form .contact-name-field input::placeholder,
-.contact .section-block .contact-form .contact-name-field textarea::placeholder,
-.contact .section-block .contact-form .contact-email-field input::placeholder,
-.contact .section-block .contact-form .contact-email-field textarea::placeholder,
-.contact .section-block .contact-form .contact-message-field input::placeholder,
-.contact .section-block .contact-form .contact-message-field textarea::placeholder {
+.contact .contact-name-field input::placeholder,
+.contact .contact-name-field textarea::placeholder,
+.contact .contact-email-field input::placeholder,
+.contact .contact-email-field textarea::placeholder,
+.contact .contact-message-field input::placeholder,
+.contact .contact-message-field textarea::placeholder {
   color: #dedede;
 }
 
-.contact .section-block .contact-form .contact-name-field input::-moz-selection,
-.contact .section-block .contact-form .contact-name-field textarea::-moz-selection,
-.contact .section-block .contact-form .contact-email-field input::-moz-selection,
-.contact .section-block .contact-form .contact-email-field textarea::-moz-selection,
-.contact .section-block .contact-form .contact-message-field input::-moz-selection,
-.contact .section-block .contact-form .contact-message-field textarea::-moz-selection {
+.contact .contact-name-field input::-moz-selection,
+.contact .contact-name-field textarea::-moz-selection,
+.contact .contact-email-field input::-moz-selection,
+.contact .contact-email-field textarea::-moz-selection,
+.contact .contact-message-field input::-moz-selection,
+.contact .contact-message-field textarea::-moz-selection {
   background: #f5dab1;
   color: #ffffff;
 }
 
-.contact .section-block .contact-form .contact-name-field input::selection,
-.contact .section-block .contact-form .contact-name-field textarea::selection,
-.contact .section-block .contact-form .contact-email-field input::selection,
-.contact .section-block .contact-form .contact-email-field textarea::selection,
-.contact .section-block .contact-form .contact-message-field input::selection,
-.contact .section-block .contact-form .contact-message-field textarea::selection {
+.contact .contact-name-field input::selection,
+.contact .contact-name-field textarea::selection,
+.contact .contact-email-field input::selection,
+.contact .contact-email-field textarea::selection,
+.contact .contact-message-field input::selection,
+.contact .contact-message-field textarea::selection {
   background: #f5dab1;
   color: #ffffff;
 }
 
-.contact .section-block .contact-form .contact-message-field {
+.contact .contact-message-field {
   margin-bottom: 27px;
 }
 
@@ -1744,9 +1741,9 @@ body.scroll-lock {
     padding: 20px;
     padding-top: 100px;
   }
-  .contact .section-block .contact-form .contact-name-field,
-  .contact .section-block .contact-form .contact-email-field,
-  .contact .section-block .contact-form .contact-message-field {
+  .contact .contact-name-field,
+  .contact .contact-email-field,
+  .contact .contact-message-field {
     padding: 8px;
     padding-left: 17px;
   }

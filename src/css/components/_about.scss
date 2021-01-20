@@ -5,6 +5,10 @@
   align-items: center;
   height: 600px;
 
+  @media screen and (max-width: 767.99px) {
+    height: 500px;
+  }
+
   .overflow-wrapper {
     overflow: hidden;
   }
@@ -49,8 +53,5 @@
     img {
       width: 100%;
     }
-  }
-  @media screen and (max-width: 767.99px) {
-    height: 500px;
   }
 }
