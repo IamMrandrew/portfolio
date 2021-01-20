@@ -4,19 +4,19 @@
 
   .ratio-wrapper {
     margin-bottom: 6px;
+  }
 
-    .img-wrapper {
-      width: 335px;
-      height: 335px;
-      overflow: hidden;
+  .img-wrapper {
+    width: 335px;
+    height: 335px;
+    overflow: hidden;
 
-      img {
-        object-fit: cover;
-        object-position: 50% 50%;
-        height: 100%;
-        width: 100%;
-        transition: transform 0.5s;
-      }
+    img {
+      object-fit: cover;
+      object-position: 50% 50%;
+      height: 100%;
+      width: 100%;
+      transition: transform 0.5s;
     }
   }
 
@@ -47,11 +47,9 @@
   }
 
   &:hover {
-    .ratio-wrapper {
-      .img-wrapper {
-        img {
-          transform: scale(1.01) translateY(-5px);
-        }
+    .img-wrapper {
+      img {
+        transform: scale(1.01) translateY(-5px);
       }
     }
   }
@@ -64,16 +62,16 @@
       width: 100%;
       height: 0;
       padding-bottom: 100%;
+    }
 
-      .img-wrapper {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-      }
+    .img-wrapper {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
     }
 
     &.wider {
@@ -92,16 +90,16 @@
       width: 100%;
       height: 0;
       padding-bottom: 100%;
+    }
 
-      .img-wrapper {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-      }
+    .img-wrapper {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
     }
 
     &.wider {

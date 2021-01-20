@@ -10,81 +10,78 @@
 
   .text-wrapper {
     width: 100%;
+  }
 
-    .main-title {
-      color: $primary;
+  .main-title {
+    color: $primary;
+  }
 
-      .highlighting {
-        position: relative;
-        display: inline-block;
+  .highlighting {
+    position: relative;
+    display: inline-block;
+  }
 
-        .highlighter {
-          position: absolute;
-          z-index: -1;
-          top: 40px;
-          left: 15px;
-          width: 100%;
-          height: 35px;
-          background-color: $highlighted;
-          opacity: 0.9;
+  .highlighter {
+    position: absolute;
+    z-index: -1;
+    top: 40px;
+    left: 15px;
+    width: 100%;
+    height: 35px;
+    background-color: $highlighted;
+    opacity: 0.9;
+  }
+
+  .sub-title {
+    font-size: 30px;
+    font-weight: 500;
+    color: $tinted;
+    letter-spacing: 1px;
+
+    &::after {
+      content: "";
+      width: 5px;
+      height: 4px;
+      border-right: 3px solid $tinted;
+      margin: 8px;
+      animation: blink 0.5s step-end infinite;
+
+      @media screen and (max-width: 767.99px) {
+        border-right: 2px solid $tinted;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
         }
-      }
-    }
-
-    .sub-title {
-      font-size: 30px;
-      font-weight: 500;
-      color: $tinted;
-      letter-spacing: 1px;
-
-      &::after {
-        content: "";
-        width: 5px;
-        height: 4px;
-        border-right: 3px solid $tinted;
-        margin: 8px;
-        animation: blink 0.5s step-end infinite;
-
-        @media screen and (max-width: 767px) {
-          border-right: 2px solid $tinted;
+        50% {
+          opacity: 0;
         }
-      }
-    }
-    @keyframes blink {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
+        100% {
+          opacity: 1;
+        }
       }
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767.99px) {
     height: 350px;
 
-    .text-wrapper {
-      .main-title {
-        font-size: 30px;
+    .main-title {
+      font-size: 30px;
+    }
 
-        .highlighting {
-          .highlighter {
-            top: 20px;
-            left: 8px;
-            width: 100%;
-            height: 18px;
-            background-color: $highlighted;
-            opacity: 0.9;
-          }
-        }
-      }
+    .highlighter {
+      top: 20px;
+      left: 8px;
+      width: 100%;
+      height: 18px;
+      background-color: $highlighted;
+      opacity: 0.9;
+    }
 
-      .sub-title {
-        font-size: 18px;
-      }
+    .sub-title {
+      font-size: 18px;
     }
   }
 }

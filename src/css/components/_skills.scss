@@ -20,46 +20,34 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
+  }
 
-    .skill-wrapper {
-      margin-bottom: 45px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  .skill-wrapper {
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-      .text-wrapper {
-        width: 170px;
+  .text-wrapper {
+    width: 170px;
 
-        .skill-title {
-          color: $darkBrown;
-          font-size: 24px;
-          font-weight: 700;
-          margin-bottom: 20px;
-        }
+    .skill-title {
+      color: $darkBrown;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
 
-        .skill {
-          color: $darkBrown;
-          font-size: 24px;
-          font-weight: 600;
-          margin-bottom: 8px;
-        }
-
-        @media screen and (max-width: 767px) {
-          width: 150px;
-
-          .skill-title {
-            font-size: 21px;
-          }
-
-          .skill {
-            font-size: 18px;
-          }
-        }
-      }
+    .skill {
+      color: $darkBrown;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767.99px) {
     .section-title {
       position: absolute;
       top: 35px;
@@ -70,6 +58,18 @@
       width: calc(100% - 15px);
       padding: 20px;
       padding-top: 90px;
+    }
+
+    .text-wrapper {
+      width: 150px;
+
+      .skill-title {
+        font-size: 21px;
+      }
+
+      .skill {
+        font-size: 18px;
+      }
     }
   }
 }
