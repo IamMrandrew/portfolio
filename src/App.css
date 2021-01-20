@@ -988,10 +988,6 @@ html {
             clip-path: circle(480px at 90% -10%);
     pointer-events: all;
   }
-  .nav .nav-list.active .burger-title {
-    font-weight: 700;
-    font-size: 36px;
-  }
   .nav .nav-list.active .nav-item {
     opacity: 1;
     padding: 15px 0px;
@@ -1000,6 +996,10 @@ html {
             transform: scale(1) translate(0, 0);
     font-size: 27px;
     font-weight: 600;
+  }
+  .nav .nav-list.active .burger-title {
+    font-weight: 700;
+    font-size: 36px;
   }
   .nav .nav-list.active a > li:focus::after, .nav .nav-list.active a > li:hover::after {
     height: 18px;
