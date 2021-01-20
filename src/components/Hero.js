@@ -53,7 +53,11 @@ const Hero = () => {
       }
     };
 
-    setInterval(typing, 400);
+    const typewriter = setInterval(typing, 400);
+
+    return () => {
+      clearInterval(typewriter);
+    };
   }, []);
 
   return (
