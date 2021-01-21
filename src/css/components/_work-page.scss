@@ -1,0 +1,117 @@
+.work-page {
+  .overflow-wrapper {
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .feature-img {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    position: relative;
+  }
+
+  .work-title {
+    color: $primary;
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    left: 0;
+  }
+
+  .section-block {
+    background-color: $background;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-bottom: 35px;
+    padding: 40px;
+    padding-top: 95px;
+  }
+
+  .work-date {
+    color: $primary;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .work-overview {
+    color: $secondary;
+    line-height: 1.25;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+
+  button {
+    background-color: $primary;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  .work-para {
+    margin-bottom: 50px;
+  }
+
+  .work-subtitle {
+    margin-bottom: 18px;
+    color: $primary;
+  }
+
+  .work-bold {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: $primary;
+  }
+
+  .work-p {
+    line-height: 1.5;
+    font-weight: 600;
+    color: $secondary;
+  }
+
+  .work-img {
+    margin-bottom: 60px;
+
+    &.sm {
+      max-width: 400px;
+    }
+  }
+
+  .work-links {
+    color: $white;
+  }
+
+  .links {
+    color: $tinted;
+  }
+
+  @media screen and (max-width: 767.99px) {
+    .work-title {
+      font-size: 36px;
+    }
+
+    .section-block {
+      width: calc(100% - 15px);
+      padding: 20px;
+      padding-top: 65px;
+    }
+
+    .text-wrapper {
+      width: 150px;
+
+      .skill-title {
+        font-size: 21px;
+      }
+
+      .skill {
+        font-size: 18px;
+      }
+    }
+  }
+}

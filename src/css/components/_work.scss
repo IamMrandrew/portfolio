@@ -1,9 +1,17 @@
 .work {
   margin-bottom: 30px;
-  cursor: pointer;
 
   .ratio-wrapper {
     margin-bottom: 6px;
+    cursor: pointer;
+
+    &:hover {
+      .img-wrapper {
+        img {
+          transform: scale(1.01) translateY(-5px);
+        }
+      }
+    }
   }
 
   .img-wrapper {
@@ -43,14 +51,6 @@
   &.wider {
     .img-wrapper {
       width: 495px;
-    }
-  }
-
-  &:hover {
-    .img-wrapper {
-      img {
-        transform: scale(1.01) translateY(-5px);
-      }
     }
   }
 
