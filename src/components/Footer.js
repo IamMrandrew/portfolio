@@ -8,7 +8,11 @@ const Footer = () => {
       <div className="footer__wrapper">
         <div className="footer__contact">
           <div className="footer__links col-md-5">
-            <a href="https://github.com/IamMrandrew" target="_blank">
+            <a
+              href="https://github.com/IamMrandrew"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub />
             </a>
             <a href="mailto:andrewliyanlap000824@gmail.com">

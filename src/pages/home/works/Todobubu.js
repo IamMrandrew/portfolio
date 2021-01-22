@@ -64,6 +64,7 @@ const Todobubu = () => {
             <a
               className="work-page__links"
               target="_blank"
+              rel="noreferrer"
               href="https://todobubu.laporatory.com/"
             >
               <Button text="View work" />
@@ -71,6 +72,7 @@ const Todobubu = () => {
             <a
               className="work-page__links"
               target="_blank"
+              rel="noreferrer"
               href="https://github.com/IamMrandrew/Todobubu"
             >
               <Button text="View GitHub" />
@@ -146,6 +148,7 @@ const Todobubu = () => {
               className="work-page__links work-page__links--inline"
               href="https://github.com/IamMrandrew/Todobubu-electron"
               target="_blank"
+              rel="noreferrer"
             >
               electron project
             </a>{" "}
