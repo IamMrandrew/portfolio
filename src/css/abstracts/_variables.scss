@@ -1,4 +1,7 @@
+// Transitions
 $containerTransitionTime: 0.3s;
+
+// Colors
 $primary: #202020;
 $secondary: #4b4b4b;
 $tinted: #747474;
@@ -9,3 +12,9 @@ $darkBrown: #514c48;
 $placeholder: #dedede;
 $background: #fafafa;
 $white: #ffffff;
+
+// Breakpoints (Desktop First, max-width)
+$breakpoint-sm: 575.99px;
+$breakpoint-md: 767.99px;
+$breakpoint-lg: 991.99px;
+$breakpoint-xl: 1199.99px;

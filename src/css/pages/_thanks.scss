@@ -1,0 +1,43 @@
+.thanks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 550px;
+
+  .text-wrapper {
+    flex-basis: 65%;
+
+    @media screen and (max-width: $breakpoint-md) {
+      flex-basis: 100%;
+      order: 1;
+    }
+  }
+
+  &__title {
+    color: $primary;
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    color: $secondary;
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+
+  button {
+    padding: 16px 35px;
+  }
+
+  .img-wrapper {
+    flex-basis: 35%;
+
+    @media screen and (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  .thanks__img {
+    width: 100%;
+  }
+}

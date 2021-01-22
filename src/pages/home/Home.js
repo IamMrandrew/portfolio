@@ -1,13 +1,14 @@
 import React from "react";
+
 import Hero from "./Hero";
 import Works from "./Works";
 
 const Home = () => {
   return (
-    <div className="home">
+    <main className="home">
       <Hero />
       <Works />
-    </div>
+    </main>
   );
 };
 

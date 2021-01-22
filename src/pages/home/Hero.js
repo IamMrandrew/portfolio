@@ -70,24 +70,24 @@ const Hero = () => {
         className="text-wrapper"
       >
         <div className="overflow-wrapper">
-          <motion.h1 variants={textIn} className="main-title">
+          <motion.h1 variants={textIn} className="hero__title">
             Hello, I am andrew <br></br> a{" "}
-            <span className="highlighting">
+            <span className="hero__highlighting">
               Computer&nbsp;
-              <div className="highlighter"></div>
+              <div className="hero__highlighter"></div>
             </span>
-            <span className="highlighting">
+            <span className="hero__highlighting">
               Science&nbsp;
-              <div className="highlighter"></div>
+              <div className="hero__highlighter"></div>
             </span>
-            <span className="highlighting">
+            <span className="hero__highlighting">
               student
-              <div className="highlighter"></div>
+              <div className="hero__highlighter"></div>
             </span>
           </motion.h1>
         </div>
         <div className="overflow-wrapper">
-          <motion.p variants={textIn} className="sub-title">
+          <motion.p variants={textIn} className="hero__subtitle">
             I love {text}
           </motion.p>
         </div>
