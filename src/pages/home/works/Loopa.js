@@ -44,7 +44,7 @@ const Loopa = () => {
         </div>
         <div className="overflow-wrapper">
           <motion.div variants={textIn} className="section-block">
-            <h3 className="work-page__date">Nov 2020 - Dev 2020</h3>
+            <h3 className="work-page__date">Nov 2020 - Dec 2020</h3>
             <div className="work-page__overview">
               <p className="work-page__p">
                 Loopa, a web app about Audio Loopstation with Effects and
@@ -99,11 +99,6 @@ const Loopa = () => {
             Master output to .wav files
           </p>
         </div>
-        {/* <img
-          className="work-page__img work-page__img--sm"
-          src={workTodobubu1}
-          alt="work-todobubu-1"
-        /> */}
         <div className="work-page__para">
           <h3 className="work-page__bold">Methodologies</h3>
           <p className="work-page__p">
@@ -111,11 +106,6 @@ const Loopa = () => {
             how our app works. Here, we will focus on the part that is related
             to the functions that manipulate the web audio.
           </p>
-          {/* <img
-            className="work-page__img work-page__img--sm"
-            src={workTodobubu2}
-            alt="work-todobubu-2"
-          /> */}
         </div>
         <div className="work-page__para">
           <h3 className="work-page__bold">Tone.js</h3>
