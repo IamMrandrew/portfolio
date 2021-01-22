@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import {
-  useNetlifyForm,
-  NetlifyFormProvider,
-  NetlifyFormComponent,
-  Honeypot,
-} from "react-netlify-forms";
-import { useForm } from "react-hook-form";
+
 import Button from "../../components/Button";
 import { FaUser, FaEnvelope, FaComments } from "react-icons/fa";
 

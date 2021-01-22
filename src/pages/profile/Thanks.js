@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import thanksSVG from "../../assets/img/thanks.svg";
 import Button from "../../components/Button";
 

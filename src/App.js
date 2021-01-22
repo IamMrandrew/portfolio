@@ -1,16 +1,13 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import Thanks from "./pages/profile/Thanks";
 import Todobubu from "./pages/home/works/Todobubu";
+
 import "./App.css";
 
 const App = () => {

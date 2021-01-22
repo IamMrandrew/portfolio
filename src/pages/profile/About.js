@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+
 import Button from "../../components/Button";
 import memoji from "../../assets/img/memoji.png";
 import resume from "../../assets/file/resume.pdf";

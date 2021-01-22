@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 const Work = ({ src, wider, title, desc }) => {
   let { path, url } = useRouteMatch();
