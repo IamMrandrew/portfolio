@@ -9,12 +9,12 @@ import thumbDanxUp from "../../assets/img/thumb-danxup.jpg";
 const Works = () => {
   return (
     <section className="works custom-container">
-      <h2 className="section-title">Works</h2>
-      <div className="section-block">
+      <h2 className="works__title">Works</h2>
+      <div className="works__section-block">
         <Work src={thumbTodobubu} wider={false} title="Todobubu" desc="React" />
         <Work src={thumbLoopa} wider={true} title="Loopa" desc="Tone.js" />
       </div>
-      <div className="section-block">
+      <div className="works__section-block">
         <Work
           src={thumbHautakchurch}
           wider={true}

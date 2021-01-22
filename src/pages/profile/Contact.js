@@ -17,38 +17,38 @@ const Contact = () => {
 
   return (
     <section className="contact custom-container">
-      <h2 className="section-title">Leave some comments</h2>
+      <h2 className="contact__title">Leave some comments</h2>
       <div className="section-block">
         <form
-          className="contact-form"
+          className="contact__form"
           name="contact-form"
           method="post"
           action="/profile/?success=true"
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact-form" />
-          <div className="contact-name-field">
+          <div className="contact__name-field">
             <FaUser />
             <input
-              className="contact-name"
+              className="contact__name-input"
               type="text"
               name="name"
               placeholder="Name"
             />
           </div>
-          <div className="contact-email-field">
+          <div className="contact__email-field">
             <FaEnvelope />
             <input
-              className="contact-email"
+              className="contact__email-input"
               name="email"
               type="email"
               placeholder="Email"
             />
           </div>
-          <div className="contact-message-field">
-            <FaComments className="icon-comments" />
+          <div className="contact__message-field">
+            <FaComments className="contact__icon-comments" />
             <textarea
-              className="contact-message"
+              className="contact__message-input"
               name="message"
               type="text"
               placeholder="What do you think about me? Enter your message here ..."

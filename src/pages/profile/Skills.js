@@ -3,33 +3,33 @@ import React from "react";
 const Skills = () => {
   return (
     <section className="skills custom-container">
-      <h2 className="section-title">Skills</h2>
+      <h2 className="skills__title">Skills</h2>
       <div className="section-block">
-        <article className="skill-wrapper col-lg-4">
+        <div className="skills__wrapper col-lg-4">
           <div className="text-wrapper">
-            <h3 className="skill-title">Coding</h3>
-            <p className="skill">HTML</p>
-            <p className="skill">CSS, SCSS</p>
-            <p className="skill">Javascript</p>
-            <p className="skill">PHP</p>
+            <h3 className="skills__subtitle">Coding</h3>
+            <p className="skills__item">HTML</p>
+            <p className="skills__item">CSS, SCSS</p>
+            <p className="skills__item">Javascript</p>
+            <p className="skills__item">PHP</p>
           </div>
-        </article>
-        <article className="skill-wrapper col-lg-4">
+        </div>
+        <div className="skills__wrapper col-lg-4">
           <div className="text-wrapper">
-            <h3 className="skill-title">Environment</h3>
-            <p className="skill">React</p>
-            <p className="skill">Bootstrap</p>
-            <p className="skill">Wordpresss</p>
-            <p className="skill">Underscores</p>
-            <p className="skill">Git, GitHub</p>
+            <h3 className="skills__subtitle">Environment</h3>
+            <p className="skills__item">React</p>
+            <p className="skills__item">Bootstrap</p>
+            <p className="skills__item">Wordpresss</p>
+            <p className="skills__item">Underscores</p>
+            <p className="skills__item">Git, GitHub</p>
           </div>
-        </article>
-        <div className="skill-wrapper col-lg-4">
+        </div>
+        <div className="skills__wrapper col-lg-4">
           <div className="text-wrapper">
-            <h3 className="skill-title">Designing</h3>
-            <p className="skill">Figma</p>
-            <p className="skill">Sketch</p>
-            <p className="skill">Adobe XD</p>
+            <h3 className="skills__subtitle">Designing</h3>
+            <p className="skills__item">Figma</p>
+            <p className="skills__item">Sketch</p>
+            <p className="skills__item">Adobe XD</p>
           </div>
         </div>
       </div>
