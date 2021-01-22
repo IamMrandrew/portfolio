@@ -1,10 +1,10 @@
 import React from "react";
-import Work from "./Work";
+import Work from "../../components/Work";
 
-import thumbTodobubu from "../img/thumb-todobubu.jpg";
-import thumbLoopa from "../img/thumb-loopa.jpg";
-import thumbHautakchurch from "../img/thumb-hautakchurch.jpg";
-import thumbDanxUp from "../img/thumb-danxup.jpg";
+import thumbTodobubu from "../../assets/img/thumb-todobubu.jpg";
+import thumbLoopa from "../../assets/img/thumb-loopa.jpg";
+import thumbHautakchurch from "../../assets/img/thumb-hautakchurch.jpg";
+import thumbDanxUp from "../../assets/img/thumb-danxup.jpg";
 
 const Works = () => {
   return (

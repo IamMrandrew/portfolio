@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import thanksSVG from "../img/thanks.svg";
-import Button from "./Button";
+import thanksSVG from "../../assets/img/thanks.svg";
+import Button from "../../components/Button";
 
 const Thanks = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Button from "./Button";
-import memoji from "../img/memoji.png";
-import resume from "../file/resume.pdf";
+import Button from "../../components/Button";
+import memoji from "../../assets/img/memoji.png";
+import resume from "../../assets/file/resume.pdf";
 
 const About = () => {
   const textsIn = {

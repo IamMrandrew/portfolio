@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import featureTodobubu from "../../img/feature-todobubu.jpg";
-import workTodobubu1 from "../../img/work-todobubu-1.jpg";
-import workTodobubu2 from "../../img/work-todobubu-2.png";
-import workTodobubu3 from "../../img/work-todobubu-3.png";
-import Button from "../Button";
+import featureTodobubu from "../../../assets/img/feature-todobubu.jpg";
+import workTodobubu1 from "../../../assets/img/work-todobubu-1.jpg";
+import workTodobubu2 from "../../../assets/img/work-todobubu-2.png";
+import workTodobubu3 from "../../../assets/img/work-todobubu-3.png";
+import Button from "../../../components/Button";
 
 const Todobubu = () => {
   const textIn = {

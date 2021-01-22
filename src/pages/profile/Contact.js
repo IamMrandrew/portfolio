@@ -7,7 +7,7 @@ import {
   Honeypot,
 } from "react-netlify-forms";
 import { useForm } from "react-hook-form";
-import Button from "./Button";
+import Button from "../../components/Button";
 import { FaUser, FaEnvelope, FaComments } from "react-icons/fa";
 
 const Contact = () => {
