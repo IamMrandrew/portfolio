@@ -22,7 +22,7 @@
   &__brand {
     font-size: 28px;
 
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: $breakpoint-md) {
       font-size: 21px;
     }
   }
@@ -30,7 +30,7 @@
   &__list {
     display: flex;
 
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: $breakpoint-md) {
       pointer-events: none;
       position: absolute;
       z-index: 1000;
@@ -56,7 +56,7 @@
     font-size: 20px;
     margin-left: 20px;
 
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: $breakpoint-md) {
       position: relative;
       top: -25px;
       padding: 0px;
@@ -74,7 +74,7 @@
     &--title {
       display: none;
 
-      @media screen and (max-width: 767.99px) {
+      @media screen and (max-width: $breakpoint-md) {
         display: block;
         font-weight: 700;
         transform: scale(0.5) translate(50px, -250px);
@@ -114,7 +114,7 @@
       height: 15px;
     }
 
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: $breakpoint-md) {
       &::after {
         content: "";
         width: 100%;
@@ -138,7 +138,7 @@
     display: none;
     cursor: pointer;
 
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: $breakpoint-md) {
       display: block;
       position: relative;
       z-index: 2000;

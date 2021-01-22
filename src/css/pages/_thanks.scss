@@ -8,7 +8,7 @@
   .text-wrapper {
     flex-basis: 65%;
 
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: $breakpoint-md) {
       flex-basis: 100%;
       order: 1;
     }
@@ -32,7 +32,7 @@
   .img-wrapper {
     flex-basis: 35%;
 
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: $breakpoint-md) {
       display: none;
     }
   }

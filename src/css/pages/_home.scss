@@ -47,7 +47,7 @@
         margin: 8px;
         animation: blink 0.5s step-end infinite;
 
-        @media screen and (max-width: 767.99px) {
+        @media screen and (max-width: $breakpoint-md) {
           border-right: 2px solid $tinted;
         }
 
@@ -65,7 +65,7 @@
       }
     }
 
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: $breakpoint-md) {
       height: 350px;
 
       &__title {
@@ -96,7 +96,7 @@
       top: 35px;
       left: 0;
 
-      @media screen and (max-width: 767.99px) {
+      @media screen and (max-width: $breakpoint-md) {
         left: 30px;
       }
     }
@@ -116,7 +116,7 @@
       justify-content: space-around;
       align-items: center;
 
-      @media screen and (max-width: 767.99px) {
+      @media screen and (max-width: $breakpoint-md) {
         width: calc(100% - 15px);
         padding: 20px;
       }
