@@ -8,9 +8,10 @@ import Profile from "./pages/profile/Profile";
 import Thanks from "./pages/profile/Thanks";
 import Todobubu from "./pages/home/works/Todobubu";
 import Loopa from "./pages/home/works/Loopa";
+import Hautakchurch from "./pages/home/works/Hautakchurch";
+import Danxup from "./pages/home/works/Danxup";
 
 import "./App.css";
-import Hautakchurch from "./pages/home/works/Hautakchurch";
 
 const App = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const App = () => {
           <Route path={"/todobubu"} component={Todobubu} />
           <Route path={"/loopa"} component={Loopa} />
           <Route path={"/hautakchurch"} component={Hautakchurch} />
+          <Route path={"/danxup"} component={Danxup} />
         </Switch>
       </AnimatePresence>
       <Footer />

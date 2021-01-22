@@ -35,7 +35,7 @@ const Works = () => {
           desc="Wordpress"
         />
         <Work
-          link="/todobubu"
+          link="/danxup"
           src={thumbDanxUp}
           wider={false}
           title="danXup"
