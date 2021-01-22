@@ -21,7 +21,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/profile" component={Profile} />
           <Route path="/profile/thanks" component={Thanks} />
-          <Route path={"/works/todobubu"} component={Todobubu} />
+          <Route path={"/todobubu"} component={Todobubu} />
         </Switch>
       </AnimatePresence>
       <Footer />

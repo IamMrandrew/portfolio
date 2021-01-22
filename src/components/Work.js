@@ -2,14 +2,9 @@ import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 
 const Work = ({ src, wider, title, desc }) => {
-  let { path, url } = useRouteMatch();
-
-  console.log("url: ", url);
-  console.log("path: ", path);
-
   return (
     <article className={wider ? "work wider" : "work"}>
-      <Link to={path + "works/todobubu"}>
+      <Link to={"/todobubu"}>
         <div className="ratio-wrapper">
           <div className="img-wrapper">
             <img src={src} alt={src ? src.toString() : ""} />
