@@ -11,17 +11,31 @@ const Works = () => {
     <section className="works custom-container">
       <h2 className="works__title">Works</h2>
       <div className="works__section-block">
-        <Work src={thumbTodobubu} wider={false} title="Todobubu" desc="React" />
-        <Work src={thumbLoopa} wider={true} title="Loopa" desc="Tone.js" />
+        <Work
+          link="/todobubu"
+          src={thumbTodobubu}
+          wider={false}
+          title="Todobubu"
+          desc="React"
+        />
+        <Work
+          link="/loopa"
+          src={thumbLoopa}
+          wider={true}
+          title="Loopa"
+          desc="Tone.js"
+        />
       </div>
       <div className="works__section-block">
         <Work
+          link="/hautakchurch"
           src={thumbHautakchurch}
           wider={true}
           title="Hau Tak Church Web"
           desc="Wordpress"
         />
         <Work
+          link="/danxup"
           src={thumbDanxUp}
           wider={false}
           title="danXup"

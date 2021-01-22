@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Work = ({ src, wider, title, desc }) => {
+const Work = ({ link, src, wider, title, desc }) => {
   return (
     <div className={wider ? "work work--wider" : "work"}>
-      <Link to={"/todobubu"}>
+      <Link to={link}>
         <div className="ratio-wrapper">
           <div className="img-wrapper">
             <img

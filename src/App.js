@@ -7,6 +7,9 @@ import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import Thanks from "./pages/profile/Thanks";
 import Todobubu from "./pages/home/works/Todobubu";
+import Loopa from "./pages/home/works/Loopa";
+import Hautakchurch from "./pages/home/works/Hautakchurch";
+import Danxup from "./pages/home/works/Danxup";
 
 import "./App.css";
 
@@ -22,6 +25,9 @@ const App = () => {
           <Route exact path="/profile" component={Profile} />
           <Route path="/profile/thanks" component={Thanks} />
           <Route path={"/todobubu"} component={Todobubu} />
+          <Route path={"/loopa"} component={Loopa} />
+          <Route path={"/hautakchurch"} component={Hautakchurch} />
+          <Route path={"/danxup"} component={Danxup} />
         </Switch>
       </AnimatePresence>
       <Footer />
