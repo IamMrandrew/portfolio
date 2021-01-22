@@ -10,6 +10,7 @@ import Todobubu from "./pages/home/works/Todobubu";
 import Loopa from "./pages/home/works/Loopa";
 
 import "./App.css";
+import Hautakchurch from "./pages/home/works/Hautakchurch";
 
 const App = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/profile/thanks" component={Thanks} />
           <Route path={"/todobubu"} component={Todobubu} />
           <Route path={"/loopa"} component={Loopa} />
+          <Route path={"/hautakchurch"} component={Hautakchurch} />
         </Switch>
       </AnimatePresence>
       <Footer />

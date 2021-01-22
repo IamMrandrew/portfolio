@@ -28,7 +28,7 @@ const Works = () => {
       </div>
       <div className="works__section-block">
         <Work
-          link="/todobubu"
+          link="/hautakchurch"
           src={thumbHautakchurch}
           wider={true}
           title="Hau Tak Church Web"
