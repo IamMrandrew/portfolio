@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import Button from "../../components/Button";
 import { FaUser, FaEnvelope, FaComments } from "react-icons/fa";
 
 const Contact = () => {
-  const [success, setSuccess] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
-      setSuccess(true);
       history.push("/profile/thanks");
     }
   }, []);
