@@ -9,8 +9,7 @@ const Thanks = () => {
   const textsIn = {
     animate: {
       transition: {
-        // delayChildren: 0.5,
-        staggerChildren: 0.1,
+        staggerChildren: 0.4,
         staggerDirection: 1,
       },
     },
