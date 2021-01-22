@@ -1883,6 +1883,10 @@ body.scroll-lock {
   height: 550px;
 }
 
+.thanks .overflow-wrapper {
+  overflow: hidden;
+}
+
 .thanks .text-wrapper {
   -ms-flex-preferred-size: 65%;
       flex-basis: 65%;
