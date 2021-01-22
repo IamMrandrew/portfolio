@@ -1688,7 +1688,7 @@ body.scroll-lock {
   }
 }
 
-.profile .skills__wraapper {
+.profile .skills__wrapper {
   margin-bottom: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1701,12 +1701,12 @@ body.scroll-lock {
           align-items: center;
 }
 
-.profile .skills__wraapper .text-wrapper {
+.profile .skills__wrapper .text-wrapper {
   width: 170px;
 }
 
 @media screen and (max-width: 767.99px) {
-  .profile .skills__wraapper .text-wrapper {
+  .profile .skills__wrapper .text-wrapper {
     width: 150px;
   }
 }
