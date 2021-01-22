@@ -1,21 +1,38 @@
 .footer {
-  .wrapper {
+  @media screen and (max-width: 767.99px) {
+    padding: 0px 30px;
+  }
+
+  &__wrapper {
     background-color: $primary;
     color: $white;
     padding: 50px;
     padding-bottom: 40px;
     margin-bottom: 50px;
+
+    @media screen and (max-width: 767.99px) {
+      padding-top: 60px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
   }
 
-  .contact-wrapper {
+  &__contact {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
     margin-bottom: 32px;
+
+    @media screen and (max-width: 767.99px) {
+      margin-bottom: 18px;
+    }
   }
 
-  .col-md-5 {
+  &__links {
+    @media screen and (max-width: 767.99px) {
+      order: 1;
+    }
     a {
       color: inherit;
       text-decoration: inherit;
@@ -24,62 +41,50 @@
     svg {
       font-size: 40px;
       margin-right: 20px;
-    }
-  }
 
-  .col-md-7 {
-    .footer-title {
-      font-size: 36px;
-      margin-bottom: 25px;
-    }
-    .footer-desc {
-      font-size: 21px;
-      font-weight: 500;
-      margin-bottom: 0;
-      line-height: 1.4;
-    }
-  }
-
-  .copyright {
-    font-size: 21px;
-    font-weight: 600;
-  }
-
-  @media screen and (max-width: 767.99px) {
-    padding: 0px 30px;
-
-    .wrapper {
-      padding-top: 60px;
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-
-    .contact-wrapper {
-      margin-bottom: 18px;
-    }
-
-    .col-md-5 {
-      order: 1;
-
-      svg {
+      @media screen and (max-width: 767.99px) {
         font-size: 30px;
         margin-right: 12px;
       }
     }
+  }
 
-    .col-md-7 {
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    @media screen and (max-width: 767.99px) {
       margin-bottom: 36px;
-
-      .footer-title {
-        font-size: 30px;
-        margin-bottom: 20px;
-      }
-      .footer-desc {
-        font-size: 18px;
-      }
     }
+  }
 
-    .copyright {
+  &__title {
+    font-size: 36px;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 767.99px) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__desc {
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 1.4;
+
+    @media screen and (max-width: 767.99px) {
+      font-size: 18px;
+    }
+  }
+
+  &__copyright {
+    font-size: 21px;
+    font-weight: 600;
+
+    @media screen and (max-width: 767.99px) {
       font-size: 16px;
     }
   }

@@ -5,9 +5,9 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="footer custom-container">
-      <div className="wrapper">
-        <div className="contact-wrapper">
-          <div className="col-md-5">
+      <div className="footer__wrapper">
+        <div className="footer__contact">
+          <div className="footer__links col-md-5">
             <a href="https://github.com/IamMrandrew" target="_blank">
               <FaGithub />
             </a>
@@ -15,17 +15,17 @@ const Footer = () => {
               <FaEnvelope />
             </a>
           </div>
-          <div className="col-md-7">
+          <div className="footer__content col-md-7">
             <div className="text-wrapper">
-              <h2 className="footer-title">Contact Me</h2>
-              <p className="footer-desc">
+              <h2 className="footer__title">Contact Me</h2>
+              <p className="footer__desc">
                 I love designing, coding, and exploring. If you are interested
                 in my work, contact me.
               </p>
             </div>
           </div>
         </div>
-        <p className="copyright">@2021 andrew li</p>
+        <p className="footer__copyright">@2021 andrew li</p>
       </div>
     </footer>
   );

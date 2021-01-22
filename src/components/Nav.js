@@ -31,32 +31,34 @@ const Nav = () => {
       <nav className="nav">
         <div className="custom-container">
           <Link style={linkStyle} to="/">
-            <div className="nav-brand">andrew li</div>
+            <div className="nav__brand">andrew li</div>
           </Link>
-          <ul className={burger ? "nav-list active" : "nav-list"}>
-            <li className="nav-item burger-title">Explore More</li>
+          <ul className={burger ? "nav__list nav__list--active" : "nav__list"}>
+            <li className="nav__item nav__item--title">Explore More</li>
             <Link
               style={linkStyle}
               to="/"
               onClick={burger ? delayBurgerHandler : null}
             >
-              <li className="nav-item">Works</li>
+              <li className="nav__item">Works</li>
             </Link>
             <Link
               style={linkStyle}
               to="/profile"
               onClick={burger ? delayBurgerHandler : null}
             >
-              <li className="nav-item">Profile</li>
+              <li className="nav__item">Profile</li>
             </Link>
           </ul>
           <div
-            className={burger ? "burger active " : "burger"}
+            className={
+              burger ? "nav__burger nav__burger--active " : "nav__burger"
+            }
             onClick={burgerHandler}
           >
-            <div className="bar bar1"></div>
-            <div className="bar bar2"></div>
-            <div className="bar bar3"></div>
+            <div className="nav__bar nav__bar-1"></div>
+            <div className="nav__bar nav__bar-2"></div>
+            <div className="nav__bar nav__bar-3"></div>
           </div>
         </div>
       </nav>
