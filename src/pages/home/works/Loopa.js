@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ProgressiveImage from "react-progressive-image";
 
 import Button from "../../../components/Button";
 
 import featureLoopa from "../../../assets/img/feature-loopa.jpg";
+import tinyFeatureLoopa from "../../../assets/img/tiny/feature-loopa.jpg";
 
 const Loopa = () => {
   const textIn = {
@@ -29,12 +31,16 @@ const Loopa = () => {
       className="work-page custom-container"
     >
       <div className="overflow-wrapper">
-        <motion.img
-          variants={textIn}
-          className="work-page__feature-img"
-          src={featureLoopa}
-          alt="feature-loopa"
-        />
+        <ProgressiveImage src={featureLoopa} placeholder={tinyFeatureLoopa}>
+          {(src) => (
+            <motion.img
+              variants={textIn}
+              className="work-page__feature-img"
+              src={src}
+              alt="feature-loopa"
+            />
+          )}
+        </ProgressiveImage>
       </div>
       <div className="work-page__content">
         <div className="overflow-wrapper">
