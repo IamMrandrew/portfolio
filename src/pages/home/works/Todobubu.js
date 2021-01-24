@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ProgressiveImage from "react-progressive-image";
 
 import Button from "../../../components/Button";
 
 import featureTodobubu from "../../../assets/img/feature-todobubu.jpg";
+import tinyFeatureTodobubu from "../../../assets/img/tiny/feature-todobubu.jpg";
 import workTodobubu1 from "../../../assets/img/work-todobubu-1.jpg";
 import workTodobubu2 from "../../../assets/img/work-todobubu-2.png";
 import workTodobubu3 from "../../../assets/img/work-todobubu-3.png";
@@ -33,12 +35,19 @@ const Todobubu = () => {
       className="work-page custom-container"
     >
       <div className="overflow-wrapper">
-        <motion.img
-          variants={textIn}
-          className="work-page__feature-img"
+        <ProgressiveImage
           src={featureTodobubu}
-          alt="feature-todobubu"
-        />
+          placeholder={tinyFeatureTodobubu}
+        >
+          {(src) => (
+            <motion.img
+              variants={textIn}
+              className="work-page__feature-img"
+              src={src}
+              alt="feature-todobubu"
+            />
+          )}
+        </ProgressiveImage>
       </div>
       <div className="work-page__content">
         <div className="overflow-wrapper">

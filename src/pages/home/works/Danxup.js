@@ -1,11 +1,12 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+import ProgressiveImage from "react-progressive-image";
 
 import Button from "../../../components/Button";
 
 import featureDanxup from "../../../assets/img/feature-danxup.jpg";
-import workHautakchurch1 from "../../../assets/img/work-hautakchurch-1.jpg";
+import tinyFeatureDanxup from "../../../assets/img/tiny/feature-danxup.jpg";
 
 const Danxup = () => {
   const textIn = {
@@ -31,12 +32,16 @@ const Danxup = () => {
       className="work-page custom-container"
     >
       <div className="overflow-wrapper">
-        <motion.img
-          variants={textIn}
-          className="work-page__feature-img"
-          src={featureDanxup}
-          alt="feature-danxup"
-        />
+        <ProgressiveImage src={featureDanxup} placeholder={tinyFeatureDanxup}>
+          {(src) => (
+            <motion.img
+              variants={textIn}
+              className="work-page__feature-img"
+              src={src}
+              alt="feature-danxup"
+            />
+          )}
+        </ProgressiveImage>
       </div>
       <div className="work-page__content">
         <div className="overflow-wrapper">

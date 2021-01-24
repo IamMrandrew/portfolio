@@ -1,10 +1,12 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+import ProgressiveImage from "react-progressive-image";
 
 import Button from "../../../components/Button";
 
 import featureHautakchurch from "../../../assets/img/feature-hautakchurch.jpg";
+import tinyFeatureHautakchurch from "../../../assets/img/tiny/feature-hautakchurch.jpg";
 import workHautakchurch1 from "../../../assets/img/work-hautakchurch-1.jpg";
 
 const Hautakchurch = () => {
@@ -31,12 +33,19 @@ const Hautakchurch = () => {
       className="work-page custom-container"
     >
       <div className="overflow-wrapper">
-        <motion.img
-          variants={textIn}
-          className="work-page__feature-img"
+        <ProgressiveImage
           src={featureHautakchurch}
-          alt="feature-hautakchurch"
-        />
+          placeholder={tinyFeatureHautakchurch}
+        >
+          {(src) => (
+            <motion.img
+              variants={textIn}
+              className="work-page__feature-img"
+              src={src}
+              alt="feature-hautakchurch"
+            />
+          )}
+        </ProgressiveImage>
       </div>
       <div className="work-page__content">
         <div className="overflow-wrapper">
