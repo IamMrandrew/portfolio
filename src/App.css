@@ -1334,7 +1334,7 @@ body.scroll-lock {
 
 @media screen and (max-width: 767.99px) {
   .work-page__title {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 
@@ -1351,7 +1351,7 @@ body.scroll-lock {
   .work-page .section-block {
     width: calc(100% - 15px);
     padding: 20px;
-    padding-top: 75px;
+    padding-top: 60px;
   }
 }
 
@@ -1371,6 +1371,7 @@ body.scroll-lock {
 
 .work-page button {
   background-color: #202020;
+  min-width: 165px;
   margin-right: 8px;
   margin-bottom: 8px;
 }
