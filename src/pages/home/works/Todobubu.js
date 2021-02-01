@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ProgressiveImage from "react-progressive-image";
+import { atomOneLight, CodeBlock } from "react-code-blocks";
 
 import Button from "../../../components/Button";
 
@@ -183,6 +184,15 @@ const Todobubu = () => {
             repetitively, like Timeslot, Todo components. This keep the code
             more clean and structeed in an intuitive way.
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`sortedTodos.map((todo) => <Timeslot key={todo.id} todo={todo} />`}
+              language={"jsx"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
           <p className="work-page__p">
             As this is my first react project, passing props through compoents
             is a bit messy at first. At last, I utilized context api to provide
@@ -195,6 +205,27 @@ const Todobubu = () => {
             example of how a new todo is added. (Spread operator in ES6
             javascript is useful here)
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`setTodos([
+  ...todos,
+  {
+    id: uuid(),
+    title: inputTitle,
+    desc: inputDesc,
+    start: inputStart,
+    end: duration ? inputEndDur : inputEnd,
+    dur: inputDur,
+    duration: duration,
+    complete: false,
+  },
+]);`}
+              language={"jsx"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
         </div>
         <div className="work-page__para">
           <h3 className="work-page__bold">Firebase Integration</h3>
@@ -205,6 +236,18 @@ const Todobubu = () => {
             react-firebase-hooks, I can fetch the query in the database with few
             lines of code.
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`const cloudTodosRef = firestore.collection("todos");
+const query = cloudTodosRef.orderBy("start");
+
+const [cloudTodos] = useCollectionData(query, { idField: "id" });`}
+              language={"jsx"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
           <p className="work-page__p">
             For authentication, using the useAuthState can identify if the user
             is logged in or not throughout the entire applications. I chose to

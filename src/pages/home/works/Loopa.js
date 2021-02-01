@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ProgressiveImage from "react-progressive-image";
+import { atomOneLight, CodeBlock } from "react-code-blocks";
 
 import Button from "../../../components/Button";
 
@@ -121,6 +122,17 @@ const Loopa = () => {
             for different purposes in our project. Player In this project, we
             utilized the Player provided in Tone.js to play the audio files.
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={
+                'const metronomeSound = new Tone.Player("audio/metronome.mp3").toDestination();'
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
           <h3 className="work-page__bold">Transport</h3>
           <p className="work-page__p">
             Also, we have used the Transport for timing musical events for the
@@ -128,6 +140,25 @@ const Loopa = () => {
             repeat. This function will be called every quarter-note. Index will
             keep increasing per beats and modulus by 4 to reset to zero.
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`function transport() {
+  const metronomeSound = new Tone.Player("audio/metronome.mp3").toDestination(); 
+  Tone.Transport.bpm.value = bpm;
+  let index = 0;
+  Tone.Transport.scheduleRepeat(repeat, '4n');
+  function repeat(time) {   
+    let step = index % 4;
+    metronomeSound.start();
+    index++;
+  }
+}`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
           <h3 className="work-page__bold">Audio Nodes, Effects</h3>
           <p className="work-page__p">
             As you can see, we provided options for users to control the filters
@@ -141,6 +172,29 @@ const Loopa = () => {
             audio node( Tone.Volume ) and the event listener to change the value
             when users input for each of them when they are newly created.
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`function setupMainLooper() {
+  // Volume Control for Individual Looper
+  const volControls = document.querySelectorAll('.main .vol-control');
+  volControls.forEach((volControl, index) => {
+    if (index >= glider.slides.length - 2) {
+      volNodes[index] = new Tone.Volume(-20);
+      volControl.addEventListener('input', () => {            
+        volNodes[index].volume.value = volControl.value;
+        if(volControl.value == -30){
+          volNodes[index].mute=true;
+        }
+      })
+    }
+  })
+}`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
           <h3 className="work-page__bold">Chain</h3>
           <p className="work-page__p">
             After we created different audio nodes for, we have to connect them
@@ -148,6 +202,15 @@ const Loopa = () => {
             them in series. We first connect the Source -&gt; Filters -&gt;
             Effects -&gt; Other Audio Nodes -&gt; Destination
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`recordings[i].chain(LPFNodes[i], HPFNodes[i], revNodes[i], panNodes[i], volNodes[i], Tone.Destination).start("+" + (recordingsOffset[i] % (Tone.Ticks("4n").toTicks() * 4) - 40) + "i");  `}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
         </div>
         <div className="work-page__para">
           <h3 className="work-page__bold">Audio Recording</h3>
@@ -158,17 +221,66 @@ const Loopa = () => {
             recordings array, which store the recorded audio to loop for each
             loopers
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
+audioContext = new AudioContext();
+gumStream = stream;
+input = audioContext.createMediaStreamSource(stream);
+}
+function createDownloadLink(blob) {
+  var url = URL.createObjectURL(blob);
+  recordings[recordingsIndex] = new Tone.Player(url);
+}`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
           <p className="work-page__p">
             Due to the lack of maintenance and functionality of Recorder.js, we
             also used another library called RecordRTC.js. We use it for the
             recording on the master output ( The output of loopers ) and output
             to a .wav file.
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`const audio = document.querySelector(".master-download");
+const audioContextforMainRecord = Tone.context;
+const dest = audioContextforMainRecord.createMediaStreamDestination();
+let masterRecorder = RecordRTC(dest.stream, {
+  type: 'audio',
+  mimeType: 'audio/wav',
+  recorderType: StereoAudioRecorder,
+  disableLogs: true
+})`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
           <p className="work-page__p">
             Chain them to the destination we created for RecordRTC
             recordings[i].chain(LPFNodes[i], HPFNodes[i], revNodes[i],
             panNodes[i], volNodes[i], dest);
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`function stopMasterRecording() {
+  masterRecorder.stopRecording( ()=> {
+    let blob = masterRecorder.getBlob();
+    audio.href = URL.createObjectURL(blob)
+    audio.download = "loopa_master.wav"
+  });
+}`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
         </div>
         <div className="work-page__para">
           <h3 className="work-page__bold">Looping Algorithm</h3>
@@ -185,6 +297,21 @@ const Loopa = () => {
             recording, and check every ticks for an interval of 4 bars. And we
             playback the audio when it matches.
           </p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`setInterval(() => {
+  if (Math.abs(Tone.Transport.ticks % (Tone.Ticks("4n").toTicks() * looperBars[i]) - recordingsTime[i] % (Tone.Ticks("4n").toTicks() * 4)) < 3)
+    try {
+      recordings[i].start();
+    } catch {
+      console.log("Require input recordings for Loop 1");
+    }`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
           <p className="work-page__p">
             However, this method requires too many calls in every tick and it
             causes the browser to start lagging and we think it is not a good
@@ -201,12 +328,41 @@ const Loopa = () => {
           <p className="work-page__p">
             Just like the previous approach, we will save the offset of ticks.
             But this time, we will make the audio to start playing with that
-            offset modulus the ticks of a bar (-40 for fixing the delay) "+" +
-            (recordingsOffset[i] % (Tone.Ticks("4n").toTicks() * 4) - 40) + "i"
+            offset modulus the ticks of a bar (-40 for fixing the delay) "+"
           </p>
-        </div>
-        <div className="work-page__para">
-          <h2 className="work-page__subtitle">User Interface Design</h2>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`+ (recordingsOffset[i] % (Tone.Ticks("4n").toTicks() * 4) - 40) + "i"`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
+          <p className="work-page__p">Here is the complete code:</p>
+          <div className="work-page__code">
+            <CodeBlock
+              text={`if (step == 0 ) {
+// Counting the remaining loops for each loopers
+for (i = 0; i < glider.slides.length - 1; i++) {
+  loopBarsCount[i]++;
+  loopBarsCount[i] %= loopBars[i];
+}
+
+for (i = 0; i < glider.slides.length - 1; i++ ){
+  try {
+    if (loopBarsCount[i] == 0) {
+      recordings[i].chain(LPFNodes[i], HPFNodes[i], revNodes[i], panNodes[i], volNodes[i], Tone.Destination).start("+" + (recordingsOffset[i] % (Tone.Ticks("4n").toTicks() * 4) - 40) + "i");  
+    }                  
+  }                
+}
+}`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={atomOneLight}
+              codeBlock
+            />
+          </div>
         </div>
       </div>
     </motion.div>
