@@ -101,4 +101,10 @@
   &__links--inline {
     color: $tinted;
   }
+
+  &__code {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
 }
