@@ -68,7 +68,7 @@ const Hautakchurch = () => {
               className="work-page__links"
               target="_blank"
               rel="noreferrer"
-              href="https://hautakchurch.org/wordpress"
+              href="https://hautakchurch.org/"
             >
               <Button text="View work" />
             </a>
