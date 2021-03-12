@@ -35,20 +35,24 @@ const Nav = () => {
           </Link>
           <ul className={burger ? "nav__list nav__list--active" : "nav__list"}>
             <li className="nav__item nav__item--title">Explore More</li>
-            <Link
-              style={linkStyle}
-              to="/"
-              onClick={burger ? delayBurgerHandler : null}
-            >
-              <li className="nav__item">Works</li>
-            </Link>
-            <Link
-              style={linkStyle}
-              to="/profile"
-              onClick={burger ? delayBurgerHandler : null}
-            >
-              <li className="nav__item">Profile</li>
-            </Link>
+            <li className="nav__item nav__item--link">
+              <Link
+                style={linkStyle}
+                to="/"
+                onClick={burger ? delayBurgerHandler : null}
+              >
+                Works
+              </Link>
+            </li>
+            <li className="nav__item nav__item--link">
+              <Link
+                style={linkStyle}
+                to="/profile"
+                onClick={burger ? delayBurgerHandler : null}
+              >
+                Profile
+              </Link>
+            </li>
           </ul>
           <div
             className={

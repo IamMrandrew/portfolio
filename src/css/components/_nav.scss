@@ -96,7 +96,7 @@
     }
   }
 
-  &__list a > li {
+  &__item--link {
     &::after {
       content: "";
       width: 100%;
