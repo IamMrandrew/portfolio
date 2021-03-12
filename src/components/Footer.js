@@ -11,13 +11,12 @@ const Footer = () => {
               href="https://github.com/IamMrandrew"
               target="_blank"
               rel="noreferrer"
+              aria-label="github"
             >
               <FaGithub aria-hidden={true} />
-              <span className="footer__hidden-label">Github</span>
             </a>
-            <a href="mailto:andrewliyanlap000824@gmail.com">
+            <a href="mailto:andrewliyanlap000824@gmail.com" aria-label="mail">
               <FaEnvelope aria-hidden={true} />
-              <span className="footer__hidden-label">Github</span>
             </a>
           </div>
           <div className="footer__content col-md-7">
