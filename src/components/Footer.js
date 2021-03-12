@@ -12,10 +12,12 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <FaGithub />
+              <FaGithub aria-hidden={true} />
+              <span className="footer__hidden-label">Github</span>
             </a>
             <a href="mailto:andrewliyanlap000824@gmail.com">
-              <FaEnvelope />
+              <FaEnvelope aria-hidden={true} />
+              <span className="footer__hidden-label">Github</span>
             </a>
           </div>
           <div className="footer__content col-md-7">
