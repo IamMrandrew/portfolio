@@ -15,7 +15,7 @@ type Props = {
 const Work: React.FC<Props> = ({ link, src, wider, title, desc }) => {
   return (
     <Wrapper>
-      <Link href="/" passHref>
+      <Link href={link} passHref>
         <Anchor>
           <RatioWrapper>
             <ImgWrapper wider={wider}>
@@ -25,8 +25,8 @@ const Work: React.FC<Props> = ({ link, src, wider, title, desc }) => {
         </Anchor>
       </Link>
       <TextWrapper>
-        <Title>Todobubu</Title>
-        <Desc>React</Desc>
+        <Title>{title}</Title>
+        <Desc>{desc}</Desc>
       </TextWrapper>
     </Wrapper>
   );
