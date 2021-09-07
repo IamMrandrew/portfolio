@@ -19,7 +19,7 @@ const Work: React.FC<Props> = ({ link, src, wider, title, desc }) => {
         <Anchor>
           <RatioWrapper>
             <ImgWrapper wider={wider}>
-              <Image src={src} layout="fill" />
+              <Image src={src} layout="fill" alt={title} />
             </ImgWrapper>
           </RatioWrapper>
         </Anchor>
