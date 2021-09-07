@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { TRANSITION_TIME } from "./GlobalStyle";
 
 export const StyledContainer = styled.div`
+  position: relative;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;

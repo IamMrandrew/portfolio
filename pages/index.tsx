@@ -2,6 +2,7 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import { ThemeProvider } from "styled-components";
 import { ResetStyle, GlobalStyle, COLOR } from "../styles/GlobalStyle";
+import Works from "../components/Works";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <ResetStyle />
         <GlobalStyle />
         <Nav />
+        <Works />
       </ThemeProvider>
     </div>
   );

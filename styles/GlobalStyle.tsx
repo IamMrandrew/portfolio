@@ -33,8 +33,7 @@ export const COLOR = {
 export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
-    -ms-overflow-style: scrollbar;
-    overflow-y: hidden;
+    -ms-overflow-style: scrollbar;    
   }
 
   html, body, #root {
@@ -73,48 +72,36 @@ export const GlobalStyle = createGlobalStyle`
   h3,
   h4,
   h5,
-  h6,
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6 {
+  h6 {
     font-family: "Montserrat";
     font-weight: 600;
     line-height: 1.34;
     margin-bottom: 40px;
   }
 
-  h1,
-  .h1 {
+  h1 {
     font-size: 60px;
     font-weight: 700;
   }
 
-  h2,
-  .h2 {
+  h2 {
     font-size: 30px;
     font-weight: 700;
   }
 
-  h3,
-  .h3 {
+  h3 {
     font-size: 24px;
   }
 
-  h4,
-  .h4 {
+  h4 {
     font-size: 1.5rem;
   }
 
-  h5,
-  .h5 {
+  h5 {
     font-size: 1.25rem;
   }
 
-  h6,
-  .h6 {
+  h6 {
     font-size: 1rem;
   }
 
@@ -123,7 +110,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 20px;
   }
 
-  @media screen and (max-width: $breakpoint-md) {
+  @media screen and (max-width: ${MEDIA_BREAK.md}) {
     h1 {
       font-size: 30px;
     }
@@ -139,150 +126,149 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const ResetStyle = createGlobalStyle`
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* font-size: 100%;
+    font: inherit; */
+    vertical-align: baseline;
+  }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
 
-body {
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-}
+  body {
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+  }
 
-ol,
-ul {
-  list-style: none;
-}
+  ol,
+  ul {
+    list-style: none;
+  }
 
-blockquote,
-q {
-  quotes: none;
-}
+  blockquote,
+  q {
+    quotes: none;
+  }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
 
-input {
-  -webkit-appearance: none;
-}
+  input {
+    -webkit-appearance: none;
+  }
 
-a[href^="tel"] {
-  text-decoration: inherit;
-  color: inherit;
-}
+  a[href^="tel"] {
+    text-decoration: inherit;
+    color: inherit;
+  }
 
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -moz-tap-hightlight-color: rgba(0, 0, 0, 0);
-}
-
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-hightlight-color: rgba(0, 0, 0, 0);
+  }
 `;
