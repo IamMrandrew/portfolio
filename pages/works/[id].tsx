@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { StyledContainer } from "../../styles/Container";
@@ -21,6 +21,8 @@ type Block = {
 };
 
 const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
+  let entry = 0;
+
   useEffect(() => {
     console.log(page);
     console.log(pageBlocks);
@@ -29,10 +31,11 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
   const getDesc = (): Array<Block> => {
     let descBlocks: Array<Block> = [];
 
-    for (let block of pageBlocks) {
+    for (let [index, block] of pageBlocks.entries()) {
       if (block.type === "paragraph") {
         descBlocks.push(<Para>{block.paragraph.text[0]?.plain_text}</Para>);
       } else {
+        entry = index;
         break;
       }
     }
@@ -41,26 +44,28 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
   };
 
   const getBlocks = (): Array<Block> => {
-    return pageBlocks.map((block: Block) => {
-      switch (block.type) {
-        case "heading_1":
-          return <Heading1>{block.heading_1.text[0]?.plain_text}</Heading1>;
-        case "heading_2":
-          return <Heading2>{block.heading_2.text[0]?.plain_text}</Heading2>;
-        case "heading_3":
-          return <Heading3>{block.heading_3.text[0]?.plain_text}</Heading3>;
-        case "paragraph":
-          return <Para>{block.paragraph.text[0]?.plain_text}</Para>;
-        case "bulleted_list_item":
-          return (
-            <BulletedList>
-              <BulletedListItem>
-                {block.bulleted_list_item.text[0]?.plain_text}
-              </BulletedListItem>
-            </BulletedList>
-          );
-      }
-    });
+    return pageBlocks
+      .map((block: Block) => {
+        switch (block.type) {
+          case "heading_1":
+            return <Heading1>{block.heading_1.text[0]?.plain_text}</Heading1>;
+          case "heading_2":
+            return <Heading2>{block.heading_2.text[0]?.plain_text}</Heading2>;
+          case "heading_3":
+            return <Heading3>{block.heading_3.text[0]?.plain_text}</Heading3>;
+          case "paragraph":
+            return <Para>{block.paragraph.text[0]?.plain_text}</Para>;
+          case "bulleted_list_item":
+            return (
+              <BulletedList>
+                <BulletedListItem>
+                  {block.bulleted_list_item.text[0]?.plain_text}
+                </BulletedListItem>
+              </BulletedList>
+            );
+        }
+      })
+      .slice(entry);
   };
   return (
     <Wrapper>
@@ -69,8 +74,10 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
           <Image
             src="/feature-todobubu.jpg"
             alt="feature-todobubu"
+            width="980"
+            height="512"
             objectFit="contain"
-            layout="fill"
+            layout="responsive"
           />
         </FeatureImage>
         <Content>
@@ -125,14 +132,13 @@ export const getStaticProps = async (context: any) => {
       page: pageRes,
       pageBlocks: pageBlocksRes.results,
     },
+    revalidate: 10,
   };
 };
 
 const Wrapper = styled.div``;
 
 const FeatureImage = styled.div`
-  position: relative;
-  height: 512px;
   margin-top: 30px;
   margin-bottom: 40px;
 `;
