@@ -35,7 +35,7 @@ const Profile: React.FC<Props> = () => {
             <OverflowWrapper>
               <Link href={"/resume.pdf"} passHref>
                 <Anchor>
-                  <Button text={"Resume"} />
+                  <Button text={"Resume"} variant="orange" />
                 </Anchor>
               </Link>
             </OverflowWrapper>

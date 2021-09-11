@@ -1,16 +1,73 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { AnyStyledComponent } from "styled-components";
 import { StyledContainer } from "../styles/Container";
 import { MEDIA_BREAK } from "../styles/GlobalStyle";
 import Work from "./Work";
 
-type Props = {};
+type Props = {
+  works: any;
+};
 
-const Works: React.FC<Props> = () => {
+const Works: React.FC<Props> = ({ works }) => {
   return (
     <Wrapper>
       <StyledContainer>
         <Title>Works</Title>
+        {works
+          .reduce(function (
+            accumulator: any,
+            currentValue: any,
+            currentIndex: any,
+            array: any
+          ) {
+            if (currentIndex % 2 === 0) {
+              accumulator.push(array.slice(currentIndex, currentIndex + 2));
+            }
+            return accumulator;
+          },
+          [])
+          .map((pair: any) => {
+            if (pair[1])
+              return (
+                <SectionBlock key={pair[0].id}>
+                  <Work
+                    link={"/works/" + pair[0].id.replace(/-/g, "")}
+                    src={"/thumb-todobubu.jpg"}
+                    wider={
+                      pair[0].properties.Wider.rich_text[0]?.plain_text ===
+                      "true"
+                    }
+                    title={pair[0].properties.Name.title[0]?.plain_text}
+                    desc={pair[0].properties.Tag.rich_text[0]?.plain_text}
+                  />
+                  <Work
+                    link={"/works/" + pair[1].id.replace(/-/g, "")}
+                    src={"/thumb-todobubu.jpg"}
+                    wider={
+                      pair[1].properties.Wider.rich_text[0]?.plain_text ===
+                      "true"
+                    }
+                    title={pair[1].properties.Name.title[0]?.plain_text}
+                    desc={pair[1].properties.Tag.rich_text[0]?.plain_text}
+                  />
+                </SectionBlock>
+              );
+            else
+              return (
+                <SectionBlock key={pair[0].id}>
+                  <Work
+                    link={"/works/" + pair[0].id.replace(/-/g, "")}
+                    src={"/thumb-todobubu.jpg"}
+                    wider={
+                      pair[0].properties.Wider.rich_text[0]?.plain_text ===
+                      "true"
+                    }
+                    title={pair[0].properties.Name.title[0]?.plain_text}
+                    desc={pair[0].properties.Tag.rich_text[0]?.plain_text}
+                  />
+                </SectionBlock>
+              );
+          })}
         <SectionBlock>
           <Work
             link="/todobubu"

@@ -1,0 +1,225 @@
+import React, { useEffect } from "react";
+import Image from "next/image";
+import styled from "styled-components";
+import { StyledContainer } from "../../styles/Container";
+import { Client } from "@notionhq/client";
+import { MEDIA_BREAK } from "../../styles/GlobalStyle";
+import Button from "../../components/Button";
+
+type Props = {
+  page: any;
+  pageBlocks: any;
+};
+
+type Block = {
+  type: string;
+  heading_1?: any;
+  heading_2?: any;
+  heading_3?: any;
+  paragraph?: any;
+  bulleted_list_item?: any;
+};
+
+const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
+  useEffect(() => {
+    console.log(page);
+    console.log(pageBlocks);
+  }, []);
+
+  const getDesc = (): Array<Block> => {
+    let descBlocks: Array<Block> = [];
+
+    for (let block of pageBlocks) {
+      if (block.type === "paragraph") {
+        descBlocks.push(<Para>{block.paragraph.text[0]?.plain_text}</Para>);
+      } else {
+        break;
+      }
+    }
+
+    return descBlocks;
+  };
+
+  const getBlocks = (): Array<Block> => {
+    return pageBlocks.map((block: Block) => {
+      switch (block.type) {
+        case "heading_1":
+          return <Heading1>{block.heading_1.text[0]?.plain_text}</Heading1>;
+        case "heading_2":
+          return <Heading2>{block.heading_2.text[0]?.plain_text}</Heading2>;
+        case "heading_3":
+          return <Heading3>{block.heading_3.text[0]?.plain_text}</Heading3>;
+        case "paragraph":
+          return <Para>{block.paragraph.text[0]?.plain_text}</Para>;
+        case "bulleted_list_item":
+          return (
+            <BulletedList>
+              <BulletedListItem>
+                {block.bulleted_list_item.text[0]?.plain_text}
+              </BulletedListItem>
+            </BulletedList>
+          );
+      }
+    });
+  };
+  return (
+    <Wrapper>
+      <StyledContainer>
+        <FeatureImage>
+          <Image
+            src="/feature-todobubu.jpg"
+            alt="feature-todobubu"
+            objectFit="contain"
+            layout="fill"
+          />
+        </FeatureImage>
+        <Content>
+          <Title>{page.properties.Name.title[0]?.plain_text}</Title>
+          <SectionBlock>
+            <Date>{page.properties.Date.rich_text[0]?.plain_text}</Date>
+            {getDesc()}
+            <Button text="View work" />
+            <Button text="View GitHub" />
+          </SectionBlock>
+          {getBlocks()}
+        </Content>
+      </StyledContainer>
+    </Wrapper>
+  );
+};
+
+export default WorkPage;
+
+export const getStaticPaths = async () => {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY });
+  const databaseID = "1d8991e599c34471a4378d3da5a27225";
+  const response = await notion.databases.query({
+    database_id: databaseID,
+  });
+
+  const paths = response.results.map((page) => {
+    return {
+      // Temporary using id as path
+      params: { id: page.id.replace(/-/g, "") },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context: any) => {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY });
+  const id = context.params.id;
+  const pageRes = await notion.pages.retrieve({
+    page_id: id,
+  });
+  const pageBlocksRes = await notion.blocks.children.list({
+    block_id: id,
+  });
+
+  return {
+    props: {
+      page: pageRes,
+      pageBlocks: pageBlocksRes.results,
+    },
+  };
+};
+
+const Wrapper = styled.div``;
+
+const FeatureImage = styled.div`
+  position: relative;
+  height: 512px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+`;
+
+const Title = styled.h1`
+  color: ${({ theme }) => theme.text.primary};
+  position: absolute;
+  z-index: 1000;
+  top: 0px;
+  left: 0;
+
+  @media screen and (max-width: ${MEDIA_BREAK.md}) {
+    font-size: 30px;
+  }
+`;
+
+const Content = styled.div`
+  position: relative;
+`;
+
+const Date = styled.div`
+  color: ${({ theme }) => theme.text.primary};
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: block;
+`;
+
+const SectionBlock = styled.div`
+  background-color: ${({ theme }) => theme.bg.main};
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-bottom: 35px;
+  padding: 40px;
+  padding-top: 100px;
+
+  // CSS for Description Buttons
+  button {
+    min-width: 165px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  @media screen and (max-width: ${MEDIA_BREAK.md}) {
+    width: calc(100% - 15px);
+    padding: 20px;
+    padding-top: 60px;
+  }
+`;
+
+const Heading1 = styled.h2`
+  margin-top: 46px;
+  margin-bottom: 12px;
+  color: ${({ theme }) => theme.text.primary};
+`;
+
+const Heading2 = styled.h3`
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 36px;
+  margin-bottom: 10px;
+  color: ${({ theme }) => theme.text.primary};
+`;
+
+const Heading3 = styled.h4`
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 26px;
+  margin-bottom: 8px;
+  color: ${({ theme }) => theme.text.primary};
+`;
+
+const Para = styled.p`
+  line-height: 1.5;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text.secondary};
+  margin-bottom: 18px;
+`;
+
+const BulletedList = styled.ul`
+  list-style: disc;
+  padding-left: 28px;
+`;
+
+const BulletedListItem = styled.li`
+  font-size: 18px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text.secondary};
+  margin-bottom: 10px;
+`;
