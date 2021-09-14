@@ -31,8 +31,13 @@ const Works: React.FC<Props> = ({ works }) => {
               return (
                 <SectionBlock key={pair[0].id}>
                   <Work
-                    link={"/works/" + pair[0].id.replace(/-/g, "")}
-                    src={"/thumb-todobubu.jpg"}
+                    link={
+                      "/works/" +
+                      pair[0].properties.Name.title[0].plain_text
+                        .replace(/\s+/g, "")
+                        .toLowerCase()
+                    }
+                    src={pair[0].properties.Thumbnail.files[0]?.file.url}
                     wider={
                       pair[0].properties.Wider.rich_text[0]?.plain_text ===
                       "true"
@@ -41,8 +46,13 @@ const Works: React.FC<Props> = ({ works }) => {
                     desc={pair[0].properties.Tag.rich_text[0]?.plain_text}
                   />
                   <Work
-                    link={"/works/" + pair[1].id.replace(/-/g, "")}
-                    src={"/thumb-todobubu.jpg"}
+                    link={
+                      "/works/" +
+                      pair[1].properties.Name.title[0].plain_text
+                        .replace(/\s+/g, "")
+                        .toLowerCase()
+                    }
+                    src={pair[1].properties.Thumbnail.files[0]?.file.url}
                     wider={
                       pair[1].properties.Wider.rich_text[0]?.plain_text ===
                       "true"
@@ -56,8 +66,13 @@ const Works: React.FC<Props> = ({ works }) => {
               return (
                 <SectionBlock key={pair[0].id}>
                   <Work
-                    link={"/works/" + pair[0].id.replace(/-/g, "")}
-                    src={"/thumb-todobubu.jpg"}
+                    link={
+                      "/works/" +
+                      pair[0].properties.Name.title[0].plain_text
+                        .replace(/\s+/g, "")
+                        .toLowerCase()
+                    }
+                    src={pair[0].properties.Thumbnail.files[0]?.file.url}
                     wider={
                       pair[0].properties.Wider.rich_text[0]?.plain_text ===
                       "true"
@@ -68,38 +83,6 @@ const Works: React.FC<Props> = ({ works }) => {
                 </SectionBlock>
               );
           })}
-        <SectionBlock>
-          <Work
-            link="/todobubu"
-            src={"/thumb-todobubu.jpg"}
-            wider={false}
-            title="Todobubu"
-            desc="React"
-          />
-          <Work
-            link="/loopa"
-            src={"/thumb-loopa.jpg"}
-            wider={true}
-            title="Loopa"
-            desc="Tone.js"
-          />
-        </SectionBlock>
-        <SectionBlock>
-          <Work
-            link="/hautakchurch"
-            src={"/thumb-hautakchurch.jpg"}
-            wider={true}
-            title="Hau Tak Church Web"
-            desc="Wordpress"
-          />
-          <Work
-            link="/danxup"
-            src={"/thumb-danxup.jpg"}
-            wider={false}
-            title="danXup"
-            desc="Pose Animator"
-          />
-        </SectionBlock>
       </StyledContainer>
     </Wrapper>
   );

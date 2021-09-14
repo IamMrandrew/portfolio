@@ -31,7 +31,10 @@ export async function getStaticProps() {
 
   return {
     props: {
-      results: response.results,
+      results: response.results.sort(
+        (a: any, b: any) =>
+          a.properties.Index.number - b.properties.Index.number
+      ),
     },
     revalidate: 10,
   };

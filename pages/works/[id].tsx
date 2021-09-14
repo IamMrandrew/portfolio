@@ -85,8 +85,26 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
           <SectionBlock>
             <Date>{page.properties.Date.rich_text[0]?.plain_text}</Date>
             {getDesc()}
-            <Button text="View work" />
-            <Button text="View GitHub" />
+            {page.properties.WorkURL.rich_text[0]?.plain_text && (
+              <Anchor
+                href={page.properties.WorkURL.rich_text[0]?.plain_text}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="work link"
+              >
+                <Button text="View work" />
+              </Anchor>
+            )}
+            {page.properties.GitHubURL.rich_text[0]?.plain_text && (
+              <Anchor
+                href={page.properties.GitHubURL.rich_text[0]?.plain_text}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="work link"
+              >
+                <Button text="View GitHub" />
+              </Anchor>
+            )}
           </SectionBlock>
           {getBlocks()}
         </Content>
@@ -104,10 +122,14 @@ export const getStaticPaths = async () => {
     database_id: databaseID,
   });
 
-  const paths = response.results.map((page) => {
+  const paths = response.results.map((page: any) => {
     return {
       // Temporary using id as path
-      params: { id: page.id.replace(/-/g, "") },
+      params: {
+        id: page.properties.Name.title[0].plain_text
+          .replace(/\s+/g, "")
+          .toLowerCase(),
+      },
     };
   });
 
@@ -119,7 +141,20 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: any) => {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  const id = context.params.id;
+  const databaseID = "1d8991e599c34471a4378d3da5a27225";
+  const response = await notion.databases.query({
+    database_id: databaseID,
+  });
+
+  const id =
+    response.results.find(
+      (page: any) =>
+        page.properties.Name.title[0].plain_text
+          .replace(/\s+/g, "")
+          .toLowerCase() == context.params.id
+    )?.id || "";
+
+  // const id = context.params.id;
   const pageRes = await notion.pages.retrieve({
     page_id: id,
   });
@@ -187,6 +222,11 @@ const SectionBlock = styled.div`
     padding: 20px;
     padding-top: 60px;
   }
+`;
+
+const Anchor = styled.a`
+  color: inherit;
+  text-decoration: inherit;
 `;
 
 const Heading1 = styled.h2`
