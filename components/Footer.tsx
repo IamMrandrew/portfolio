@@ -48,10 +48,6 @@ const Footer: React.FC<Props> = () => {
 export default Footer;
 const Wrapper = styled.div`
   padding-bottom: 50px;
-
-  @media screen and (max-width: ${MEDIA_BREAK.md}) {
-    padding: 0px 30px;
-  }
 `;
 
 const InnerWrapper = styled.div`

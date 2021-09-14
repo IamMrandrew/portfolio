@@ -36,25 +36,22 @@ const Nav: React.FC<Props> = () => {
               <Brand>andrew li</Brand>
             </Anchor>
           </Link>
+
           <List active={burger}>
             <Item variant="title">Explore More</Item>
             <Item variant="link">
-              <Link
-                href="/"
-                passHref
-                // onClick={burger ? delayBurgerHandler : null}
-              >
-                <Anchor>Works</Anchor>
-              </Link>
+              <TriggerWrapper onClick={burger ? delayBurgerHandler : null}>
+                <Link href="/" passHref>
+                  <Anchor>Works</Anchor>
+                </Link>
+              </TriggerWrapper>
             </Item>
             <Item variant="link">
-              <Link
-                href="/profile"
-                passHref
-                // onClick={burger ? delayBurgerHandler : null}
-              >
-                <Anchor>Profile</Anchor>
-              </Link>
+              <TriggerWrapper onClick={burger ? delayBurgerHandler : null}>
+                <Link href="/profile" passHref>
+                  <Anchor>Profile</Anchor>
+                </Link>
+              </TriggerWrapper>
             </Item>
           </List>
 
@@ -90,6 +87,8 @@ const Anchor = styled.a`
   color: inherit;
   text-decoration: inherit;
 `;
+
+const TriggerWrapper = styled.div<any>``;
 
 const Brand = styled.div`
   color: ${({ theme }) => theme.text.primary};
