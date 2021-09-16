@@ -50,7 +50,15 @@ export default function Home({ results }: Props) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Andrew Li | Laporatory</title>
+        <meta
+          name="description"
+          content="Computer Science student from The Chinese University of Hong Kong, Designing and developing."
+        />
+        <meta
+          name="keywords"
+          content="andrew li, li yan lap, computer science, cuhk, todobubu, loopa, danxup, hau tak church"
+        />
       </Head>
       <Hero>
         <StyledContainer>
