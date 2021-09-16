@@ -4,6 +4,7 @@ export default {
     secondary: "#4B4B4B",
     tinted: "#747474",
     contrast: "#ffffff",
+    darkBrown: "#514c48",
   },
   bg: {
     main: "#fafafa",
