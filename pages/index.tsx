@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { StyledContainer } from "../styles/Container";
 import Works from "../components/Works";
 import { Client } from "@notionhq/client";
@@ -16,6 +17,32 @@ export default function Home({ results }: Props) {
   }, []);
 
   const [text, setText] = useState("");
+
+  const textsIn = {
+    animate: {
+      transition: {
+        // delayChildren: 0.5,
+        staggerChildren: 0.4,
+        staggerDirection: 1,
+      },
+    },
+  };
+
+  const textIn = {
+    initial: {
+      y: 100,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "backOut",
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
 
   useEffect(() => {
     const texts = [
@@ -62,9 +89,14 @@ export default function Home({ results }: Props) {
       </Head>
       <Hero>
         <StyledContainer>
-          <TextWrapper>
+          <TextWrapper
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+            variants={textsIn}
+          >
             <OverflowWrapper>
-              <Title>
+              <Title variants={textIn}>
                 Hello, I am andrew <br></br> a{" "}
                 <Highlighting>
                   Computer&nbsp;
@@ -81,7 +113,7 @@ export default function Home({ results }: Props) {
               </Title>
             </OverflowWrapper>
             <OverflowWrapper>
-              <Subtitle>I love {text}</Subtitle>
+              <Subtitle variants={textIn}>I love {text}</Subtitle>
             </OverflowWrapper>
           </TextWrapper>
         </StyledContainer>
@@ -120,11 +152,11 @@ const OverflowWrapper = styled.div`
   overflow: hidden;
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled(motion.div)`
   width: 100%;
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   color: ${({ theme }) => theme.text.primary};
 
   @media screen and (max-width: ${MEDIA_BREAK.md}) {
@@ -157,7 +189,7 @@ const Highlighter = styled.div`
   }
 `;
 
-const Subtitle = styled.p`
+const Subtitle = styled(motion.p)`
   font-size: 30px;
   font-weight: 500;
   color: ${({ theme }) => theme.text.tinted};

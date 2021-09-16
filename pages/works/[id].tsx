@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { StyledContainer } from "../../styles/Container";
 import { Client } from "@notionhq/client";
 import { MEDIA_BREAK } from "../../styles/GlobalStyle";
@@ -27,6 +28,22 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
     console.log(page);
     console.log(pageBlocks);
   }, []);
+
+  const textIn = {
+    initial: {
+      y: 100,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "backOut",
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
 
   const getDesc = (): Array<Block> => {
     let descBlocks: Array<Block> = [];
@@ -68,9 +85,9 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
       .slice(entry);
   };
   return (
-    <Wrapper>
+    <Wrapper initial={"initial"} animate={"animate"} exit={"exit"}>
       <StyledContainer>
-        <FeatureImage>
+        <FeatureImage variants={textIn}>
           <Image
             src={page.properties.Feature.files[0]?.file.url}
             alt="feature-todobubu"
@@ -81,8 +98,10 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
           />
         </FeatureImage>
         <Content>
-          <Title>{page.properties.Name.title[0]?.plain_text}</Title>
-          <SectionBlock>
+          <Title variants={textIn}>
+            {page.properties.Name.title[0]?.plain_text}
+          </Title>
+          <SectionBlock variants={textIn}>
             <Date>{page.properties.Date.rich_text[0]?.plain_text}</Date>
             {getDesc()}
             {page.properties.WorkURL.rich_text[0]?.plain_text && (
@@ -171,14 +190,14 @@ export const getStaticProps = async (context: any) => {
   };
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled(motion.div)``;
 
-const FeatureImage = styled.div`
+const FeatureImage = styled(motion.div)`
   margin-top: 30px;
   margin-bottom: 40px;
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   color: ${({ theme }) => theme.text.primary};
   position: absolute;
   z-index: 1000;
@@ -202,7 +221,7 @@ const Date = styled.div`
   display: block;
 `;
 
-const SectionBlock = styled.div`
+const SectionBlock = styled(motion.div)`
   background-color: ${({ theme }) => theme.bg.main};
   width: calc(100% - 40px);
   margin-left: auto;

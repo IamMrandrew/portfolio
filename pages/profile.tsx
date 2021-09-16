@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 import Button from "../components/Button";
 import { StyledContainer } from "../styles/Container";
 import { MEDIA_BREAK } from "../styles/GlobalStyle";
@@ -9,35 +10,70 @@ import Image from "next/image";
 type Props = {};
 
 const Profile: React.FC<Props> = () => {
+  const textsIn = {
+    animate: {
+      transition: {
+        // delayChildren: 0.5,
+        staggerChildren: 0.4,
+        staggerDirection: 1,
+      },
+    },
+  };
+
+  const textIn = {
+    initial: {
+      y: 100,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "backOut",
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
   return (
     <Wrapper>
       <StyledContainer>
         <AboutSection>
-          <TextWrapper variant="about">
+          <TextWrapper
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+            variants={textsIn}
+            variant="about"
+          >
             <OverflowWrapper>
-              <Title>Know more about me?</Title>
+              <Title variants={textIn}>Know more about me?</Title>
             </OverflowWrapper>
             <OverflowWrapper>
-              <Desc>
+              <Desc variants={textIn}>
                 I am a year 3 student in the Chinese University of Hong Kong
                 majoring in Computer Science.
               </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
-              <Desc>
+              <Desc variants={textIn}>
                 I love designing and coding. Working on frontend web development
                 and UI/ UX design recently.
               </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
-              <Desc>I am eager to learn more and I can learn quickly</Desc>
+              <Desc variants={textIn}>
+                I am eager to learn more and I can learn quickly
+              </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
-              <Link href={"/resume.pdf"} passHref>
-                <Anchor>
-                  <Button text={"Resume"} variant="orange" />
-                </Anchor>
-              </Link>
+              <Motion variants={textIn}>
+                <Link href={"/resume.pdf"} passHref>
+                  <Anchor>
+                    <Button text={"Resume"} variant="orange" />
+                  </Anchor>
+                </Link>
+              </Motion>
             </OverflowWrapper>
           </TextWrapper>
           <ImgWrapper>
@@ -119,7 +155,7 @@ const OverflowWrapper = styled.div`
   overflow: hidden;
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled(motion.div)`
   ${(props: { variant?: string }) =>
     props.variant === "skill" &&
     css`
@@ -141,11 +177,11 @@ const TextWrapper = styled.div`
     `}
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   color: ${({ theme }) => theme.text.primary};
 `;
 
-const Desc = styled.p`
+const Desc = styled(motion.p)`
   font-size: 24px;
   font-weight: 500;
   line-height: 1.3;
@@ -156,6 +192,8 @@ const Desc = styled.p`
     font-size: 18px;
   }
 `;
+
+const Motion = styled(motion.div)``;
 
 const ImgWrapper = styled.div`
   flex-basis: 40%;

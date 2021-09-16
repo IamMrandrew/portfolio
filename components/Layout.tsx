@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
 
 type Props = {
   children: any;
@@ -24,7 +25,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         <title>Andrew Li | Laporatory</title>
       </Head>
       <Nav />
-      {children}
+      <motion.main>{children}</motion.main>
       <Footer />
     </>
   );
