@@ -171,7 +171,7 @@ const TextWrapper = styled(motion.div)`
     css`
       flex-basis: 60%;
 
-      @media screen and (max-width: ${MEDIA_BREAK.md}) {
+      @media screen and (max-width: ${MEDIA_BREAK.lg}) {
         flex-basis: 100%;
       }
     `}
@@ -199,7 +199,7 @@ const ImgWrapper = styled.div`
   flex-basis: 40%;
   padding: 30px;
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: 992px) {
     display: none;
   }
 `;
