@@ -51,19 +51,19 @@ const Profile: React.FC<Props> = () => {
             </OverflowWrapper>
             <OverflowWrapper>
               <Desc variants={textIn}>
-                I am a year 3 student in the Chinese University of Hong Kong
+                I am a year 4 student in the Chinese University of Hong Kong
                 majoring in Computer Science.
               </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
               <Desc variants={textIn}>
-                I love designing and coding. Working on frontend web development
-                and UI/ UX design recently.
+                I am interested in UX/UI Design, Software Development, and
+                Product Management.
               </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
               <Desc variants={textIn}>
-                I am eager to learn more and I can learn quickly
+                I am eager to learn more and I can learn quickly.
               </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
