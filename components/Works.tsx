@@ -33,7 +33,7 @@ const Works: React.FC<Props> = ({ works }) => {
                   <Work
                     link={
                       "/works/" +
-                      pair[0].properties.Name.title[0].plain_text
+                      pair[0].properties.Name.title[0]?.plain_text
                         .replace(/\s+/g, "")
                         .toLowerCase()
                     }
