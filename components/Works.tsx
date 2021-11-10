@@ -37,7 +37,10 @@ const Works: React.FC<Props> = ({ works }) => {
                         .replace(/\s+/g, "")
                         .toLowerCase()
                     }
-                    src={pair[0].properties.Thumbnail.files[0]?.file.url}
+                    src={
+                      pair[0].properties.Thumbnail.files[0]?.file?.url ||
+                      pair[0].properties.Thumbnail.files[0]?.external?.url
+                    }
                     wider={
                       pair[0].properties.Wider.rich_text[0]?.plain_text ===
                       "true"
@@ -52,7 +55,10 @@ const Works: React.FC<Props> = ({ works }) => {
                         .replace(/\s+/g, "")
                         .toLowerCase()
                     }
-                    src={pair[1].properties.Thumbnail.files[0]?.file.url}
+                    src={
+                      pair[1].properties.Thumbnail.files[0]?.file?.url ||
+                      pair[1].properties.Thumbnail.files[0]?.external?.url
+                    }
                     wider={
                       pair[1].properties.Wider.rich_text[0]?.plain_text ===
                       "true"
@@ -72,7 +78,10 @@ const Works: React.FC<Props> = ({ works }) => {
                         .replace(/\s+/g, "")
                         .toLowerCase()
                     }
-                    src={pair[0].properties.Thumbnail.files[0]?.file.url}
+                    src={
+                      pair[0].properties.Thumbnail.files[0]?.file?.url ||
+                      pair[0].properties.Thumbnail.files[0]?.external?.url
+                    }
                     wider={
                       pair[0].properties.Wider.rich_text[0]?.plain_text ===
                       "true"

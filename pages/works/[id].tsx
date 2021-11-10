@@ -89,7 +89,10 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
       <StyledContainer>
         <FeatureImage variants={textIn}>
           <Image
-            src={page.properties.Feature.files[0]?.file.url}
+            src={
+              page.properties.Feature.files[0]?.file?.url ||
+              page.properties.Feature.files[0]?.external?.url
+            }
             alt="feature-todobubu"
             width="980"
             height="512"
