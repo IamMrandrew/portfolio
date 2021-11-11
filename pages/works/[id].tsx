@@ -6,7 +6,7 @@ import { StyledContainer } from "../../styles/Container";
 import { Client } from "@notionhq/client";
 import { MEDIA_BREAK } from "../../styles/GlobalStyle";
 import Button from "../../components/Button";
-import { github, atomOneLight, CodeBlock } from "react-code-blocks";
+import { atomOneLight, CodeBlock } from "react-code-blocks";
 
 type Props = {
   page: any;
@@ -154,7 +154,7 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
             return (
               <Image
                 src={
-                  block[block.type].file.url || block[block.type].external.url
+                  block[block.type].file?.url || block[block.type].external?.url
                 }
                 alt={block[block.type].caption}
                 width="980"
