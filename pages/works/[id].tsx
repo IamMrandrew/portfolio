@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import { StyledContainer } from "../../styles/Container";
 import { Client } from "@notionhq/client";
 import { MEDIA_BREAK } from "../../styles/GlobalStyle";
 import Button from "../../components/Button";
+import { github, atomOneLight, CodeBlock } from "react-code-blocks";
 
 type Props = {
   page: any;
@@ -19,6 +20,8 @@ type Block = {
   heading_3?: any;
   paragraph?: any;
   bulleted_list_item?: any;
+  image?: any;
+  code?: any;
 };
 
 const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
@@ -50,7 +53,11 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
 
     for (let [index, block] of pageBlocks.entries()) {
       if (block.type === "paragraph") {
-        descBlocks.push(<Para>{block.paragraph.text[0]?.plain_text}</Para>);
+        descBlocks.push(
+          <Para>
+            <Text>{block.paragraph.text}</Text>
+          </Para>
+        );
       } else {
         entry = index;
         break;
@@ -60,25 +67,113 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
     return descBlocks;
   };
 
+  const Text: React.FC<{ children: any }> = ({ children }) => {
+    const text = children;
+
+    if (!text) {
+      return null;
+    }
+    return text.map((value: any) => {
+      // { bold, code, color, italic, strikethrough, underline }
+      const { annotations: annotations, text } = value;
+
+      return (
+        <TextBlock annotations={annotations}>
+          {text.link ? (
+            <a href={text.link.url}>{text.content}</a>
+          ) : (
+            text.content
+          )}
+        </TextBlock>
+      );
+    });
+  };
+
+  const TextBlock = styled.span`
+    // css for inline-code
+    ${(props: { annotations: any }) =>
+      props.annotations.code &&
+      css`
+        font-family: "Roboto Mono", monospace;
+        font-weight: 500;
+        font-size: 16px;
+        color: #eb5757;
+        background-color: rgb(242, 242, 242);
+        padding: 2px 4px;
+        border-radius: 2px;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: rgb(15, 8, 28);
+        }
+      `}
+
+    ${(props: { annotations: any }) =>
+      props.annotations.bold &&
+      css`
+        font-weight: 700;
+      `}
+  `;
+
   const getBlocks = (): Array<Block> => {
     return pageBlocks
       .map((block: Block) => {
         switch (block.type) {
           case "heading_1":
-            return <Heading1>{block.heading_1.text[0]?.plain_text}</Heading1>;
+            return (
+              <Heading1>
+                <Text>{block[block.type].text}</Text>
+              </Heading1>
+            );
           case "heading_2":
-            return <Heading2>{block.heading_2.text[0]?.plain_text}</Heading2>;
+            return (
+              <Heading2>
+                <Text>{block[block.type].text}</Text>
+              </Heading2>
+            );
           case "heading_3":
-            return <Heading3>{block.heading_3.text[0]?.plain_text}</Heading3>;
+            return (
+              <Heading3>
+                <Text>{block[block.type].text}</Text>
+              </Heading3>
+            );
           case "paragraph":
-            return <Para>{block.paragraph.text[0]?.plain_text}</Para>;
+            return (
+              <Para>
+                <Text>{block[block.type].text}</Text>
+              </Para>
+            );
           case "bulleted_list_item":
             return (
               <BulletedList>
                 <BulletedListItem>
-                  {block.bulleted_list_item.text[0]?.plain_text}
+                  <Text>{block[block.type].text}</Text>
                 </BulletedListItem>
               </BulletedList>
+            );
+          case "image":
+            return (
+              <Image
+                src={
+                  block[block.type].file.url || block[block.type].external.url
+                }
+                alt={block[block.type].caption}
+                width="980"
+                height="512"
+                objectFit="contain"
+                layout="responsive"
+              ></Image>
+            );
+          case "code":
+            return (
+              <CodeBlockWrapper>
+                <CodeBlock
+                  text={block[block.type].text[0].plain_text}
+                  language={block[block.type].language}
+                  showLineNumbers={false}
+                  theme={atomOneLight}
+                  codeBlock
+                />
+              </CodeBlockWrapper>
             );
         }
       })
@@ -290,4 +385,10 @@ const BulletedListItem = styled.li`
   font-weight: 600;
   color: ${({ theme }) => theme.text.secondary};
   margin-bottom: 10px;
+`;
+
+const CodeBlockWrapper = styled.div`
+  font-weight: 500;
+  font-family: "Roboto Mono", monospace;
+  margin-bottom: 20px;
 `;
