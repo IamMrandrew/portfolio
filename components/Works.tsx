@@ -102,7 +102,7 @@ export default Works;
 const Wrapper = styled.section``;
 
 const Title = styled.h2`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme }) => theme.color.neutral.onBackground};
   position: absolute;
   top: 35px;
   left: 0;
@@ -113,7 +113,7 @@ const Title = styled.h2`
 `;
 
 const SectionBlock = styled.div`
-  background-color: ${({ theme }) => theme.bg.main};
+  background-color: ${({ theme }) => theme.color.neutral.surface};
   width: calc(100% - 40px);
   margin-left: auto;
   margin-bottom: 35px;

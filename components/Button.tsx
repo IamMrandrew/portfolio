@@ -22,12 +22,12 @@ const StyledButton = styled.button`
   background-color: ${(props: { variant: string | undefined; theme: any }) => {
     switch (props.variant) {
       case "orange":
-        return props.theme.bg.orange;
+        return props.theme.color.accent.secondary;
       default:
-        return props.theme.bg.primary;
+        return props.theme.color.neutral.inverseBackground;
     }
   }};
-  color: ${({ theme }) => theme.text.contrast};
+  color: ${({ theme }) => theme.color.accent.onSecondary};
   font-size: 18px;
   font-weight: 700;
   appearance: none;

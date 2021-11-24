@@ -51,8 +51,8 @@ const Wrapper = styled.div`
 `;
 
 const InnerWrapper = styled.div`
-  background-color: ${({ theme }) => theme.bg.primary};
-  color: ${({ theme }) => theme.text.contrast};
+  background-color: ${({ theme }) => theme.color.neutral.inverseBackground};
+  color: ${({ theme }) => theme.color.neutral.onInverseBackground};
   padding: 50px;
   padding-bottom: 40px;
 

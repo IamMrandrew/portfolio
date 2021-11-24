@@ -14,6 +14,7 @@ type Props = {
 };
 
 type Block = {
+  id?: string;
   type: string;
   heading_1?: any;
   heading_2?: any;
@@ -54,9 +55,9 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
     for (let [index, block] of pageBlocks.entries()) {
       if (block.type === "paragraph") {
         descBlocks.push(
-          <Para>
+          <Paragraph key={block.id}>
             <Text>{block.paragraph.text}</Text>
-          </Para>
+          </Paragraph>
         );
       } else {
         entry = index;
@@ -73,12 +74,12 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
     if (!text) {
       return null;
     }
-    return text.map((value: any) => {
+    return text.map((value: any, index: number) => {
       // { bold, code, color, italic, strikethrough, underline }
       const { annotations: annotations, text } = value;
 
       return (
-        <TextBlock annotations={annotations}>
+        <TextBlock key={index} annotations={annotations}>
           {text.link ? (
             <a href={text.link.url}>{text.content}</a>
           ) : (
@@ -120,31 +121,31 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
         switch (block.type) {
           case "heading_1":
             return (
-              <Heading1>
+              <Heading1 key={block.id}>
                 <Text>{block[block.type].text}</Text>
               </Heading1>
             );
           case "heading_2":
             return (
-              <Heading2>
+              <Heading2 key={block.id}>
                 <Text>{block[block.type].text}</Text>
               </Heading2>
             );
           case "heading_3":
             return (
-              <Heading3>
+              <Heading3 key={block.id}>
                 <Text>{block[block.type].text}</Text>
               </Heading3>
             );
           case "paragraph":
             return (
-              <Para>
+              <Paragraph key={block.id}>
                 <Text>{block[block.type].text}</Text>
-              </Para>
+              </Paragraph>
             );
           case "bulleted_list_item":
             return (
-              <BulletedList>
+              <BulletedList key={block.id}>
                 <BulletedListItem>
                   <Text>{block[block.type].text}</Text>
                 </BulletedListItem>
@@ -152,20 +153,23 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
             );
           case "image":
             return (
-              <Image
-                src={
-                  block[block.type].file?.url || block[block.type].external?.url
-                }
-                alt={block[block.type].caption}
-                width="980"
-                height="512"
-                objectFit="contain"
-                layout="responsive"
-              ></Image>
+              <ImageWrapper key={block.id}>
+                <Image
+                  src={
+                    block[block.type].file?.url ||
+                    block[block.type].external?.url
+                  }
+                  alt={block[block.type].caption}
+                  width="980"
+                  height="512"
+                  objectFit="contain"
+                  layout="responsive"
+                ></Image>
+              </ImageWrapper>
             );
           case "code":
             return (
-              <CodeBlockWrapper>
+              <CodeBlockWrapper key={block.id}>
                 <CodeBlock
                   text={block[block.type].text[0].plain_text}
                   language={block[block.type].language}
@@ -199,9 +203,13 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
           <Title variants={textIn}>
             {page.properties.Name.title[0]?.plain_text}
           </Title>
-          <SectionBlock variants={textIn}>
+          <SectionBlock
+            variants={textIn}
+            title={page.properties.Name.title[0]?.plain_text}
+          >
             <Date>{page.properties.Date.rich_text[0]?.plain_text}</Date>
             {getDesc()}
+            <Spacer />
             {page.properties.WorkURL.rich_text[0]?.plain_text && (
               <Anchor
                 href={page.properties.WorkURL.rich_text[0]?.plain_text}
@@ -288,7 +296,9 @@ export const getStaticProps = async (context: any) => {
   };
 };
 
-const Wrapper = styled(motion.div)``;
+const Wrapper = styled(motion.div)`
+  padding-bottom: 36px;
+`;
 
 const FeatureImage = styled(motion.div)`
   margin-top: 30px;
@@ -296,14 +306,17 @@ const FeatureImage = styled(motion.div)`
 `;
 
 const Title = styled(motion.h1)`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme }) => theme.color.neutral.onBackground};
+  font-size: ${({ theme }) => theme.typography.heading.title.fontsize};
+  font-weight: ${({ theme }) => theme.typography.heading.title.fontweight};
+  line-height: ${({ theme }) => theme.typography.heading.title.lineheight};
   position: absolute;
   z-index: 1000;
   top: 0px;
   left: 0;
 
-  @media screen and (max-width: ${MEDIA_BREAK.md}) {
-    font-size: 30px;
+  @media screen and (max-width: ${MEDIA_BREAK.sm}) {
+    font-size: 40px;
   }
 `;
 
@@ -312,7 +325,7 @@ const Content = styled.div`
 `;
 
 const Date = styled.div`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme }) => theme.color.neutral.onBackground};
   font-size: 21px;
   font-weight: 700;
   margin-bottom: 18px;
@@ -320,7 +333,7 @@ const Date = styled.div`
 `;
 
 const SectionBlock = styled(motion.div)`
-  background-color: ${({ theme }) => theme.bg.main};
+  background-color: ${({ theme }) => theme.color.neutral.surface};
   width: calc(100% - 40px);
   margin-left: auto;
   margin-bottom: 35px;
@@ -334,10 +347,11 @@ const SectionBlock = styled(motion.div)`
     margin-bottom: 8px;
   }
 
-  @media screen and (max-width: ${MEDIA_BREAK.md}) {
+  @media screen and (max-width: ${MEDIA_BREAK.sm}) {
     width: calc(100% - 15px);
     padding: 20px;
-    padding-top: 60px;
+    padding-top: ${(props: { title: string }) =>
+      props.title.length < 10 ? "60px" : "120px"};
   }
 `;
 
@@ -346,49 +360,89 @@ const Anchor = styled.a`
   text-decoration: inherit;
 `;
 
-const Heading1 = styled.h2`
-  margin-top: 46px;
-  margin-bottom: 12px;
-  color: ${({ theme }) => theme.text.primary};
+const Heading1 = styled.h1`
+  color: ${({ theme }) => theme.color.neutral.onBackground};
+  font-size: ${({ theme }) => theme.typography.heading.heading1.fontsize};
+  font-weight: ${({ theme }) => theme.typography.heading.heading1.fontweight};
+  line-height: ${({ theme }) => theme.typography.heading.heading1.lineheight};
+  margin-top: ${({ theme }) => theme.typography.heading.heading1.margintop};
+  margin-bottom: ${({ theme }) =>
+    theme.typography.heading.heading1.marginbottom};
 `;
 
-const Heading2 = styled.h3`
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 36px;
-  margin-bottom: 10px;
-  color: ${({ theme }) => theme.text.primary};
+const Heading2 = styled.h2`
+  color: ${({ theme }) => theme.color.neutral.onBackground};
+  font-size: ${({ theme }) => theme.typography.heading.heading2.fontsize};
+  font-weight: ${({ theme }) => theme.typography.heading.heading2.fontweight};
+  line-height: ${({ theme }) => theme.typography.heading.heading2.lineheight};
+  margin-top: ${({ theme }) => theme.typography.heading.heading2.margintop};
+  margin-bottom: ${({ theme }) =>
+    theme.typography.heading.heading2.marginbottom};
 `;
 
-const Heading3 = styled.h4`
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 26px;
-  margin-bottom: 8px;
-  color: ${({ theme }) => theme.text.primary};
+const Heading3 = styled.h3`
+  color: ${({ theme }) => theme.color.neutral.onBackground};
+  font-size: ${({ theme }) => theme.typography.heading.heading3.fontsize};
+  font-weight: ${({ theme }) => theme.typography.heading.heading3.fontweight};
+  line-height: ${({ theme }) => theme.typography.heading.heading3.lineheight};
+  margin-top: ${({ theme }) => theme.typography.heading.heading3.margintop};
+  margin-bottom: ${({ theme }) =>
+    theme.typography.heading.heading3.marginbottom};
 `;
 
-const Para = styled.p`
-  line-height: 1.5;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text.secondary};
-  margin-bottom: 18px;
+const Paragraph = styled.p`
+  color: ${({ theme }) => theme.color.neutral.onBackground};
+  font-size: ${({ theme }) => theme.typography.text.paragraph.fontsize};
+  font-weight: ${({ theme }) => theme.typography.text.paragraph.fontweight};
+  line-height: ${({ theme }) => theme.typography.text.paragraph.lineheight};
+  margin-top: ${({ theme }) =>
+    theme.typography.text.paragraph.margintop.single};
+  margin-bottom: ${({ theme }) => theme.typography.text.paragraph.marginbottom};
+
+  p + & {
+    margin-top: ${({ theme }) =>
+      theme.typography.text.paragraph.margintop.multiple};
+  }
 `;
 
 const BulletedList = styled.ul`
   list-style: disc;
   padding-left: 28px;
+  margin-top: ${({ theme }) =>
+    theme.typography.text.bulletlistitem.margintop.single};
+
+  h1 + &,
+  h2 + &,
+  h3 + &,
+  ul + & {
+    margin-top: ${({ theme }) =>
+      theme.typography.text.bulletlistitem.margintop.multiple};
+  }
 `;
 
 const BulletedListItem = styled.li`
-  font-size: 18px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text.secondary};
-  margin-bottom: 10px;
+  color: ${({ theme }) => theme.color.neutral.onBackground};
+  font-size: ${({ theme }) => theme.typography.text.bulletlistitem.fontsize};
+  font-weight: ${({ theme }) =>
+    theme.typography.text.bulletlistitem.fontweight};
+  line-height: ${({ theme }) =>
+    theme.typography.text.bulletlistitem.lineheight};
+  margin-bottom: ${({ theme }) =>
+    theme.typography.text.bulletlistitem.marginbottom};
+`;
+
+const ImageWrapper = styled.div`
+  margin-top: 36px;
+  margin-bottom: 16px;
 `;
 
 const CodeBlockWrapper = styled.div`
   font-weight: 500;
   font-family: "Roboto Mono", monospace;
-  margin-bottom: 20px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+`;
+
+const Spacer = styled.div`
+  height: 18px;
 `;

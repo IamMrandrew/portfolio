@@ -99,13 +99,13 @@ const TextWrapper = styled.div`
 
 const Title = styled.div`
   font-size: 18px;
-  color: ${({ theme }) => theme.text.secondary};
+  color: ${({ theme }) => theme.color.neutral.onSurface};
   font-weight: 500;
 `;
 
 const Desc = styled.div`
   font-size: 18px;
-  color: ${({ theme }) => theme.text.secondary};
+  color: ${({ theme }) => theme.color.neutral.onSurface};
   font-weight: 400;
   text-align: right;
 `;
