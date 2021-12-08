@@ -91,7 +91,7 @@ const Anchor = styled.a`
 const TriggerWrapper = styled.div<any>``;
 
 const Brand = styled.div`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme }) => theme.color.neutral.onBackground};
   font-family: "Montserrat";
   font-weight: 600;
   transition: opacity 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -118,7 +118,7 @@ const List = styled.ul`
     align-items: flex-end;
     height: 450px;
     width: 100%;
-    background-color: ${({ theme }) => theme.bg.oldLace};
+    background-color: ${({ theme }) => theme.color.accent.primaryContainer};
     clip-path: circle(0px at 90% 45px);
     transition: all 0.7s cubic-bezier(0.87, 0, 0.11, 1.2);
 
@@ -141,7 +141,7 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme }) => theme.color.accent.onPrimaryContainer};
   font-family: "Montserrat";
   font-weight: 600;
   transition: opacity 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -187,7 +187,7 @@ const Item = styled.li`
         content: "";
         width: 100%;
         height: 0px;
-        background-color: ${({ theme }) => theme.bg.highlighted};
+        background-color: ${({ theme }) => theme.color.accent.primary};
         position: absolute;
         bottom: -4px;
         left: 4px;
@@ -208,7 +208,7 @@ const Item = styled.li`
           content: "";
           width: 100%;
           height: 0px;
-          background-color: ${({ theme }) => theme.bg.highlighted};
+          background-color: ${({ theme }) => theme.color.accent.primary};
           position: absolute;
           bottom: 10px;
           left: 6px;
@@ -236,7 +236,7 @@ const Burger = styled.div`
 `;
 
 const Bar = styled.div`
-  background-color: ${({ theme }) => theme.bg.primary};
+  background-color: ${({ theme }) => theme.color.neutral.onBackground};
   width: 20px;
   height: 3px;
   margin-left: auto;

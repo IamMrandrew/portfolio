@@ -6,9 +6,10 @@ import Works from "../components/Works";
 import { Client } from "@notionhq/client";
 import { useEffect, useState } from "react";
 import { MEDIA_BREAK } from "../styles/GlobalStyle";
+import { Page } from "../types/Page";
 
 type Props = {
-  results: any;
+  results: Array<Page>;
 };
 
 export default function Home({ results }: Props) {
@@ -133,7 +134,7 @@ export async function getStaticProps() {
   return {
     props: {
       results: response.results.sort(
-        (a: any, b: any) =>
+        (a: Page, b: Page) =>
           a.properties.Index.number - b.properties.Index.number
       ),
     },
@@ -157,7 +158,7 @@ const TextWrapper = styled(motion.div)`
 `;
 
 const Title = styled(motion.h1)`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme }) => theme.color.neutral.onBackground};
 
   @media screen and (max-width: ${MEDIA_BREAK.md}) {
     font-size: 30px;
@@ -176,7 +177,7 @@ const Highlighter = styled.div`
   left: 15px;
   width: 100%;
   height: 35px;
-  background-color: ${({ theme }) => theme.bg.highlighted};
+  background-color: ${({ theme }) => theme.color.accent.primary};
   opacity: 0.9;
 
   @media screen and (max-width: ${MEDIA_BREAK.md}) {
@@ -192,7 +193,7 @@ const Highlighter = styled.div`
 const Subtitle = styled(motion.p)`
   font-size: 30px;
   font-weight: 500;
-  color: ${({ theme }) => theme.text.tinted};
+  color: ${({ theme }) => theme.color.neutral.onBackgroundVariant};
   letter-spacing: 1px;
   line-height: 1.3;
 
@@ -203,12 +204,14 @@ const Subtitle = styled(motion.p)`
     content: "";
     width: 5px;
     height: 4px;
-    border-right: 3px solid ${({ theme }) => theme.text.tinted};
+    border-right: 3px solid
+      ${({ theme }) => theme.color.neutral.onBackgroundVariant};
     margin: 8px;
     animation: blink 0.5s step-end infinite;
 
     @media screen and (max-width: ${MEDIA_BREAK.md}) {
-      border-right: 2px solid ${({ theme }) => theme.text.tinted};
+      border-right: 2px solid
+        ${({ theme }) => theme.color.neutral.onBackgroundVariant};
     }
 
     @keyframes blink {

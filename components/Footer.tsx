@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { StyledContainer } from "../styles/Container";
-import { FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaLinkedin, FaMedium } from "react-icons/fa";
 import { MEDIA_BREAK } from "../styles/GlobalStyle";
 
 type Props = {};
@@ -27,6 +27,22 @@ const Footer: React.FC<Props> = () => {
               >
                 <FaEnvelope aria-hidden={true} />
               </Anchor>
+              <Anchor
+                href="https://www.linkedin.com/in/yan-lap-li-327715201/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="linkedin"
+              >
+                <FaLinkedin aria-hidden={true} />
+              </Anchor>
+              <Anchor
+                href="https://medium.com/@andrewliyanlap000824"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="medium"
+              >
+                <FaMedium aria-hidden={true} />
+              </Anchor>
             </Links>
             <Content>
               <TextWrapper>
@@ -51,8 +67,8 @@ const Wrapper = styled.div`
 `;
 
 const InnerWrapper = styled.div`
-  background-color: ${({ theme }) => theme.bg.primary};
-  color: ${({ theme }) => theme.text.contrast};
+  background-color: ${({ theme }) => theme.color.neutral.inverseBackground};
+  color: ${({ theme }) => theme.color.neutral.onInverseBackground};
   padding: 50px;
   padding-bottom: 40px;
 

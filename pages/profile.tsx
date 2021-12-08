@@ -178,7 +178,7 @@ const TextWrapper = styled(motion.div)`
 `;
 
 const Title = styled(motion.h1)`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme }) => theme.color.neutral.onBackground};
 `;
 
 const Desc = styled(motion.p)`
@@ -186,7 +186,7 @@ const Desc = styled(motion.p)`
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: 1px;
-  color: ${({ theme }) => theme.text.tinted};
+  color: ${({ theme }) => theme.color.neutral.onBackgroundVariant};
 
   @media screen and (max-width: ${MEDIA_BREAK.md}) {
     font-size: 18px;
@@ -209,7 +209,7 @@ const SkillSection = styled.section`
 `;
 
 const SkillTitle = styled.h2`
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme }) => theme.color.neutral.onBackground};
   position: absolute;
   top: 35px;
   left: 0;
@@ -223,7 +223,7 @@ const SectionBlock = styled.div`
   padding: 40px;
   padding-top: 100px;
   padding-bottom: 60px;
-  background-color: ${({ theme }) => theme.bg.oldLace};
+  background-color: ${({ theme }) => theme.color.accent.primaryContainer};
   width: calc(100% - 40px);
   margin-left: auto;
   margin-bottom: 35px;
@@ -253,7 +253,7 @@ const SkillsWrapper = styled.div`
 `;
 
 const SkillsSubtitle = styled.h3`
-  color: ${({ theme }) => theme.text.darkBrown};
+  color: ${({ theme }) => theme.color.accent.onPrimaryContainer};
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -264,7 +264,7 @@ const SkillsSubtitle = styled.h3`
 `;
 
 const SkillsItem = styled.p`
-  color: ${({ theme }) => theme.text.darkBrown};
+  color: ${({ theme }) => theme.color.accent.onPrimaryContainer};
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 8px;
