@@ -6,9 +6,10 @@ import Works from "../components/Works";
 import { Client } from "@notionhq/client";
 import { useEffect, useState } from "react";
 import { MEDIA_BREAK } from "../styles/GlobalStyle";
+import { Page } from "../types/Page";
 
 type Props = {
-  results: any;
+  results: Array<Page>;
 };
 
 export default function Home({ results }: Props) {
@@ -133,7 +134,7 @@ export async function getStaticProps() {
   return {
     props: {
       results: response.results.sort(
-        (a: any, b: any) =>
+        (a: Page, b: Page) =>
           a.properties.Index.number - b.properties.Index.number
       ),
     },

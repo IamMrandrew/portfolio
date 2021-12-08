@@ -1,32 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { motion } from "framer-motion";
 import { StyledContainer } from "../../styles/Container";
 import { Client } from "@notionhq/client";
 import { MEDIA_BREAK } from "../../styles/GlobalStyle";
+import { Block } from "../../types/Block";
+import { Page } from "../../types/Page";
 import Button from "../../components/Button";
-import { atomOneLight, CodeBlock } from "react-code-blocks";
+import Render from "../../components/Render";
+import Paragraph from "../../components/Blocks/Paragraph";
 
 type Props = {
-  page: any;
-  pageBlocks: any;
-};
-
-type Block = {
-  id?: string;
-  type: string;
-  heading_1?: any;
-  heading_2?: any;
-  heading_3?: any;
-  paragraph?: any;
-  bulleted_list_item?: any;
-  image?: any;
-  code?: any;
+  page: Page;
+  pageBlocks: Array<Block>;
 };
 
 const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
-  let entry = 0;
+  let offset = 0;
 
   useEffect(() => {
     console.log(page);
@@ -49,18 +40,14 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
     },
   };
 
-  const getDesc = (): Array<Block> => {
-    let descBlocks: Array<Block> = [];
+  const getDesc = (): Array<JSX.Element> => {
+    let descBlocks: Array<JSX.Element> = [];
 
     for (let [index, block] of pageBlocks.entries()) {
       if (block.type === "paragraph") {
-        descBlocks.push(
-          <Paragraph key={block.id}>
-            <Text>{block.paragraph.text}</Text>
-          </Paragraph>
-        );
+        descBlocks.push(<Paragraph key={block.id} block={block} />);
       } else {
-        entry = index;
+        offset = index;
         break;
       }
     }
@@ -68,121 +55,6 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
     return descBlocks;
   };
 
-  const Text: React.FC<{ children: any }> = ({ children }) => {
-    const text = children;
-
-    if (!text) {
-      return null;
-    }
-    return text.map((value: any, index: number) => {
-      // { bold, code, color, italic, strikethrough, underline }
-      const { annotations: annotations, text } = value;
-
-      return (
-        <TextBlock key={index} annotations={annotations}>
-          {text.link ? (
-            <a href={text.link.url}>{text.content}</a>
-          ) : (
-            text.content
-          )}
-        </TextBlock>
-      );
-    });
-  };
-
-  const TextBlock = styled.span`
-    // css for inline-code
-    ${(props: { annotations: any }) =>
-      props.annotations.code &&
-      css`
-        font-family: "Roboto Mono", monospace;
-        font-weight: 500;
-        font-size: 16px;
-        color: #eb5757;
-        background-color: rgb(242, 242, 242);
-        padding: 2px 4px;
-        border-radius: 2px;
-
-        @media (prefers-color-scheme: dark) {
-          background-color: rgb(15, 8, 28);
-        }
-      `}
-
-    ${(props: { annotations: any }) =>
-      props.annotations.bold &&
-      css`
-        font-weight: 700;
-      `}
-  `;
-
-  const getBlocks = (): Array<Block> => {
-    return pageBlocks
-      .map((block: Block) => {
-        switch (block.type) {
-          case "heading_1":
-            return (
-              <Heading1 key={block.id}>
-                <Text>{block[block.type].text}</Text>
-              </Heading1>
-            );
-          case "heading_2":
-            return (
-              <Heading2 key={block.id}>
-                <Text>{block[block.type].text}</Text>
-              </Heading2>
-            );
-          case "heading_3":
-            return (
-              <Heading3 key={block.id}>
-                <Text>{block[block.type].text}</Text>
-              </Heading3>
-            );
-          case "paragraph":
-            return (
-              <Paragraph key={block.id}>
-                <Text>{block[block.type].text}</Text>
-              </Paragraph>
-            );
-          case "bulleted_list_item":
-            return (
-              <BulletedList key={block.id}>
-                <BulletedListItem>
-                  <Text>{block[block.type].text}</Text>
-                </BulletedListItem>
-              </BulletedList>
-            );
-          case "image":
-            return (
-              <ImageWrapper key={block.id}>
-                <Image
-                  src={
-                    block[block.type].file?.url ||
-                    block[block.type].external?.url
-                  }
-                  alt={block[block.type].caption}
-                  width="980"
-                  height="512"
-                  objectFit="contain"
-                  layout="responsive"
-                ></Image>
-              </ImageWrapper>
-            );
-          case "code":
-            return (
-              <CodeBlockWrapper key={block.id}>
-                <CodeBlock
-                  text={block[block.type].text[0].plain_text}
-                  language={block[block.type].language}
-                  showLineNumbers={false}
-                  theme={atomOneLight}
-                  codeBlock
-                />
-              </CodeBlockWrapper>
-            );
-        }
-      })
-      .slice(entry);
-  };
   return (
     <Wrapper initial={"initial"} animate={"animate"} exit={"exit"}>
       <StyledContainer>
@@ -231,7 +103,7 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
               </Anchor>
             )}
           </SectionBlock>
-          {getBlocks()}
+          <Render blocks={pageBlocks.slice(offset)} />
         </Content>
       </StyledContainer>
     </Wrapper>
@@ -247,7 +119,7 @@ export const getStaticPaths = async () => {
     database_id: databaseID,
   });
 
-  const paths = response.results.map((page: any) => {
+  const paths = response.results.map((page: Page) => {
     return {
       // Temporary using id as path
       params: {
@@ -273,7 +145,7 @@ export const getStaticProps = async (context: any) => {
 
   const id =
     response.results.find(
-      (page: any) =>
+      (page: Page) =>
         page.properties.Name.title[0].plain_text
           .replace(/\s+/g, "")
           .toLowerCase() == context.params.id
@@ -358,89 +230,6 @@ const SectionBlock = styled(motion.div)`
 const Anchor = styled.a`
   color: inherit;
   text-decoration: inherit;
-`;
-
-const Heading1 = styled.h1`
-  color: ${({ theme }) => theme.color.neutral.onBackground};
-  font-size: ${({ theme }) => theme.typography.heading.heading1.fontsize};
-  font-weight: ${({ theme }) => theme.typography.heading.heading1.fontweight};
-  line-height: ${({ theme }) => theme.typography.heading.heading1.lineheight};
-  margin-top: ${({ theme }) => theme.typography.heading.heading1.margintop};
-  margin-bottom: ${({ theme }) =>
-    theme.typography.heading.heading1.marginbottom};
-`;
-
-const Heading2 = styled.h2`
-  color: ${({ theme }) => theme.color.neutral.onBackground};
-  font-size: ${({ theme }) => theme.typography.heading.heading2.fontsize};
-  font-weight: ${({ theme }) => theme.typography.heading.heading2.fontweight};
-  line-height: ${({ theme }) => theme.typography.heading.heading2.lineheight};
-  margin-top: ${({ theme }) => theme.typography.heading.heading2.margintop};
-  margin-bottom: ${({ theme }) =>
-    theme.typography.heading.heading2.marginbottom};
-`;
-
-const Heading3 = styled.h3`
-  color: ${({ theme }) => theme.color.neutral.onBackground};
-  font-size: ${({ theme }) => theme.typography.heading.heading3.fontsize};
-  font-weight: ${({ theme }) => theme.typography.heading.heading3.fontweight};
-  line-height: ${({ theme }) => theme.typography.heading.heading3.lineheight};
-  margin-top: ${({ theme }) => theme.typography.heading.heading3.margintop};
-  margin-bottom: ${({ theme }) =>
-    theme.typography.heading.heading3.marginbottom};
-`;
-
-const Paragraph = styled.p`
-  color: ${({ theme }) => theme.color.neutral.onBackground};
-  font-size: ${({ theme }) => theme.typography.text.paragraph.fontsize};
-  font-weight: ${({ theme }) => theme.typography.text.paragraph.fontweight};
-  line-height: ${({ theme }) => theme.typography.text.paragraph.lineheight};
-  margin-top: ${({ theme }) =>
-    theme.typography.text.paragraph.margintop.single};
-  margin-bottom: ${({ theme }) => theme.typography.text.paragraph.marginbottom};
-
-  p + & {
-    margin-top: ${({ theme }) =>
-      theme.typography.text.paragraph.margintop.multiple};
-  }
-`;
-
-const BulletedList = styled.ul`
-  list-style: disc;
-  padding-left: 28px;
-  margin-top: ${({ theme }) =>
-    theme.typography.text.bulletlistitem.margintop.single};
-
-  h1 + &,
-  h2 + &,
-  h3 + &,
-  ul + & {
-    margin-top: ${({ theme }) =>
-      theme.typography.text.bulletlistitem.margintop.multiple};
-  }
-`;
-
-const BulletedListItem = styled.li`
-  color: ${({ theme }) => theme.color.neutral.onBackground};
-  font-size: ${({ theme }) => theme.typography.text.bulletlistitem.fontsize};
-  font-weight: ${({ theme }) =>
-    theme.typography.text.bulletlistitem.fontweight};
-  line-height: ${({ theme }) =>
-    theme.typography.text.bulletlistitem.lineheight};
-  margin-bottom: ${({ theme }) =>
-    theme.typography.text.bulletlistitem.marginbottom};
-`;
-
-const ImageWrapper = styled.div`
-  margin-top: 36px;
-  margin-bottom: 16px;
-`;
-
-const CodeBlockWrapper = styled.div`
-  font-weight: 500;
-  font-family: "Roboto Mono", monospace;
-  margin-top: 24px;
-  margin-bottom: 16px;
 `;
 
 const Spacer = styled.div`
