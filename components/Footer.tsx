@@ -108,7 +108,7 @@ const Links = styled.div`
 
     @media screen and (max-width: ${MEDIA_BREAK.md}) {
       font-size: 30px;
-      margin-right: 12px;
+      margin-right: 16px;
     }
   }
 `;
