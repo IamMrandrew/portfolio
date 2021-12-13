@@ -48,8 +48,7 @@ const Footer: React.FC<Props> = () => {
               <TextWrapper>
                 <Title>Contact Me</Title>
                 <Desc>
-                  I love designing, coding, and exploring. If you are interested
-                  in my work, contact me.
+                  I am developer with design. Designer with code.
                 </Desc>
               </TextWrapper>
             </Content>
