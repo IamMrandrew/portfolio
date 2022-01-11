@@ -63,7 +63,7 @@ export default {
         fontweight: 500,
         lineheight: 1.5,
         margintop: {
-          single: "18px",
+          single: "8px",
           multiple: "4px",
         },
         marginbottom: "4px",

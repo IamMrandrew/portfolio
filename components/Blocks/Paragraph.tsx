@@ -26,7 +26,8 @@ const Wrapper = styled.p`
     theme.typography.text.paragraph.margintop.single};
   margin-bottom: ${({ theme }) => theme.typography.text.paragraph.marginbottom};
 
-  p + & {
+  p + &,
+  ul + & {
     margin-top: ${({ theme }) =>
       theme.typography.text.paragraph.margintop.multiple};
   }
