@@ -36,7 +36,7 @@ const Footer: React.FC<Props> = () => {
                 <FaLinkedin aria-hidden={true} />
               </Anchor>
               <Anchor
-                href="https://medium.com/@andrewliyanlap000824"
+                href="https://medium.com/@IamMrandrew"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="medium"
