@@ -114,7 +114,7 @@ export default WorkPage;
 
 export const getStaticPaths = async () => {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  const databaseID = "1d8991e599c34471a4378d3da5a27225";
+  const databaseID = process.env.NOTION_DATABASE_ID || "";
   const response = await notion.databases.query({
     database_id: databaseID,
   });
@@ -138,7 +138,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: any) => {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  const databaseID = "1d8991e599c34471a4378d3da5a27225";
+  const databaseID = process.env.NOTION_DATABASE_ID || "";
   const response = await notion.databases.query({
     database_id: databaseID,
   });
