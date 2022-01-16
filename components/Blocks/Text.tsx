@@ -44,4 +44,16 @@ const TextBlock = styled.span`
     css`
       font-weight: 700;
     `}
+    
+  a {
+    color: inherit;
+    text-decoration-color: #bbbbbb;
+    text-decoration-thickness: 2px;
+    transition: text-decoration-color 300ms;
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration-color: ${({ theme }) => theme.color.neutral.onSurface};
+  }
 `;
