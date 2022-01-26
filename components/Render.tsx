@@ -4,7 +4,9 @@ import Heading1 from "./Blocks/Heading1";
 import Heading2 from "./Blocks/Heading2";
 import Heading3 from "./Blocks/Heading3";
 import Paragraph from "./Blocks/Paragraph";
-import BulletedList from "./Blocks/BulletList";
+import BulletedList from "./Blocks/BulletedList";
+import NumberedList from "./Blocks/NumberedList";
+import Quote from "./Blocks/Quote";
 import Image from "./Blocks/Image";
 import Code from "./Blocks/Code";
 
@@ -25,10 +27,14 @@ const Render: React.FC<Props> = ({ blocks }) => {
         return <Paragraph key={block.id} block={block} />;
       case "bulleted_list_item":
         return <BulletedList key={block.id} block={block} />;
+      case "numbered_list_item":
+        return <NumberedList key={block.id} block={block} />;
       case "image":
         return <Image key={block.id} block={block} />;
       case "code":
         return <Code key={block.id} block={block} />;
+      case "quote":
+        return <Quote key={block.id} block={block} />;
     }
   });
 };
