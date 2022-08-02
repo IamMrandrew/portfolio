@@ -14,6 +14,7 @@ const Works: React.FC<Props> = ({ works }) => {
       <StyledContainer>
         <Title>Works</Title>
         {works
+          .filter((work: any) => work.properties.Archive.checkbox === false)
           .reduce(function (
             accumulator: any,
             currentValue: any,
