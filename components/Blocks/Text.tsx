@@ -34,9 +34,9 @@ const TextBlock = styled.span`
       padding: 2px 4px;
       border-radius: 2px;
 
-      @media (prefers-color-scheme: dark) {
+      /* @media (prefers-color-scheme: dark) {
         background-color: rgb(15, 8, 28);
-      }
+      } */
     `}
 
   ${(props: { annotations: any }) =>
