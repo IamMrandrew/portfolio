@@ -10,6 +10,7 @@ import Quote from "./Blocks/Quote";
 import Image from "./Blocks/Image";
 import Code from "./Blocks/Code";
 import Callout from "./Blocks/Callout";
+import Video from "./Blocks/Video";
 
 type Props = {
   blocks: any;
@@ -38,6 +39,8 @@ const Render: React.FC<Props> = ({ blocks }) => {
         return <Quote key={block.id} block={block} />;
       case "callout":
         return <Callout key={block.id} block={block} />;
+      case "video":
+        return <Video key={block.id} block={block} />;
     }
   });
 };
