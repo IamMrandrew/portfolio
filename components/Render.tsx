@@ -9,6 +9,7 @@ import NumberedList from "./Blocks/NumberedList";
 import Quote from "./Blocks/Quote";
 import Image from "./Blocks/Image";
 import Code from "./Blocks/Code";
+import Callout from "./Blocks/Callout";
 
 type Props = {
   blocks: any;
@@ -35,6 +36,8 @@ const Render: React.FC<Props> = ({ blocks }) => {
         return <Code key={block.id} block={block} />;
       case "quote":
         return <Quote key={block.id} block={block} />;
+      case "callout":
+        return <Callout key={block.id} block={block} />;
     }
   });
 };
