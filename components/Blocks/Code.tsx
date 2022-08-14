@@ -27,5 +27,5 @@ const Wrapper = styled.div`
   font-weight: 500;
   font-family: "Roboto Mono", monospace;
   margin-top: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 `;
