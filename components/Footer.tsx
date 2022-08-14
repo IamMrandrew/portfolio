@@ -47,9 +47,7 @@ const Footer: React.FC<Props> = () => {
             <Content>
               <TextWrapper>
                 <Title>Contact Me</Title>
-                <Desc>
-                  I am developer with design. Designer with code.
-                </Desc>
+                <Desc>I am a developer, but I don't only code...</Desc>
               </TextWrapper>
             </Content>
           </Contact>

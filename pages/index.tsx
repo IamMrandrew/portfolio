@@ -47,9 +47,9 @@ export default function Home({ results }: Props) {
 
   useEffect(() => {
     const texts = [
-      "creating beautiful things",
-      "solving problems with my own creation",
-      "exploring interesting things",
+      "creating beautiful products",
+      "solving problems with my own creations",
+      "exploring best practices",
     ];
     let index = 0;
     let letterIndex = 0;

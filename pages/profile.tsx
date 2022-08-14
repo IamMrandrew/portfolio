@@ -51,19 +51,20 @@ const Profile: React.FC<Props> = () => {
             </OverflowWrapper>
             <OverflowWrapper>
               <Desc variants={textIn}>
-                I am a year 4 student in the Chinese University of Hong Kong
+                I am a fresh graduate of the Chinese University of Hong Kong
                 majoring in Computer Science.
               </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
               <Desc variants={textIn}>
-                I am interested in UX/UI Design, Software Development, and
-                Product Management.
+                I am interested in software development, UX/UI design, and
+                product management.
               </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
               <Desc variants={textIn}>
-                I am eager to learn more and I can learn quickly.
+                I am eager to learn more and I can learn quickly, also enjoy
+                following best practices.
               </Desc>
             </OverflowWrapper>
             <OverflowWrapper>
@@ -98,6 +99,7 @@ const Profile: React.FC<Props> = () => {
                 <SkillsItem>Javascript</SkillsItem>
                 <SkillsItem>Typescript</SkillsItem>
                 <SkillsItem>Python</SkillsItem>
+                <SkillsItem>Swift</SkillsItem>
                 <SkillsItem>PHP</SkillsItem>
               </TextWrapper>
             </SkillsWrapper>
@@ -106,21 +108,21 @@ const Profile: React.FC<Props> = () => {
                 <SkillsSubtitle>Environment</SkillsSubtitle>
                 <SkillsItem>React, Next.js</SkillsItem>
                 <SkillsItem>MERN</SkillsItem>
-                <SkillsItem>Bootstrap</SkillsItem>
-                <SkillsItem>Wordpress</SkillsItem>
+                <SkillsItem>SwiftUI</SkillsItem>
                 <SkillsItem>Firebase</SkillsItem>
                 <SkillsItem>Flutter</SkillsItem>
+                <SkillsItem>Wordpress</SkillsItem>
                 <SkillsItem>Git, GitHub</SkillsItem>
               </TextWrapper>
             </SkillsWrapper>
             <SkillsWrapper>
               <TextWrapper variant="skill">
-                <SkillsSubtitle>UX/UI</SkillsSubtitle>
+                <SkillsSubtitle>UX/UI & Project</SkillsSubtitle>
                 <SkillsItem>Figma</SkillsItem>
-                <SkillsItem>Framer</SkillsItem>
                 <SkillsItem>UX Research</SkillsItem>
                 <SkillsItem>Prototyping</SkillsItem>
                 <SkillsItem>Usability Testing</SkillsItem>
+                <SkillsItem>GitHub Project</SkillsItem>
               </TextWrapper>
             </SkillsWrapper>
           </SectionBlock>
