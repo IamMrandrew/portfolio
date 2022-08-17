@@ -41,14 +41,21 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
   );
 
   const refresh = async () => {
+    // await (page.id);
+    // Call /api/revalidate with page id with fetch api
+    await fetch(
+      `/api/revalidate?id=${page.properties.Name.title[0].plain_text
+        .replace(/\s+/g, "")
+        .toLowerCase()}`
+    );
     console.info("Refresh page cache", cacheAge);
     router.replace(router.asPath, router.asPath, { scroll: false }); // Soft refresh
+    // router.replace(router.asPath);
   };
-
-  if (cacheAge > 10) refresh();
 
   useEffect(() => {
     console.info("Current page cache", cacheAge);
+    if (cacheAge > 10) refresh();
   }, []);
 
   const textIn = {

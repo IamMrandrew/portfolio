@@ -14,6 +14,12 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "styled-components.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "styled-components.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/api/revalidate.ts"
+  ],
   "exclude": ["node_modules"]
 }
