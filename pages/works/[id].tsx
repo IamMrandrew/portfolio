@@ -7,12 +7,22 @@ import { Client } from "@notionhq/client";
 import { MEDIA_BREAK } from "../../styles/GlobalStyle";
 import { Block } from "../../types/Block";
 import { Page } from "../../types/Page";
+import { PagesRetrieveResponse } from "@notionhq/client/build/src/api-endpoints";
 import Button from "../../components/Button";
 import Render from "../../components/Render";
 import Paragraph from "../../components/Blocks/Paragraph";
+import { useRouter } from "next/router";
+
+interface ExtPage extends Page {
+  last_fetch?: number;
+}
+
+interface ExtPagesRetrieveResponse extends PagesRetrieveResponse {
+  last_fetch?: number;
+}
 
 type Props = {
-  page: Page;
+  page: ExtPage;
   pageBlocks: Array<Block>;
 };
 
@@ -22,6 +32,23 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
   useEffect(() => {
     console.log(page);
     console.log(pageBlocks);
+  }, []);
+
+  // RefreshPage if notion data is older than 1h, aws-image links expire
+  const router = useRouter();
+  const cacheAge = Math.floor(
+    (+new Date() - +new Date(page.last_fetch || 1)) / 1000
+  );
+
+  const refresh = async () => {
+    console.info("Refresh page cache", cacheAge);
+    router.replace(router.asPath, router.asPath, { scroll: false }); // Soft refresh
+  };
+
+  if (cacheAge > 10) refresh();
+
+  useEffect(() => {
+    console.info("Current page cache", cacheAge);
   }, []);
 
   const textIn = {
@@ -79,7 +106,7 @@ const WorkPage: React.FC<Props> = ({ page, pageBlocks }) => {
             variants={textIn}
             title={page.properties.Name.title[0]?.plain_text}
           >
-            <Date>{page.properties.Date.rich_text[0]?.plain_text}</Date>
+            <DateText>{page.properties.Date.rich_text[0]?.plain_text}</DateText>
             {getDesc()}
             <Spacer />
             {page.properties.WorkURL.rich_text[0]?.plain_text && (
@@ -152,9 +179,11 @@ export const getStaticProps = async (context: any) => {
     )?.id || "";
 
   // const id = context.params.id;
-  const pageRes = await notion.pages.retrieve({
+  const pageRes: ExtPagesRetrieveResponse = await notion.pages.retrieve({
     page_id: id,
   });
+  pageRes.last_fetch = new Date().getTime();
+
   const pageBlocksRes = await notion.blocks.children.list({
     block_id: id,
   });
@@ -196,7 +225,7 @@ const Content = styled.div`
   position: relative;
 `;
 
-const Date = styled.div`
+const DateText = styled.div`
   color: ${({ theme }) => theme.color.neutral.onBackground};
   font-size: 21px;
   font-weight: 700;
