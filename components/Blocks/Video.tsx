@@ -9,7 +9,9 @@ type Props = {
 const Video: React.FC<Props> = ({ block }) => {
   return (
     <Wrapper controls>
-      <source src={block[block.type].file.url} />
+      <source
+        src={block[block.type].file?.url || block[block.type].external?.url}
+      />
     </Wrapper>
   );
 };
